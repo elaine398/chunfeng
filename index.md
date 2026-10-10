@@ -2,14 +2,27 @@
 layout: default
 ---
 
-<div class="magazine-container">
+<!-- 1. 🌟 完美的 TOP BAR 顶栏横带区 -->
+<div class="custom-top-bar">
+  <div class="top-bar-left-branding">
+    <span class="top-brand-name">椿枫漫笔</span>
+    <span class="top-brand-subtitle">Let's not remember years, remember moments</span>
+  </div>
+  <div class="top-bar-right-menu">
+    <a class="top-menu-item" href="/chunfeng/">主页</a>
+    <a class="top-menu-item" href="/chunfeng/about">关于我</a>
+  </div>
+</div>
 
-  <!-- 🧭 左边竖栏：7大分类直达小方块 -->
-  <div class="left-sidebar-menu">
+<!-- 2. 📰 下方核心双栏大杂志格局 -->
+<div class="magazine-layout-wrapper">
+
+  <!-- 🧭 左边栏：紧贴最左侧的 7 大专栏精致方块 -->
+  <div class="left-sidebar-menu-panel">
     <div class="sidebar-menu-title">📚 专栏分类</div>
     <div class="sidebar-box-grid">
       {% for category in site.sidebar-categories %}
-        <a class="sidebar-category-box" href="#{{ category.tag }}">
+        <a class="sidebar-category-box" href="/chunfeng/tags/#{{ category.tag }}">
           <span class="box-text">{{ category.name }}</span>
           <span class="box-count">({{ site.tags[category.tag].size | default: 0 }})</span>
         </a>
@@ -17,8 +30,8 @@ layout: default
     </div>
   </div>
 
-  <!-- 📄 右边竖栏：真实的历史文章流 -->
-  <div class="right-articles-flow">
+  <!-- 📄 右边栏：行云流水、宽敞舒畅的中文历史随笔流 -->
+  <div class="right-articles-flow-panel">
     <h2 class="flow-header">📖 我的历史随笔</h2>
     
     <div class="articles-list-wrapper">
@@ -36,34 +49,74 @@ layout: default
 
 </div>
 
-<!-- 🎨 专属顶级杂志双栏排版皮肤控制 (CSS) -->
+<!-- 3. 🎨 纯手工完全自定义全屏视觉控制皮肤 (CSS) -->
 <style>
-  /* Split layout into a gorgeous asymmetrical double column */
-  .magazine-container {
+  /* 全局去边距，让全屏自由呼吸 */
+  body {
+    margin: 0;
+    padding: 0 40px;
+    background-color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  /* 🌟 TOP BAR 顶部横带核心样式：强制单线条高档宣纸风 */
+  .custom-top-bar {
     display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-top: 30px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+    border-bottom: 2px solid #e8dfcf; /* 素雅的泥金单边底线 */
+    margin-bottom: 40px;
+  }
+  .top-brand-name {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #2c3e50;
+    letter-spacing: 1px;
+    margin-right: 15px;
+  }
+  .top-brand-subtitle {
+    font-size: 0.95em;
+    color: #7f8c8d;
+    font-style: italic;
+  }
+  .top-bar-right-menu {
+    display: flex;
+    gap: 25px;
+  }
+  .top-menu-item {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #34495e !important;
+    text-decoration: none !important;
+    transition: color 0.2s;
+  }
+  .top-menu-item:hover {
+    color: #e67e22 !important;
+  }
+
+  /* 📰 下方大杂志双栏容器排版 */
+  .magazine-layout-wrapper {
+    display: flex;
+    gap: 50px;
     align-items: flex-start;
   }
 
-  /* Left Column: Fixed structural width for your 7 blocks */
-  .left-sidebar-menu {
-    flex: 1;
-    min-width: 260px;
+  /* 左边栏：7大分类方块完美靠左悬挂 */
+  .left-sidebar-menu-panel {
+    flex: 0 0 280px; /* 固定280像素高档宽度 */
     background-color: #faf9f6;
     padding: 20px;
     border-radius: 12px;
     border: 1px solid #f2ede4;
   }
   .sidebar-menu-title {
-    font-size: 1.1em;
+    font-size: 1.05em;
     font-weight: bold;
     color: #2c3e50;
-    padding-bottom: 12px;
+    padding-bottom: 10px;
     margin-bottom: 15px;
     border-bottom: 2px solid #e8dfcf;
-    letter-spacing: 1px;
   }
   .sidebar-box-grid {
     display: flex;
@@ -80,7 +133,7 @@ layout: default
     border-radius: 8px;
     text-decoration: none !important;
     color: #34495e !important;
-    font-weight: 500;
+    font-weight: bold;
     transition: all 0.2s ease;
   }
   .sidebar-category-box:hover {
@@ -94,13 +147,12 @@ layout: default
     color: #95a5a6;
   }
 
-  /* Right Column: Expansive area for your articles list */
-  .right-articles-flow {
-    flex: 2;
-    min-width: 320px;
+  /* 右边栏：历史随笔流舒畅铺开 */
+  .right-articles-flow-panel {
+    flex: 1;
   }
   .flow-header {
-    font-size: 1.4em;
+    font-size: 1.3em;
     font-weight: bold;
     color: #2c3e50;
     margin-top: 0;
@@ -119,7 +171,6 @@ layout: default
     gap: 12px;
     padding-bottom: 12px;
     border-bottom: 1px dashed #f2ede4;
-    font-size: 1.05em;
   }
   .post-row-date {
     color: #7f8c8d;
@@ -142,6 +193,10 @@ layout: default
     background-color: #fdf6ec;
     padding: 2px 8px;
     border-radius: 4px;
-    white-space: nowrap;
+  }
+
+  /* 🧼 隐藏原皮肤残留的一切底层英文牛皮癣和多余横线 */
+  footer, .theme-by, #downloads, .site-footer {
+    display: none !important;
   }
 </style>
