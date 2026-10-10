@@ -5,3 +5,9 @@ description: "Let's not remember years, remember moments"
 
 # 启用 GitHub 官方推荐的、最雅致、排版最完美的杂志双栏皮肤
 theme: jekyll-theme-minimal
+
+# 🚀 激活官方 Jekyll 博客引擎与文章抓取功能
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+future: true
