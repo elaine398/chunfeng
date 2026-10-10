@@ -5,7 +5,7 @@ layout: default
 <!-- 1. 🌟 终极合体：完美的极简顶栏横带（大名字与主页、关于我在同一横行） -->
 <div class="custom-top-bar">
   <div class="top-bar-left-branding">
-    <span class="top-brand-name">椿枫漫笔</span>
+    <a class="top-brand-name-link" href="/chunfeng/">椿枫漫笔</a>
     <span class="top-brand-subtitle">Let's not remember years, remember moments</span>
   </div>
   <div class="top-bar-right-menu">
@@ -50,13 +50,16 @@ layout: default
 </div>
 
 <!-- 3. 🎨 纯手工完全自定义全屏视觉控制皮肤 (CSS) -->
+<!-- 3. 🎨 纯手工完全自定义全屏视觉控制皮肤 (CSS) -->
 <style>
-  /* 强行气化隐藏旧官方皮肤在最顶部遗留的那个蓝字大标题的大盒子 */
-  header {
+  /* 🧼 终极绝招：强行在底层彻底将官方遗留的那个蓝色旧标题大盒子完全气化蒸发 */
+  header, .site-header, #flash-container, .page-header {
     display: none !important;
     height: 0 !important;
     padding: 0 !important;
     margin: 0 !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
   }
 
   body {
@@ -66,7 +69,7 @@ layout: default
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
 
-  /* 🌟 TOP BAR 顶部横带核心样式：强制单线条高档宣纸风 */
+  /* 🌟 TOP BAR 顶部横带核心样式：大名字与主页菜单完美并排 */
   .custom-top-bar {
     display: flex;
     justify-content: space-between;
@@ -76,13 +79,21 @@ layout: default
     margin-bottom: 40px;
     margin-top: 20px;
   }
-  .top-brand-name {
+  
+  /* 🌟 新增美化：将下方的“椿枫漫笔”大字变成优雅的、可点击的高质感主页链接 */
+  .top-brand-name-link {
     font-size: 1.9em;
     font-weight: bold;
-    color: #2c3e50;
+    color: #2c3e50 !important;
     letter-spacing: 1px;
     margin-right: 15px;
+    text-decoration: none !important; /* 彻底去掉难看的下划线 */
+    transition: color 0.2s;
   }
+  .top-brand-name-link:hover {
+    color: #e67e22 !important; /* 鼠标悬停时会变成温暖的杏橙色提示可点击 */
+  }
+  
   .top-brand-subtitle {
     font-size: 0.95em;
     color: #7f8c8d;
