@@ -3,11 +3,20 @@ title: "椿枫漫笔"
 author: "Elaine"
 description: "Let's not remember years, remember moments"
 
-# 启用 GitHub 官方推荐的、最雅致、排版最完美的杂志双栏皮肤
-theme: jekyll-theme-minimal
+# 1. 顶部横栏专属：仅保留主页与关于我两个黄金大门
+navbar-links:
+  "主页": "/chunfeng/"
+  "关于我": "/chunfeng/about"
 
-# 🚀 激活官方 Jekyll 博客引擎与文章抓取功能
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-future: true
+# 2. 左侧竖栏数据中心：锁死你的7大分类
+sidebar-categories:
+  - { name: "📖 故事专栏", tag: "故事" }
+  - { name: "✍️ 短文随笔", tag: "短文" }
+  - { name: "✈️ 游记日记", tag: "游记" }
+  - { name: "📅 生活日志", tag: "日志" }
+  - { name: "📚 读书书摘", tag: "书摘" }
+  - { name: "🏡 个人书斋", tag: "书斋" }
+  - { name: "🍳 美食私房", tag: "美食" }
+
+# 启用官方极简杂志双栏皮肤
+theme: jekyll-theme-minimal
