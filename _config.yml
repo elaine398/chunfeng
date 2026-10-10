@@ -1,14 +1,14 @@
-# 🌸 椿枫漫笔纯净版总账本
+# 🌸 椿枫漫笔纯净版总账本（终极格局）
 title: "椿枫漫笔"
 author: "Elaine"
 description: "Let's not remember years, remember moments"
 
-# 1. 顶部横栏专属：仅保留主页与关于我两个黄金大门
+# 顶部横栏链接锁定
 navbar-links:
   "主页": "/chunfeng/"
   "关于我": "/chunfeng/about"
 
-# 2. 左侧竖栏数据中心：锁死你的7大分类
+# 侧边栏分类数据
 sidebar-categories:
   - { name: "📖 故事专栏", tag: "故事" }
   - { name: "✍️ 短文随笔", tag: "短文" }
@@ -18,5 +18,5 @@ sidebar-categories:
   - { name: "🏡 个人书斋", tag: "书斋" }
   - { name: "🍳 美食私房", tag: "美食" }
 
-# 启用官方极简杂志双栏皮肤
-theme: jekyll-theme-minimal
+# ⚠️ 彻底解雇官方古板皮肤，腾出全屏空间
+theme: ""
