@@ -2,14 +2,14 @@
 layout: default
 ---
 
-<!-- 1. 🌟 完美的 TOP BAR 顶栏横带区 -->
+<!-- 1. 🌟 终极合体：完美的极简顶栏横带（大名字与主页、关于我在同一横行） -->
 <div class="custom-top-bar">
   <div class="top-bar-left-branding">
     <span class="top-brand-name">椿枫漫笔</span>
     <span class="top-brand-subtitle">Let's not remember years, remember moments</span>
   </div>
   <div class="top-bar-right-menu">
-    <a class="top-menu-item" href="/chunfeng/">主页</a>
+    <a class="top-menu-item active-nav" href="/chunfeng/">主页</a>
     <a class="top-menu-item" href="/chunfeng/about">关于我</a>
   </div>
 </div>
@@ -51,7 +51,14 @@ layout: default
 
 <!-- 3. 🎨 纯手工完全自定义全屏视觉控制皮肤 (CSS) -->
 <style>
-  /* 全局去边距，让全屏自由呼吸 */
+  /* 强行气化隐藏旧官方皮肤在最顶部遗留的那个蓝字大标题的大盒子 */
+  header {
+    display: none !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
   body {
     margin: 0;
     padding: 0 40px;
@@ -67,9 +74,10 @@ layout: default
     padding: 25px 0;
     border-bottom: 2px solid #e8dfcf; /* 素雅的泥金单边底线 */
     margin-bottom: 40px;
+    margin-top: 20px;
   }
   .top-brand-name {
-    font-size: 1.8em;
+    font-size: 1.9em;
     font-weight: bold;
     color: #2c3e50;
     letter-spacing: 1px;
@@ -91,7 +99,7 @@ layout: default
     text-decoration: none !important;
     transition: color 0.2s;
   }
-  .top-menu-item:hover {
+  .top-menu-item:hover, .active-nav {
     color: #e67e22 !important;
   }
 
@@ -104,7 +112,7 @@ layout: default
 
   /* 左边栏：7大分类方块完美靠左悬挂 */
   .left-sidebar-menu-panel {
-    flex: 0 0 280px; /* 固定280像素高档宽度 */
+    flex: 0 0 280px;
     background-color: #faf9f6;
     padding: 20px;
     border-radius: 12px;
@@ -147,7 +155,7 @@ layout: default
     color: #95a5a6;
   }
 
-  /* 右边栏：历史随笔流舒畅铺开 */
+  /* 右边栏：历史随笔流流利铺开 */
   .right-articles-flow-panel {
     flex: 1;
   }
@@ -195,8 +203,8 @@ layout: default
     border-radius: 4px;
   }
 
-  /* 🧼 隐藏原皮肤残留的一切底层英文牛皮癣和多余横线 */
-  footer, .theme-by, #downloads, .site-footer {
+  /* 🧼 强行气化隐藏旧官方皮肤的一切底部牛皮癣 */
+  footer, .theme-by, #downloads, .site-footer, section.sidebar {
     display: none !important;
   }
 </style>
