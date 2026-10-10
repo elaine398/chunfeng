@@ -53,13 +53,17 @@ layout: default
 <!-- 3. 🎨 纯手工完全自定义全屏视觉控制皮肤 (CSS) -->
 <style>
   /* 🧼 终极绝招：强行在底层彻底将官方遗留的那个蓝色旧标题大盒子完全气化蒸发 */
-  header, .site-header, #flash-container, .page-header {
+ header, .site-header, #flash-container, .page-header, 
+  #forkongithub, #project_title, .inner, #main_content_wrap header,
+  body > header {
     display: none !important;
     height: 0 !important;
     padding: 0 !important;
     margin: 0 !important;
     visibility: hidden !important;
     opacity: 0 !important;
+    position: absolute !important;
+    top: -9999px !important; /* 强行扔到屏幕外一万像素的地方 */
   }
 
   body {
