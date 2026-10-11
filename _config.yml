@@ -19,3 +19,10 @@ sidebar-categories:
   - { name: "🍳 美食私房", tag: "美食" }
 
 # ⚠️ 彻底解雇官方古板皮肤，腾出全屏空间
+# 🌸 全自动命令：只要是随笔文章，一律启用刚才建好的精装 post 皮肤
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
