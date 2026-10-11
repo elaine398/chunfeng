@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<!-- 1. 🌟 TOP BAR 顶部横带区 -->
+<!-- 1. 🌟 TOP BAR 顶部横带区（名字与菜单完美并排） -->
 <div class="custom-top-bar">
   <div class="top-bar-left-branding">
     <a class="top-brand-name-link" href="/chunfeng/">椿枫漫笔</a>
@@ -17,7 +17,7 @@ layout: default
 <!-- 2. 📰 CORE SPLIT MAGAZINE INTERFACE -->
 <div class="magazine-layout-wrapper">
 
-  <!-- 🧭 左边栏：高级两层递进风琴折叠书架（带独立滚动条 ✨） -->
+  <!-- 🧭 左边栏：固态吸顶悬浮大书架（带整栏独立高级滚动条 🌟） -->
   <div class="left-sidebar-menu-panel">
     <div class="sidebar-menu-title">📚 专栏分类</div>
     <div class="sidebar-accordion-group">
@@ -49,7 +49,7 @@ layout: default
         <summary class="accordion-header">
           <span class="header-text">✍️ 短文随笔</span>
           <span class="header-right-info">
-            <span class="badge-count">{{ site.tags["短文"].size | default: 0 }}</span>
+            <span class="badge-count holiday-adjust">{{ site.tags["短文"].size | default: 0 }}</span>
             <span class="arrow-icon">▶</span>
           </span>
         </summary>
@@ -179,7 +179,7 @@ layout: default
     </div>
   </div>
 
-  <!-- 📄 右边中央主舞台 -->
+  <!-- 📄 右边中央主舞台：展示段落分明的详细正文 -->
   <div class="right-articles-flow-panel">
     
     <!-- 🏡 缺省默认欢迎室 -->
@@ -212,7 +212,7 @@ layout: default
 
 </div>
 
-<!-- 3. 🎨 纯手工完全自定义全屏视觉控制皮肤 -->
+<!-- 3. 🎨 纯手工完全自定义全屏视觉控制皮肤 (CSS 终极完美大收官魔术) -->
 <style>
   header { display: none !important; height: 0 !important; padding: 0 !important; margin: 0 !important; }
   body { margin: 0; padding: 0 40px; background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
@@ -229,18 +229,26 @@ layout: default
   /* 双栏杂志大排版外壳 */
   .magazine-layout-wrapper { display: flex; gap: 50px; align-items: flex-start; margin-bottom: 60px; }
 
-  /* 🧭 左边栏：高级折叠式大书架 */
-  .left-sidebar-menu-panel { flex: 0 0 310px; background-color: #faf9f6; padding: 20px; border-radius: 12px; border: 1px solid #f2ede4; position: sticky; top: 30px; }
+  /* 🧭 🧭 🧭 【全新蜕变】左边栏：固态全屏吸顶悬浮大书架 🧭 🧭 🧭 */
+  .left-sidebar-menu-panel { 
+    flex: 0 0 310px; 
+    background-color: #faf9f6; 
+    padding: 20px; 
+    border-radius: 12px; 
+    border: 1px solid #f2ede4; 
+    
+    /* 核心魔法 1：开启吸顶跟随模式，当右边文章往下拉时，左边像磁铁一样死死吸在左侧！ */
+    position: sticky !important; 
+    top: 25px !important; 
+    
+    /* 核心魔法 2：高能锁死！强行命令整个左边栏的外壳总高度，绝对不能超过读者屏幕的显示高度！ */
+    max-height: calc(100vh - 90px) !important; 
+    
+    /* 核心魔法 3：当抽屉拉开撑满时，不准往下挤，直接在左边栏自己内部强行亮起整栏大滚动条！ */
+    overflow-y: auto !important; 
+    overflow-x: hidden !important;
+  }
+  
   .sidebar-menu-title { font-size: 1.05em; font-weight: bold; color: #2c3e50; padding-bottom: 10px; margin-bottom: 15px; border-bottom: 2px solid #e8dfcf; letter-spacing: 0.5px; }
   .sidebar-accordion-group { display: flex; flex-direction: column; gap: 12px; }
 
-  /* 🔒 【超级重力修正 1】：在手风琴盒子外壳上，锁死溢出控制，彻底剥夺它的野蛮膨胀权！ */
-  .category-accordion-box { 
-    background-color: #ffffff; 
-    border: 1px solid #eef0f2; 
-    border-radius: 8px; 
-    overflow: hidden !important; /* 👈 关键铁律：彻底斩断抽屉往外乱爆的空间，逼迫滚动条亮相！ */
-    transition: border-color 0.2s; 
-  }
-  .category-accordion-box[open] { border-color: #e67e22; box-shadow: 0 3px 10px rgba(230,126,34,0.03); }
-  
