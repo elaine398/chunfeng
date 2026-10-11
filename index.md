@@ -1,17 +1,7 @@
-That makes total sense. The hover method can feel too chaotic because the screen flashes and changes the moment your mouse accidentally drifts across the page.
-By shifting to the click-to-lock architecture, your website will behave like a premium, rock-solid desktop application. When a reader clicks a category block on the left, that specific menu will lock into place and stay there permanently until they consciously choose to click another category. Inside that directory, every single essay title will be a fully functional live link that opens up the actual text room smoothly when clicked.
-We will use the ultra-stable pure CSS :target engine to build this. This ensures that your website loads at lightning speeds, requires zero maintenance, and works perfectly on both Mac Safari and mobile phones.
-Let's do our absolute final formatting wash inside your index.md file via the web portal:
-------------------------------
-## 🛠️ The 10-Second Master Layout Reset
-Please copy and paste this exact link into your Safari address bar to go straight to your main file editor:
-👉 https://github.com
-(If it gives you a 404 error, change main at the very end of that link to master).
-Press Command + A to select all old testing code, hit delete to clear the canvas completely, and paste this beautifully stabilized architectural code block:
-
 ---
 layout: default
 ---
+
 <!-- 1. 🌟 TOP BAR 顶部横带区（大名字与全局菜单完美合并在同一横行） -->
 <div class="custom-top-bar">
   <div class="top-bar-left-branding">
@@ -23,6 +13,7 @@ layout: default
     <a class="top-menu-item" href="/chunfeng/about">关于我</a>
   </div>
 </div>
+
 <!-- 2. 📰 CORE SPLIT MAGAZINE INTERFACE -->
 <div class="magazine-layout-wrapper">
 
@@ -173,6 +164,7 @@ layout: default
   </div>
 
 </div>
+
 <!-- 3. 🎨 SOLID CLICK-TO-LOCK STYLESHEET (CSS CORE) -->
 <style>
   /* Wipe old theme residue */
@@ -232,13 +224,3 @@ layout: default
   /* Typography Styles for Interior Content Elements */
   .flow-header { font-size: 1.3em; font-weight: bold; margin-top: 0; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #f2ede4; color: #e67e22; }
   .articles-list-wrapper { display: flex; flex-direction: column; gap: 15px; }
-
-.post-row-item { display: flex; align-items: center; gap: 12px; padding-bottom: 12px; border-bottom: 1px dashed #f2ede4; }
-.post-row-date { color: #7f8c8d; font-size: 0.95em; white-space: nowrap; }
-/* Live Text Link Routing Styles for the Main Articles */
-.post-row-title-link { color: #2c3e50 !important; text-decoration: none !important; font-weight: bold; flex-grow: 1; transition: color 0.15s; }
-.post-row-title-link:hover { color: #e67e22 !important; text-decoration: underline !important; }
-.empty-notice { font-style: italic; color: #7f8c8d; }
-/* Purge baseline layout signatures */
-footer, .theme-by, #downloads, .site-footer, section.sidebar { display: none !important; }
-
