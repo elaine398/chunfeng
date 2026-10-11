@@ -179,11 +179,11 @@ layout: default
     </div>
   </div>
 
-  <!-- 📄 右边中央主舞台 -->
+  <!-- 📄 右边中央主舞台：精选随笔流展厅 -->
   <div class="right-articles-flow-panel">
     
     <!-- 🏡 1. 缺省默认展示流：进门时自动抓取最新的 5 篇文章并原地折叠展示 -->
-    <div class="content-inside-card default-welcome-room">
+    <div class="content-panel-card default-welcome-room">
       <h2 class="magazine-stream-header">✨ 最近发表 · 精选随笔</h2>
       
       {% for post in site.posts limit:5 %}
@@ -191,6 +191,7 @@ layout: default
           <h3 class="stream-title">{{ post.title }}</h3>
           <div class="stream-meta">📅 {{ post.date | date: "%Y-%m-%d" }} &nbsp;|&nbsp; 🏷️ {{ post.tags | first }}</div>
           
+          <!-- 📜 伸缩组件：将第一段截取作为预览，其余藏在抽屉里 -->
           <details class="readmore-accordion">
             <summary class="readmore-btn-summary">
               <div class="teaser-text-preview">
@@ -210,9 +211,9 @@ layout: default
       {% endfor %}
     </div>
 
-    <!-- 📖 2. 深度阅读室 -->
+    <!-- 📖 2. 深度阅读室：点击左边任何一篇具体随笔时，一秒无缝在中间拆开 -->
     {% for post in site.posts %}
-      <div class="content-inside-card article-reading-room" id="post-{{ post.id | slugify }}">
+      <div class="content-panel-card article-reading-room" id="post-{{ post.id | slugify }}">
         <h1 class="article-inside-title">{{ post.title }}</h1>
         <div class="article-inside-meta">
           <span>📅 发布时间：{{ post.date | date: "%Y-%m-%d" }}</span>
@@ -231,11 +232,11 @@ layout: default
 
 </div>
 
-<!-- 3. 🎨 纯手工完全自定义全屏视觉控制皮肤 (CSS 终极超级重力加固扩容版) -->
+<!-- 3. 🎨 纯手工完全自定义全屏视觉控制皮肤 (CSS 终极彻底对齐死锁版) -->
 <style>
-  /* 💥 【终极核心大重锤】：强行粉碎官方旧皮肤设置在最高容器身上的任何最大宽度枷锁限制！ */
+  /* 全盘炸碎官方旧皮肤的最大宽度枷锁限制 */
   html, body, .wrapper, #main_content_wrap, section.main-content, .container, main {
-    max-width: 100% !important;   /* 彻底掀翻 640px/900px 的官方天花板限制 */
+    max-width: 100% !important;   
     width: 100% !important;
     padding: 0 !important;
     margin: 0 !important;
@@ -243,11 +244,10 @@ layout: default
 
   header { display: none !important; height: 0 !important; padding: 0 !important; margin: 0 !important; }
   
-  /* 给全站大包裹加一层宽敞大方的全屏两侧呼吸垫子 */
   body { 
     background-color: #ffffff; 
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    padding: 0 50px !important; /* 强制左右两侧留空 50 像素的高档展厅边距 */
+    padding: 0 40px !important; 
     box-sizing: border-box !important;
   }
 
