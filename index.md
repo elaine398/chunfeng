@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<!-- 1. 🌟 TOP BAR 顶部横带区 -->
+<!-- 1. 🌟 TOP BAR 顶部横带区（名字与菜单完美并排） -->
 <div class="custom-top-bar">
   <div class="top-bar-left-branding">
     <a class="top-brand-name-link" href="/chunfeng/">椿枫漫笔</a>
@@ -31,10 +31,11 @@ layout: default
             <span class="arrow-icon">▶</span>
           </span>
         </summary>
+        <!-- 【第二层子目录】：点击后精准唤醒右侧对应的无缝正文展厅 -->
         <div class="accordion-sub-links-list">
           {% for post in site.tags["故事"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="{{ post.url | relative_url }}">
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
                 ▪ {{ post.title }}
               </a>
             </div>
@@ -56,7 +57,7 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["短文"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="{{ post.url | relative_url }}">
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
                 ▪ {{ post.title }}
               </a>
             </div>
@@ -78,7 +79,7 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["游记"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="{{ post.url | relative_url }}">
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
                 ▪ {{ post.title }}
               </a>
             </div>
@@ -100,7 +101,7 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["日志"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="{{ post.url | relative_url }}">
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
                 ▪ {{ post.title }}
               </a>
             </div>
@@ -122,7 +123,7 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["书摘"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="{{ post.url | relative_url }}">
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
                 ▪ {{ post.title }}
               </a>
             </div>
@@ -144,7 +145,7 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["书斋"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="{{ post.url | relative_url }}">
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
                 ▪ {{ post.title }}
               </a>
             </div>
@@ -166,7 +167,7 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["美食"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="{{ post.url | relative_url }}">
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
                 ▪ {{ post.title }}
               </a>
             </div>
@@ -179,10 +180,12 @@ layout: default
     </div>
   </div>
 
-  <!-- 📄 右边中央主舞台：精选随笔流展厅（彻底拿掉重复的PART B，数据再也不打架！） -->
+  <!-- 📄 右边中央主舞台：动态内容大展厅（完美在 5 篇摘要流与单篇长正文之间一秒无缝置换） -->
   <div class="right-articles-flow-panel">
-    <div class="content-panel-card default-welcome-room">
-      <h2 class="magazine-stream-header">✨ 最近发表 · 精选随笔随流</h2>
+    
+    <!-- 🏡 【空间 A】：缺省默认展示区 —— 进门时自动平铺展示最近发表的 5 篇随笔摘要流 -->
+    <div class="content-panel-card default-welcome-stream-room">
+      <h2 class="magazine-stream-header">✨ 最近发表 · 精选随笔</h2>
       
       {% for post in site.posts limit:5 %}
         <div class="stream-article-item">
@@ -191,9 +194,9 @@ layout: default
           
           <details class="readmore-accordion">
             <summary class="readmore-btn-summary">
-              <!-- 强制只抓取140个文字摘要，彻底隔绝乱码 -->
+              <!-- 使用纯文字安全切断引擎，100%隔绝原文内部格式拉扯 -->
               <div class="teaser-text-preview">
-                {{ post.content | strip_html | truncate: 140 }}
+                {{ post.content | strip_html | truncatewords: 40 }}
               </div>
               <div class="readmore-badge-trigger">
                 <span class="text-expand">[展开阅读全文 ↓]</span>
@@ -208,39 +211,50 @@ layout: default
         </div>
       {% endfor %}
     </div>
+
+    <!-- 📖 【空间 B】：终极深度阅读室 —— 当读者点击左侧任意一个书名时，长文章正文在原位一秒无缝铺开绽放！ -->
+    {% for post in site.posts %}
+      <div class="content-panel-card article-reading-room" id="post-{{ post.id | slugify }}">
+        <h1 class="article-inside-title">{{ post.title }}</h1>
+        <div class="article-inside-meta">
+          <span>📅 发布时间：{{ post.date | date: "%Y-%m-%d" }}</span>
+          <span class="meta-split">|</span>
+          <span>✍️ 作者：{{ post.author | default: "Elaine" }}</span>
+          <span class="meta-split">|</span>
+          <span>🏷️ 分类：{{ post.tags | first }}</span>
+          <span class="meta-split">|</span>
+          <a class="back-to-home-badge" href="/chunfeng/">返回最近发表 ↩</a>
+        </div>
+        
+        <!-- 墨香文字内核：完美的 1.6em 段落呼吸留白，舒适度拉满 -->
+        <div class="article-inside-body">
+          {{ post.content }}
+        </div>
+      </div>
+    {% endfor %}
+
   </div>
 
 </div>
 
-<!-- 🎨 顶级完全自定义样式表 -->
+<!-- 3. 🎨 纯手工完全自定义全屏视觉控制皮肤 (CSS 终极一体化无缝调度魔术) -->
 <style>
-  header, .site-header { display: none !important; height: 0 !important; }
-  body { margin: 0; padding: 0 40px !important; background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; box-sizing: border-box !important; }
-
-  .custom-top-bar { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; border-bottom: 2px solid #e8dfcf; margin-bottom: 40px; margin-top: 20px; }
-  .top-brand-name-link { font-size: 1.9em; font-weight: bold; color: #2c3e50 !important; letter-spacing: 1px; text-decoration: none !important; }
-  .top-brand-name-link:hover { color: #e67e22 !important; }
-  .top-brand-subtitle { font-size: 0.95em; color: #7f8c8d; font-style: italic; margin-left: 15px; }
-  .top-bar-right-menu { display: flex; gap: 25px; }
-  .top-menu-item { font-size: 1.1em; font-weight: bold; color: #34495e !important; text-decoration: none !important; }
-
-  /* 🔒 绝对并排横向骨架，绝对禁止塌陷堆叠 */
-  .magazine-layout-wrapper { 
-    display: flex !important; 
-    flex-direction: row !important; 
-    flex-wrap: nowrap !important; /* 彻底锁死并排 */
-    gap: 45px !important; 
-    align-items: flex-start !important; 
+  html, body, .wrapper, #main_content_wrap, section.main-content, .container, main {
+    max-width: 100% !important;   
     width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
-  /* 🧭 左边栏：固态310px黄金吸顶悬浮柜 */
-  .left-sidebar-menu-panel { 
-    flex: 0 0 310px !important; width: 310px !important; min-width: 310px !important;
-    background-color: #faf9f6; padding: 20px; border-radius: 12px; border: 1px solid #f2ede4; 
-    position: sticky !important; top: 25px !important; max-height: calc(100vh - 90px) !important; 
-    overflow-y: auto !important; overflow-x: hidden !important; box-sizing: border-box !important;
+  header { display: none !important; height: 0 !important; padding: 0 !important; margin: 0 !important; }
+  
+  body { 
+    background-color: #ffffff; 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding: 0 40px !important; 
+    box-sizing: border-box !important;
   }
-  .sidebar-menu-title { font-size: 1.05em; font-weight: bold; color: #2c3e50; padding-bottom: 10px; margin-bottom: 15px; border-bottom: 2px solid #e8dfcf; }
-  .sidebar-accordion-group { display: flex; flex-direction: column; gap: 12px; }
 
+  /* Top Bar 顶栏 */
+  .custom-top-bar { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; border-bottom: 2px solid #e8dfcf; margin-bottom: 40px; margin-top: 20px; width: 100% !important; box-sizing: border-box; }
+  .top-brand-name-link { font-size: 1.9em; font-weight: bold; color: #2c3e50 !important; letter-spacing: 1px; text-decoration: none !important; transition: color 0.2s; }
