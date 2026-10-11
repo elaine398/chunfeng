@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<!-- 1. 🌟 TOP BAR HEADER (Grand 2.2em text that routes back to Home when clicked!) -->
+<!-- 1. 🌟 TOP BAR HEADER (Grand 2.2em text that safely routes back to Home when clicked!) -->
 <div class="custom-top-bar">
   <div class="top-bar-left-branding">
     <a class="top-brand-name-link" href="/chunfeng/">椿枫漫笔</a>
@@ -179,7 +179,7 @@ layout: default
     </div>
   </div>
 
-  <!-- 📄 RIGHT COLUMN: Teaser Feed for the 5 Most Recent Essays -->
+  <!-- 📄 RIGHT COLUMN: Graceful Teaser Feed for the 5 Most Recent Essays -->
   <div class="right-articles-flow-panel">
     <div class="content-panel-card default-welcome-stream-room" style="display: block !important;">
       <h2 class="magazine-stream-header">✨ 最近发表 · 精选随笔</h2>
@@ -211,7 +211,7 @@ layout: default
 
 </div>
 
-<!-- 3. 🎨 ENHANCED CUSTOM CSS STYLESHEET -->
+<!-- 3. 🎨 ENHANCED CUSTOM CSS STYLESHEET (Double-Axis Deadlock Prevention Layout) -->
 <style>
   html, body, .wrapper, #main_content_wrap, section.main-content, .container, main, .markdown-body {
     max-width: 100% !important;   
@@ -231,7 +231,7 @@ layout: default
   /* Top Bar Navigation Layout */
   .custom-top-bar { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; border-bottom: 2px solid #e8dfcf; margin-bottom: 40px; margin-top: 20px; width: 100% !important; box-sizing: border-box; }
   
-  /* Explodes header text size to a magnificent 2.2em */
+  /* 🌟 Core Branding Update: Explodes header text size to a magnificent 2.2em with zero lower underline tags */
   .top-brand-name-link { font-size: 2.2em !important; font-weight: bold !important; color: #2c3e50 !important; letter-spacing: 1px !important; text-decoration: none !important; transition: color 0.2s ease; display: inline-block; }
   .top-brand-name-link:hover { color: #e67e22 !important; }
   
@@ -240,14 +240,9 @@ layout: default
   .top-menu-item { font-size: 1.1em; font-weight: bold; color: #34495e !important; text-decoration: none !important; }
   .top-menu-item:hover, .active-nav { color: #e67e22 !important; }
 
-  /* Permanent Parallel Horizontal Split Configuration */
+  /* 🔒 Permanent Parallel Horizontal Split Configuration */
   .magazine-layout-wrapper { 
     display: flex !important; 
     flex-direction: row !important; 
     flex-wrap: nowrap !important;       
     gap: 45px !important; 
-    align-items: flex-start !important; 
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
