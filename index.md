@@ -31,11 +31,10 @@ layout: default
             <span class="arrow-icon">▶</span>
           </span>
         </summary>
-        <!-- 【第二层子目录】：点击后精准唤醒右侧对应的无缝正文展厅 -->
         <div class="accordion-sub-links-list">
           {% for post in site.tags["故事"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
+              <a class="sub-article-title-link" href="{{ post.url | relative_url }}">
                 ▪ {{ post.title }}
               </a>
             </div>
@@ -57,7 +56,7 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["短文"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
+              <a class="sub-article-title-link" href="{{ post.url | relative_url }}">
                 ▪ {{ post.title }}
               </a>
             </div>
@@ -79,7 +78,7 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["游记"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
+              <a class="sub-article-title-link" href="{{ post.url | relative_url }}">
                 ▪ {{ post.title }}
               </a>
             </div>
@@ -101,7 +100,7 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["日志"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
+              <a class="sub-article-title-link" href="{{ post.url | relative_url }}">
                 ▪ {{ post.title }}
               </a>
             </div>
@@ -123,7 +122,7 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["书摘"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
+              <a class="sub-article-title-link" href="{{ post.url | relative_url }}">
                 ▪ {{ post.title }}
               </a>
             </div>
@@ -145,7 +144,7 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["书斋"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
+              <a class="sub-article-title-link" href="{{ post.url | relative_url }}">
                 ▪ {{ post.title }}
               </a>
             </div>
@@ -167,7 +166,7 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["美食"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
+              <a class="sub-article-title-link" href="{{ post.url | relative_url }}">
                 ▪ {{ post.title }}
               </a>
             </div>
@@ -180,11 +179,9 @@ layout: default
     </div>
   </div>
 
-  <!-- 📄 右边中央主舞台：动态内容大展厅（完美在 5 篇摘要流与单篇长正文之间一秒无缝置换） -->
+  <!-- 📄 右边中央主舞台：精选最近发表的 5 篇摘要流（原地无缝展开收起 ✨） -->
   <div class="right-articles-flow-panel">
-    
-    <!-- 🏡 【空间 A】：缺省默认展示区 —— 进门时自动平铺展示最近发表的 5 篇随笔摘要流 -->
-    <div class="content-panel-card default-welcome-stream-room">
+    <div class="content-panel-card default-welcome-stream-room" style="display: block !important;">
       <h2 class="magazine-stream-header">✨ 最近发表 · 精选随笔</h2>
       
       {% for post in site.posts limit:5 %}
@@ -194,9 +191,9 @@ layout: default
           
           <details class="readmore-accordion">
             <summary class="readmore-btn-summary">
-              <!-- 使用纯文字安全切断引擎，100%隔绝原文内部格式拉扯 -->
+              <!-- 纯文字安全摘要截取 -->
               <div class="teaser-text-preview">
-                {{ post.content | strip_html | truncatewords: 40 }}
+                {{ post.content | strip_html | truncate: 140 }}
               </div>
               <div class="readmore-badge-trigger">
                 <span class="text-expand">[展开阅读全文 ↓]</span>
@@ -211,33 +208,11 @@ layout: default
         </div>
       {% endfor %}
     </div>
-
-    <!-- 📖 【空间 B】：终极深度阅读室 —— 当读者点击左侧任意一个书名时，长文章正文在原位一秒无缝铺开绽放！ -->
-    {% for post in site.posts %}
-      <div class="content-panel-card article-reading-room" id="post-{{ post.id | slugify }}">
-        <h1 class="article-inside-title">{{ post.title }}</h1>
-        <div class="article-inside-meta">
-          <span>📅 发布时间：{{ post.date | date: "%Y-%m-%d" }}</span>
-          <span class="meta-split">|</span>
-          <span>✍️ 作者：{{ post.author | default: "Elaine" }}</span>
-          <span class="meta-split">|</span>
-          <span>🏷️ 分类：{{ post.tags | first }}</span>
-          <span class="meta-split">|</span>
-          <a class="back-to-home-badge" href="/chunfeng/">返回最近发表 ↩</a>
-        </div>
-        
-        <!-- 墨香文字内核：完美的 1.6em 段落呼吸留白，舒适度拉满 -->
-        <div class="article-inside-body">
-          {{ post.content }}
-        </div>
-      </div>
-    {% endfor %}
-
   </div>
 
 </div>
 
-<!-- 3. 🎨 纯手工完全自定义全屏视觉控制皮肤 (CSS 终极一体化无缝调度魔术) -->
+<!-- 3. 🎨 纯手工完全自定义全屏视觉控制皮肤 (CSS 终极无缝并排死锁版) -->
 <style>
   html, body, .wrapper, #main_content_wrap, section.main-content, .container, main {
     max-width: 100% !important;   
@@ -258,3 +233,28 @@ layout: default
   /* Top Bar 顶栏 */
   .custom-top-bar { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; border-bottom: 2px solid #e8dfcf; margin-bottom: 40px; margin-top: 20px; width: 100% !important; box-sizing: border-box; }
   .top-brand-name-link { font-size: 1.9em; font-weight: bold; color: #2c3e50 !important; letter-spacing: 1px; text-decoration: none !important; transition: color 0.2s; }
+  .top-brand-name-link:hover { color: #e67e22 !important; }
+  .top-brand-subtitle { font-size: 0.95em; color: #7f8c8d; font-style: italic; margin-left: 15px; }
+  .top-bar-right-menu { display: flex; gap: 25px; }
+  .top-menu-item { font-size: 1.1em; font-weight: bold; color: #34495e !important; text-decoration: none !important; }
+  .top-menu-item:hover, .active-nav { color: #e67e22 !important; }
+
+  /* 🔒 【双栏永久死锁并排骨架】：无论发生什么切换，左右两边绝对横向并排坐，100%禁止换行塌陷！ */
+  .magazine-layout-wrapper { 
+    display: flex !important; 
+    flex-direction: row !important; 
+    flex-wrap: nowrap !important;       /* 彻底封死换行机制 */
+    gap: 45px !important; 
+    align-items: flex-start !important; 
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 🧭 左边栏：固态310px黄金吸顶悬浮柜（整栏自带独立小滚动条 🌟） */
+  .left-sidebar-menu-panel { 
+    flex: 0 0 310px !important; 
+    width: 310px !important; 
+    min-width: 310px !important;
+    background-color: #faf9f6; 
+    padding: 20px; 
+    border-radius: 12px; 
