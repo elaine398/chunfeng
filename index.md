@@ -17,7 +17,7 @@ layout: default
 <!-- 2. 📰 CORE SPLIT MAGAZINE INTERFACE -->
 <div class="magazine-layout-wrapper">
 
-  <!-- 🧭 左边栏：固态吸顶悬浮大书架（带整栏独立高级滚动条 🌟） -->
+  <!-- 🧭 左边栏：固态吸顶悬浮大书架（带整栏独立高级滚动条） -->
   <div class="left-sidebar-menu-panel">
     <div class="sidebar-menu-title">📚 专栏分类</div>
     <div class="sidebar-accordion-group">
@@ -49,7 +49,7 @@ layout: default
         <summary class="accordion-header">
           <span class="header-text">✍️ 短文随笔</span>
           <span class="header-right-info">
-            <span class="badge-count holiday-adjust">{{ site.tags["短文"].size | default: 0 }}</span>
+            <span class="badge-count">{{ site.tags["短文"].size | default: 0 }}</span>
             <span class="arrow-icon">▶</span>
           </span>
         </summary>
@@ -179,18 +179,41 @@ layout: default
     </div>
   </div>
 
-  <!-- 📄 右边中央主舞台：展示段落分明的详细正文 -->
+  <!-- 📄 右边中央主舞台：跟随左侧子目录的点击，无缝展现对应内容 -->
   <div class="right-articles-flow-panel">
     
-    <!-- 🏡 缺省默认欢迎室 -->
+    <!-- 🏡 1. 缺省默认展示流：进门时自动抓取最新的 5 篇文章并原地折叠展示 -->
     <div class="content-inside-card default-welcome-room">
-      <h1 class="welcome-main-title">欢迎来到“椿枫漫笔”独立书斋</h1>
-      <p class="welcome-p">这里是一片完全属于文字的净土。没有多余的喧嚣与广告，有且仅有关于生活感悟、读书摘录、以及东欧与纽约旅行的真实足迹。</p>
-      <p class="welcome-p">💡 <strong>阅读指南</strong>：请用鼠标点击左侧的【专栏分类】展开您的固态书架，轻点任意一篇随笔标题，即可在这里直接享受高质感、段落分明的优雅无缝阅读。</p>
-      <div class="welcome-decor-line"></div>
+      <h2 class="magazine-stream-header">✨ 最近发表 · 精选随笔随流</h2>
+      
+      {% for post in site.posts limit:5 %}
+        <div class="stream-article-item">
+          <h3 class="stream-title">{{ post.title }}</h3>
+          <div class="stream-meta">📅 {{ post.date | date: "%Y-%m-%d" }} &nbsp;|&nbsp; 🏷️ {{ post.tags | first }}</div>
+          
+          <!-- 📜 核心黑魔法：利用 HTML 原生伸缩组件，把第一段作为摘要，其余藏在抽屉里 -->
+          <details class="readmore-accordion">
+            <summary class="readmore-btn-summary">
+              <!-- 自动抓取并剥离出文章开头的 120 个字（大约刚好是第一段的长度） -->
+              <div class="teaser-text-preview">
+                {{ post.content | strip_html | truncate: 120 }}
+              </div>
+              <div class="readmore-badge-trigger">
+                <span class="text-expand">[展开阅读全文 ↓]</span>
+                <span class="text-collapse">[收起全文 ↑]</span>
+              </div>
+            </summary>
+            
+            <!-- 展开后展现的、原汁原味段落分明的全量正文 -->
+            <div class="full-article-body-expanded">
+              {{ post.content }}
+            </div>
+          </details>
+        </div>
+      {% endfor %}
     </div>
 
-    <!-- 📖 全量文章详细正文隐藏展厅 -->
+    <!-- 📖 2. 深度阅读室：点击左边任何一篇具体书名时，一秒无缝在中间拆开 -->
     {% for post in site.posts %}
       <div class="content-inside-card article-reading-room" id="post-{{ post.id | slugify }}">
         <h1 class="article-inside-title">{{ post.title }}</h1>
@@ -201,7 +224,6 @@ layout: default
           <span class="meta-split">|</span>
           <span>🏷️ 分类：{{ post.tags | first }}</span>
         </div>
-        
         <div class="article-inside-body">
           {{ post.content }}
         </div>
@@ -212,7 +234,7 @@ layout: default
 
 </div>
 
-<!-- 3. 🎨 纯手工完全自定义全屏视觉控制皮肤 (CSS 终极完美大收官魔术) -->
+<!-- 3. 🎨 纯手工自定义全屏视觉控制皮肤 (CSS 终极形态魔术) -->
 <style>
   header { display: none !important; height: 0 !important; padding: 0 !important; margin: 0 !important; }
   body { margin: 0; padding: 0 40px; background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
@@ -228,27 +250,4 @@ layout: default
 
   /* 双栏杂志大排版外壳 */
   .magazine-layout-wrapper { display: flex; gap: 50px; align-items: flex-start; margin-bottom: 60px; }
-
-  /* 🧭 🧭 🧭 【全新蜕变】左边栏：固态全屏吸顶悬浮大书架 🧭 🧭 🧭 */
-  .left-sidebar-menu-panel { 
-    flex: 0 0 310px; 
-    background-color: #faf9f6; 
-    padding: 20px; 
-    border-radius: 12px; 
-    border: 1px solid #f2ede4; 
-    
-    /* 核心魔法 1：开启吸顶跟随模式，当右边文章往下拉时，左边像磁铁一样死死吸在左侧！ */
-    position: sticky !important; 
-    top: 25px !important; 
-    
-    /* 核心魔法 2：高能锁死！强行命令整个左边栏的外壳总高度，绝对不能超过读者屏幕的显示高度！ */
-    max-height: calc(100vh - 90px) !important; 
-    
-    /* 核心魔法 3：当抽屉拉开撑满时，不准往下挤，直接在左边栏自己内部强行亮起整栏大滚动条！ */
-    overflow-y: auto !important; 
-    overflow-x: hidden !important;
-  }
-  
-  .sidebar-menu-title { font-size: 1.05em; font-weight: bold; color: #2c3e50; padding-bottom: 10px; margin-bottom: 15px; border-bottom: 2px solid #e8dfcf; letter-spacing: 0.5px; }
-  .sidebar-accordion-group { display: flex; flex-direction: column; gap: 12px; }
 
