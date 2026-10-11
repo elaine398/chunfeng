@@ -179,7 +179,7 @@ layout: default
     </div>
   </div>
 
-  <!-- 📄 右边中央主舞台：跟随左侧子目录的点击，无缝展现对应内容 -->
+  <!-- 📄 右边中央主舞台 -->
   <div class="right-articles-flow-panel">
     
     <!-- 🏡 1. 缺省默认展示流：进门时自动抓取最新的 5 篇文章并原地折叠展示 -->
@@ -191,7 +191,6 @@ layout: default
           <h3 class="stream-title">{{ post.title }}</h3>
           <div class="stream-meta">📅 {{ post.date | date: "%Y-%m-%d" }} &nbsp;|&nbsp; 🏷️ {{ post.tags | first }}</div>
           
-          <!-- 📜 伸缩组件：将第一段截取作为预览，其余藏在抽屉里 -->
           <details class="readmore-accordion">
             <summary class="readmore-btn-summary">
               <div class="teaser-text-preview">
@@ -211,7 +210,7 @@ layout: default
       {% endfor %}
     </div>
 
-    <!-- 📖 2. 深度阅读室：点击左边任何一篇具体随笔时，一秒无缝在中间拆开 -->
+    <!-- 📖 2. 深度阅读室 -->
     {% for post in site.posts %}
       <div class="content-inside-card article-reading-room" id="post-{{ post.id | slugify }}">
         <h1 class="article-inside-title">{{ post.title }}</h1>
@@ -232,22 +231,29 @@ layout: default
 
 </div>
 
-<!-- 3. 🎨 纯手工完全自定义全屏视觉控制皮肤 (CSS 终极完美防挤压魔术) -->
+<!-- 3. 🎨 纯手工完全自定义全屏视觉控制皮肤 (CSS 终极超级重力加固扩容版) -->
 <style>
+  /* 💥 【终极核心大重锤】：强行粉碎官方旧皮肤设置在最高容器身上的任何最大宽度枷锁限制！ */
+  html, body, .wrapper, #main_content_wrap, section.main-content, .container, main {
+    max-width: 100% !important;   /* 彻底掀翻 640px/900px 的官方天花板限制 */
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
   header { display: none !important; height: 0 !important; padding: 0 !important; margin: 0 !important; }
-  body { margin: 0; padding: 0 40px; background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  
+  /* 给全站大包裹加一层宽敞大方的全屏两侧呼吸垫子 */
+  body { 
+    background-color: #ffffff; 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding: 0 50px !important; /* 强制左右两侧留空 50 像素的高档展厅边距 */
+    box-sizing: border-box !important;
+  }
 
   /* Top Bar 顶栏 */
-  .custom-top-bar { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; border-bottom: 2px solid #e8dfcf; margin-bottom: 40px; margin-top: 20px; }
+  .custom-top-bar { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; border-bottom: 2px solid #e8dfcf; margin-bottom: 40px; margin-top: 20px; width: 100% !important; box-sizing: border-box; }
   .top-brand-name-link { font-size: 1.9em; font-weight: bold; color: #2c3e50 !important; letter-spacing: 1px; margin-right: 15px; text-decoration: none !important; transition: color 0.2s; }
   .top-brand-name-link:hover { color: #e67e22 !important; }
   .top-brand-subtitle { font-size: 0.95em; color: #7f8c8d; font-style: italic; }
   .top-bar-right-menu { display: flex; gap: 25px; }
-  .top-menu-item { font-size: 1.1em; font-weight: bold; color: #34495e !important; text-decoration: none !important; }
-  .top-menu-item:hover, .active-nav { color: #e67e22 !important; }
-
-  /* 双栏杂志大排版外壳 */
-  .magazine-layout-wrapper { display: flex; gap: 50px; align-items: flex-start; margin-bottom: 60px; }
-
-  /* 🧭 左边栏：固态全屏吸顶悬浮大书架 */
-  .left-sidebar-menu-panel { 
