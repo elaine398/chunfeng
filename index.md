@@ -2,10 +2,10 @@
 layout: default
 ---
 
-<!-- 1. 🌟 TOP BAR 顶部横带区（名字与菜单完美并排） -->
+<!-- 1. 🌟 TOP BAR 顶部横带区 -->
 <div class="custom-top-bar">
   <div class="top-bar-left-branding">
-    <a class="top-brand-name-link" href="/chunfeng/">椿枫漫笔</a>
+    <span class="top-brand-name">椿枫漫笔</span>
     <span class="top-brand-subtitle">Let's not remember years, remember moments</span>
   </div>
   <div class="top-bar-right-menu">
@@ -17,7 +17,7 @@ layout: default
 <!-- 2. 📰 CORE SPLIT MAGAZINE INTERFACE -->
 <div class="magazine-layout-wrapper">
 
-  <!-- 🧭 左边栏：保留精美高颜值外壳 + 升级两层递进风琴折叠书架（带独立滚动条 ✨） -->
+  <!-- 🧭 左边栏：固态全屏吸顶悬浮大书架（带整栏独立高级滚动条） -->
   <div class="left-sidebar-menu-panel">
     <div class="sidebar-menu-title">📚 专栏分类</div>
     <div class="sidebar-accordion-group">
@@ -31,11 +31,10 @@ layout: default
             <span class="arrow-icon">▶</span>
           </span>
         </summary>
-        <!-- 【第二层子目录】：垂直排列，每篇名字占一行 -->
         <div class="accordion-sub-links-list">
           {% for post in site.tags["故事"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
+              <a class="sub-article-title-link" href="{{ post.url | relative_url }}">
                 ▪ {{ post.title }}
               </a>
             </div>
@@ -57,7 +56,7 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["短文"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
+              <a class="sub-article-title-link" href="{{ post.url | relative_url }}">
                 ▪ {{ post.title }}
               </a>
             </div>
@@ -79,7 +78,7 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["游记"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
+              <a class="sub-article-title-link" href="{{ post.url | relative_url }}">
                 ▪ {{ post.title }}
               </a>
             </div>
@@ -101,7 +100,7 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["日志"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
+              <a class="sub-article-title-link" href="{{ post.url | relative_url }}">
                 ▪ {{ post.title }}
               </a>
             </div>
@@ -123,7 +122,7 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["书摘"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
+              <a class="sub-article-title-link" href="{{ post.url | relative_url }}">
                 ▪ {{ post.title }}
               </a>
             </div>
@@ -145,7 +144,7 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["书斋"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
+              <a class="sub-article-title-link" href="{{ post.url | relative_url }}">
                 ▪ {{ post.title }}
               </a>
             </div>
@@ -167,7 +166,7 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["美食"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
+              <a class="sub-article-title-link" href="{{ post.url | relative_url }}">
                 ▪ {{ post.title }}
               </a>
             </div>
@@ -180,11 +179,9 @@ layout: default
     </div>
   </div>
 
-  <!-- 📄 右边中央主舞台：跟随左侧的点击，在最近发表与详细正文之间无缝完美置换 -->
+  <!-- 📄 右边中央主舞台：精选最近发表的 5 篇摘要流（原地折叠） -->
   <div class="right-articles-flow-panel">
-    
-    <!-- 🏡 【空间一】：缺省默认展示流 —— 进门时展示最近发表的 5 篇带[展开/收起]纽扣的摘要流 -->
-    <div class="content-panel-card default-welcome-stream-room">
+    <div class="content-panel-card default-welcome-stream-room" style="display: block !important;">
       <h2 class="magazine-stream-header">✨ 最近发表 · 精选随笔</h2>
       
       {% for post in site.posts limit:5 %}
@@ -194,7 +191,6 @@ layout: default
           
           <details class="readmore-accordion">
             <summary class="readmore-btn-summary">
-              <!-- 纯文字安全摘要截取，杜绝代码拉扯 -->
               <div class="teaser-text-preview">
                 {{ post.content | strip_html | truncate: 140 }}
               </div>
@@ -211,33 +207,11 @@ layout: default
         </div>
       {% endfor %}
     </div>
-
-    <!-- 📖 【空间二】：终极深度阅读室 —— 点击左栏任意一本书名，长正文在原位一秒无缝绽放！ -->
-    {% for post in site.posts %}
-      <div class="content-panel-card article-reading-room" id="post-{{ post.id | slugify }}">
-        <h1 class="article-inside-title">{{ post.title }}</h1>
-        <div class="article-inside-meta">
-          <span>📅 发布时间：{{ post.date | date: "%Y-%m-%d" }}</span>
-          <span class="meta-split">|</span>
-          <span>✍️ 作者：{{ post.author | default: "Elaine" }}</span>
-          <span class="meta-split">|</span>
-          <span>🏷️ 分类：{{ post.tags | first }}</span>
-          <span class="meta-split">|</span>
-          <a class="back-to-home-badge" href="/chunfeng/">返回最近发表 ↩</a>
-        </div>
-        
-        <!-- 墨香文字排版，段落 1.6em 黄金书籍大留白 -->
-        <div class="article-inside-body">
-          {{ post.content }}
-        </div>
-      </div>
-    {% endfor %}
-
   </div>
 
 </div>
 
-<!-- 3. 🎨 纯手工完全自定义全屏视觉控制皮肤 (CSS 终极双轴独立滚动防拉扯版) -->
+<!-- 3. 🎨 纯手工完全自定义全屏视觉控制皮肤 (适应官方骨架的并排防护墙版) -->
 <style>
   html, body, .wrapper, #main_content_wrap, section.main-content, .container, main, .markdown-body {
     max-width: 100% !important;   
@@ -245,15 +219,36 @@ layout: default
     padding: 0 !important;
     margin: 0 !important;
   }
-  header, .site-header { display: none !important; height: 0 !important; padding: 0 !important; margin: 0 !important; }
-  
+
   body { 
     background-color: #ffffff; 
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    padding: 0 40px !important; 
+    padding: 0 20px !important; 
     box-sizing: border-box !important;
   }
 
   /* Top Bar 顶栏 */
   .custom-top-bar { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; border-bottom: 2px solid #e8dfcf; margin-bottom: 40px; margin-top: 20px; width: 100% !important; box-sizing: border-box; }
-  .top-brand-name-link { font-size: 1.9em; font-weight: bold; color: #2c3e50 !important; letter-spacing: 1px; text-decoration: none !important; transition: color 0.2s; }
+  .top-brand-name-link { font-size: 1.9em; font-weight: bold; color: #2c3e50 !important; letter-spacing: 1px; text-decoration: none !important; }
+  .top-brand-subtitle { font-size: 0.95em; color: #7f8c8d; font-style: italic; margin-left: 15px; }
+  .top-bar-right-menu { display: flex; gap: 25px; }
+  .top-menu-item { font-size: 1.1em; font-weight: bold; color: #34495e !important; text-decoration: none !important; }
+
+  /* 🔒 【双栏永久死锁并排骨架】：强制左右并肩而坐 */
+  .magazine-layout-wrapper { 
+    display: flex !important; 
+    flex-direction: row !important; 
+    flex-wrap: nowrap !important;       
+    gap: 45px !important; 
+    align-items: flex-start !important; 
+    width: 100% !important;
+  }
+
+  /* 🧭 左边栏：固态310px黄金吸顶悬浮柜 */
+  .left-sidebar-menu-panel { 
+    flex: 0 0 310px !important; width: 310px !important; min-width: 310px !important;
+    background-color: #faf9f6; padding: 20px; border-radius: 12px; border: 1px solid #f2ede4; 
+    position: sticky !important; top: 25px !important; max-height: calc(100vh - 90px) !important; 
+    overflow-y: auto !important; overflow-x: hidden !important; box-sizing: border-box !important;
+  }
+  .sidebar-menu-title { font-size: 1.05em; font-weight: bold; color: #2c3e50; padding-bottom: 10px; margin-bottom: 15px; border-bottom: 2px solid #e8dfcf; }
