@@ -17,7 +17,7 @@ layout: default
 <!-- 2. 📰 CORE SPLIT MAGAZINE INTERFACE -->
 <div class="magazine-layout-wrapper">
 
-  <!-- 🧭 左边栏：固态吸顶悬浮大书架（带整栏独立高级滚动条） -->
+  <!-- 🧭 左边栏：固态全屏吸顶悬浮大书架（带整栏独立高级滚动条） -->
   <div class="left-sidebar-menu-panel">
     <div class="sidebar-menu-title">📚 专栏分类</div>
     <div class="sidebar-accordion-group">
@@ -184,19 +184,18 @@ layout: default
     
     <!-- 🏡 1. 缺省默认展示流：进门时自动抓取最新的 5 篇文章并原地折叠展示 -->
     <div class="content-inside-card default-welcome-room">
-      <h2 class="magazine-stream-header">✨ 最近发表 · 精选随笔随流</h2>
+      <h2 class="magazine-stream-header">✨ 最近发表 · 精选随笔</h2>
       
       {% for post in site.posts limit:5 %}
         <div class="stream-article-item">
           <h3 class="stream-title">{{ post.title }}</h3>
           <div class="stream-meta">📅 {{ post.date | date: "%Y-%m-%d" }} &nbsp;|&nbsp; 🏷️ {{ post.tags | first }}</div>
           
-          <!-- 📜 核心黑魔法：利用 HTML 原生伸缩组件，把第一段作为摘要，其余藏在抽屉里 -->
+          <!-- 📜 伸缩组件：将第一段截取作为预览，其余藏在抽屉里 -->
           <details class="readmore-accordion">
             <summary class="readmore-btn-summary">
-              <!-- 自动抓取并剥离出文章开头的 120 个字（大约刚好是第一段的长度） -->
               <div class="teaser-text-preview">
-                {{ post.content | strip_html | truncate: 120 }}
+                {{ post.content | strip_html | truncate: 140 }}
               </div>
               <div class="readmore-badge-trigger">
                 <span class="text-expand">[展开阅读全文 ↓]</span>
@@ -204,7 +203,6 @@ layout: default
               </div>
             </summary>
             
-            <!-- 展开后展现的、原汁原味段落分明的全量正文 -->
             <div class="full-article-body-expanded">
               {{ post.content }}
             </div>
@@ -213,7 +211,7 @@ layout: default
       {% endfor %}
     </div>
 
-    <!-- 📖 2. 深度阅读室：点击左边任何一篇具体书名时，一秒无缝在中间拆开 -->
+    <!-- 📖 2. 深度阅读室：点击左边任何一篇具体随笔时，一秒无缝在中间拆开 -->
     {% for post in site.posts %}
       <div class="content-inside-card article-reading-room" id="post-{{ post.id | slugify }}">
         <h1 class="article-inside-title">{{ post.title }}</h1>
@@ -234,7 +232,7 @@ layout: default
 
 </div>
 
-<!-- 3. 🎨 纯手工自定义全屏视觉控制皮肤 (CSS 终极形态魔术) -->
+<!-- 3. 🎨 纯手工完全自定义全屏视觉控制皮肤 (CSS 终极完美防挤压魔术) -->
 <style>
   header { display: none !important; height: 0 !important; padding: 0 !important; margin: 0 !important; }
   body { margin: 0; padding: 0 40px; background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
@@ -251,3 +249,5 @@ layout: default
   /* 双栏杂志大排版外壳 */
   .magazine-layout-wrapper { display: flex; gap: 50px; align-items: flex-start; margin-bottom: 60px; }
 
+  /* 🧭 左边栏：固态全屏吸顶悬浮大书架 */
+  .left-sidebar-menu-panel { 
