@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<!-- 1. 🌟 TOP BAR HEADER (Grand 2.2em text that safely routes back to Home when clicked!) -->
+<!-- 1. 🌟 TOP BAR 顶部横带区（左侧大字饱满放大，且一键点击秒回首页！） -->
 <div class="custom-top-bar">
   <div class="top-bar-left-branding">
     <a class="top-brand-name-link" href="/chunfeng/">椿枫漫笔</a>
@@ -17,12 +17,12 @@ layout: default
 <!-- 2. 📰 CORE SPLIT MAGAZINE INTERFACE -->
 <div class="magazine-layout-wrapper">
 
-  <!-- 🧭 LEFT COLUMN: Fixed 310px Floating Bookshelf with Independent Scrollbars -->
+  <!-- 🧭 左边栏：固态310px黄金吸顶悬浮柜（7分类两层折叠小抽屉，带整栏独立滚动条） -->
   <div class="left-sidebar-menu-panel">
     <div class="sidebar-menu-title">📚 专栏分类</div>
     <div class="sidebar-accordion-group">
       
-      <!-- [Category 1]: 故事专栏 -->
+      <!-- 【第一层分类 1】: 故事专栏 -->
       <details class="category-accordion-box">
         <summary class="accordion-header">
           <span class="header-text">📖 故事专栏</span>
@@ -44,7 +44,7 @@ layout: default
         </div>
       </details>
 
-      <!-- [Category 2]: 短文随笔 -->
+      <!-- 【第一层分类 2】: 短文随笔 -->
       <details class="category-accordion-box">
         <summary class="accordion-header">
           <span class="header-text">✍️ 短文随笔</span>
@@ -66,7 +66,7 @@ layout: default
         </div>
       </details>
 
-      <!-- [Category 3]: 游记日记 -->
+      <!-- 【第一层分类 3】: 游记日记 -->
       <details class="category-accordion-box">
         <summary class="accordion-header">
           <span class="header-text">✈️ 游记日记</span>
@@ -88,7 +88,7 @@ layout: default
         </div>
       </details>
 
-      <!-- [Category 4]: 生活日志 -->
+      <!-- 【第一层分类 4】: 生活日志 -->
       <details class="category-accordion-box">
         <summary class="accordion-header">
           <span class="header-text">📅 生活日志</span>
@@ -110,7 +110,7 @@ layout: default
         </div>
       </details>
 
-      <!-- [Category 5]: 读书书摘 -->
+      <!-- 【第一层分类 5】: 读书书摘 -->
       <details class="category-accordion-box">
         <summary class="accordion-header">
           <span class="header-text">📚 读书书摘</span>
@@ -132,7 +132,7 @@ layout: default
         </div>
       </details>
 
-      <!-- [Category 6]: 个人书斋 -->
+      <!-- 【第一层分类 6】: 个人书斋 -->
       <details class="category-accordion-box">
         <summary class="accordion-header">
           <span class="header-text">🏡 个人书斋</span>
@@ -154,7 +154,7 @@ layout: default
         </div>
       </details>
 
-      <!-- [Category 7]: 美食私房 -->
+      <!-- 【第一层分类 7】: 美食私房 -->
       <details class="category-accordion-box">
         <summary class="accordion-header">
           <span class="header-text">🍳 美食私房</span>
@@ -179,7 +179,7 @@ layout: default
     </div>
   </div>
 
-  <!-- 📄 RIGHT COLUMN: Graceful Teaser Feed for the 5 Most Recent Essays -->
+  <!-- 📄 右边中央主舞台：精选最近发表的 5 篇摘要流（带[展开/收起]纽扣 ✨） -->
   <div class="right-articles-flow-panel">
     <div class="content-panel-card default-welcome-stream-room" style="display: block !important;">
       <h2 class="magazine-stream-header">✨ 最近发表 · 精选随笔</h2>
@@ -211,7 +211,7 @@ layout: default
 
 </div>
 
-<!-- 3. 🎨 ENHANCED CUSTOM CSS STYLESHEET (Double-Axis Deadlock Prevention Layout) -->
+<!-- 3. 🎨 纯手工完全自定义全屏视觉控制皮肤 (CSS 终极双轴独立滚动防拉扯版) -->
 <style>
   html, body, .wrapper, #main_content_wrap, section.main-content, .container, main, .markdown-body {
     max-width: 100% !important;   
@@ -228,10 +228,10 @@ layout: default
     box-sizing: border-box !important;
   }
 
-  /* Top Bar Navigation Layout */
+  /* Top Bar 顶栏 */
   .custom-top-bar { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; border-bottom: 2px solid #e8dfcf; margin-bottom: 40px; margin-top: 20px; width: 100% !important; box-sizing: border-box; }
   
-  /* 🌟 Core Branding Update: Explodes header text size to a magnificent 2.2em with zero lower underline tags */
+  /* 🌟 核心放大：将左上角的“椿枫漫笔”大字狠狠放大至 2.2em，并做成高质感的可点击主页链接 */
   .top-brand-name-link { font-size: 2.2em !important; font-weight: bold !important; color: #2c3e50 !important; letter-spacing: 1px !important; text-decoration: none !important; transition: color 0.2s ease; display: inline-block; }
   .top-brand-name-link:hover { color: #e67e22 !important; }
   
@@ -240,9 +240,17 @@ layout: default
   .top-menu-item { font-size: 1.1em; font-weight: bold; color: #34495e !important; text-decoration: none !important; }
   .top-menu-item:hover, .active-nav { color: #e67e22 !important; }
 
-  /* 🔒 Permanent Parallel Horizontal Split Configuration */
+  /* 🔒 【双栏永久死锁并排骨架】：核心钢筋！永远左右并肩，禁止换行塌陷！ */
   .magazine-layout-wrapper { 
     display: flex !important; 
     flex-direction: row !important; 
     flex-wrap: nowrap !important;       
     gap: 45px !important; 
+    align-items: flex-start !important; 
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 🧭 左边栏：固态310px黄金吸顶悬浮柜（整栏自带独立小滚动条） */
+  .left-sidebar-menu-panel { 
+    flex: 0 0 310px !important; width: 310px !important; min-width: 310px !important;
