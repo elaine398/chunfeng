@@ -1,8 +1,18 @@
+That makes total sense. The hover method can feel too chaotic because the screen flashes and changes the moment your mouse accidentally drifts across the page.
+By shifting to the click-to-lock architecture, your website will behave like a premium, rock-solid desktop application. When a reader clicks a category block on the left, that specific menu will lock into place and stay there permanently until they consciously choose to click another category. Inside that directory, every single essay title will be a fully functional live link that opens up the actual text room smoothly when clicked.
+We will use the ultra-stable pure CSS :target engine to build this. This ensures that your website loads at lightning speeds, requires zero maintenance, and works perfectly on both Mac Safari and mobile phones.
+Let's do our absolute final formatting wash inside your index.md file via the web portal:
+------------------------------
+## 🛠️ The 10-Second Master Layout Reset
+Please copy and paste this exact link into your Safari address bar to go straight to your main file editor:
+👉 https://github.com
+(If it gives you a 404 error, change main at the very end of that link to master).
+Press Command + A to select all old testing code, hit delete to clear the canvas completely, and paste this beautifully stabilized architectural code block:
+
 ---
 layout: default
 ---
-
-<!-- 1. 🌟 完美的极简顶栏横带（大名字与主页菜单完美并排） -->
+<!-- 1. 🌟 TOP BAR 顶部横带区（大名字与全局菜单完美合并在同一横行） -->
 <div class="custom-top-bar">
   <div class="top-bar-left-branding">
     <a class="top-brand-name-link" href="/chunfeng/">椿枫漫笔</a>
@@ -13,73 +23,50 @@ layout: default
     <a class="top-menu-item" href="/chunfeng/about">关于我</a>
   </div>
 </div>
+<!-- 2. 📰 CORE SPLIT MAGAZINE INTERFACE -->
+<div class="magazine-layout-wrapper">
 
-<!-- 2. 📰 核心大杂志联动大盒（鼠标划过的终极感应舞台） -->
-<div class="magazine-interactive-outer">
-
-  <!-- 🧭 左边栏外壳：7大专栏方块 -->
+  <!-- 🧭 左边栏：7大分类点击锁定方块 -->
   <div class="left-sidebar-menu-panel">
     <div class="sidebar-menu-title">📚 专栏分类</div>
     <div class="sidebar-box-grid">
-      
-      <!-- 每一个方块代表一个感属性的“感应雷达” -->
-      <div class="radar-box trigger-stories">
-        <a class="sidebar-category-box" href="/chunfeng/tags/#故事">
-          <span class="box-text">📖 故事专栏</span>
-          <span class="box-count">({{ site.tags["故事"].size | default: 0 }})</span>
-        </a>
-      </div>
-
-      <div class="radar-box trigger-essays">
-        <a class="sidebar-category-box" href="/chunfeng/tags/#短文">
-          <span class="box-text">✍️ 短文随笔</span>
-          <span class="box-count">({{ site.tags["短文"].size | default: 0 }})</span>
-        </a>
-      </div>
-
-      <div class="radar-box trigger-travels">
-        <a class="sidebar-category-box" href="/chunfeng/tags/#游记">
-          <span class="box-text">✈️ 游记日记</span>
-          <span class="box-count">({{ site.tags["游记"].size | default: 0 }})</span>
-        </a>
-      </div>
-
-      <div class="radar-box trigger-diaries">
-        <a class="sidebar-category-box" href="/chunfeng/tags/#日志">
-          <span class="box-text">📅 生活日志</span>
-          <span class="box-count">({{ site.tags["日志"].size | default: 0 }})</span>
-        </a>
-      </div>
-
-      <div class="radar-box trigger-excerpts">
-        <a class="sidebar-category-box" href="/chunfeng/tags/#书摘">
-          <span class="box-text">📚 读书书摘</span>
-          <span class="box-count">({{ site.tags["书摘"].size | default: 0 }})</span>
-        </a>
-      </div>
-
-      <div class="radar-box trigger-library">
-        <a class="sidebar-category-box" href="/chunfeng/tags/#书斋">
-          <span class="box-text">🏡 个人书斋</span>
-          <span class="box-count">({{ site.tags["书斋"].size | default: 0 }})</span>
-        </a>
-      </div>
-
-      <div class="radar-box trigger-cooking">
-        <a class="sidebar-category-box" href="/chunfeng/tags/#美食">
-          <span class="box-text">🍳 美食私房</span>
-          <span class="box-count">({{ site.tags["美食"].size | default: 0 }})</span>
-        </a>
-      </div>
-
+      <!-- Each anchor tag points to a distinct internal id hash -->
+      <a class="sidebar-category-box btn-stories" href="#stories">
+        <span class="box-text">📖 故事专栏</span>
+        <span class="box-count">({{ site.tags["故事"].size | default: 0 }})</span>
+      </a>
+      <a class="sidebar-category-box btn-essays" href="#essays">
+        <span class="box-text">✍️ 短文随笔</span>
+        <span class="box-count">({{ site.tags["短文"].size | default: 0 }})</span>
+      </a>
+      <a class="sidebar-category-box btn-travels" href="#travels">
+        <span class="box-text">✈️ 游记日记</span>
+        <span class="box-count">({{ site.tags["游记"].size | default: 0 }})</span>
+      </a>
+      <a class="sidebar-category-box btn-diaries" href="#diaries">
+        <span class="box-text">📅 生活日志</span>
+        <span class="box-count">({{ site.tags["日志"].size | default: 0 }})</span>
+      </a>
+      <a class="sidebar-category-box btn-excerpts" href="#excerpts">
+        <span class="box-text">📚 读书书摘</span>
+        <span class="box-count">({{ site.tags["书摘"].size | default: 0 }})</span>
+      </a>
+      <a class="sidebar-category-box btn-library" href="#library">
+        <span class="box-text">🏡 个人书斋</span>
+        <span class="box-count">({{ site.tags["书斋"].size | default: 0 }})</span>
+      </a>
+      <a class="sidebar-category-box btn-cooking" href="#cooking">
+        <span class="box-text">🍳 美食私房</span>
+        <span class="box-count">({{ site.tags["美食"].size | default: 0 }})</span>
+      </a>
     </div>
   </div>
 
-  <!-- 📄 右边中央主界面：感应式文章目录大厅（跟随左侧鼠标悬停自动一秒换幕） -->
+  <!-- 📄 右边中央主界面：固态文章分类展示墙（点击切换并长久锁定） -->
   <div class="right-articles-flow-panel">
     
-    <!-- 目录 1: 故事专栏 (通过 CSS 设定为缺省默认显示 ✨) -->
-    <div class="category-display-panel panel-stories">
+    <!-- 目录 1: 故事专栏 (Defines as the default room using CSS classes ✨) -->
+    <div class="category-display-panel default-show-room" id="stories">
       <h2 class="flow-header">📖 故事专栏 · 文章目录</h2>
       <div class="articles-list-wrapper">
         {% for post in site.tags["故事"] %}
@@ -94,7 +81,7 @@ layout: default
     </div>
 
     <!-- 目录 2: 短文随笔 -->
-    <div class="category-display-panel panel-essays">
+    <div class="category-display-panel" id="essays">
       <h2 class="flow-header">✍️ 短文随笔 · 文章目录</h2>
       <div class="articles-list-wrapper">
         {% for post in site.tags["短文"] %}
@@ -109,7 +96,7 @@ layout: default
     </div>
 
     <!-- 目录 3: 游记日记 -->
-    <div class="category-display-panel panel-travels">
+    <div class="category-display-panel" id="travels">
       <h2 class="flow-header">✈️ 游记日记 · 文章目录</h2>
       <div class="articles-list-wrapper">
         {% for post in site.tags["游记"] %}
@@ -124,7 +111,7 @@ layout: default
     </div>
 
     <!-- 目录 4: 生活日志 -->
-    <div class="category-display-panel panel-diaries">
+    <div class="category-display-panel" id="diaries">
       <h2 class="flow-header">📅 生活日志 · 文章目录</h2>
       <div class="articles-list-wrapper">
         {% for post in site.tags["日志"] %}
@@ -139,7 +126,7 @@ layout: default
     </div>
 
     <!-- 目录 5: 读书书摘 -->
-    <div class="category-display-panel panel-excerpts">
+    <div class="category-display-panel" id="excerpts">
       <h2 class="flow-header">📚 读书书摘 · 文章目录</h2>
       <div class="articles-list-wrapper">
         {% for post in site.tags["书摘"] %}
@@ -154,7 +141,7 @@ layout: default
     </div>
 
     <!-- 目录 6: 个人书斋 -->
-    <div class="category-display-panel panel-library">
+    <div class="category-display-panel" id="library">
       <h2 class="flow-header">🏡 个人书斋 · 文章目录</h2>
       <div class="articles-list-wrapper">
         {% for post in site.tags["书斋"] %}
@@ -169,7 +156,7 @@ layout: default
     </div>
 
     <!-- 目录 7: 美食私房 -->
-    <div class="category-display-panel panel-cooking">
+    <div class="category-display-panel" id="cooking">
       <h2 class="flow-header">🍳 美食私房 · 文章目录</h2>
       <div class="articles-list-wrapper">
         {% for post in site.tags["美食"] %}
@@ -186,53 +173,72 @@ layout: default
   </div>
 
 </div>
-
-<!-- 3. 🎨 鼠标触碰联动核心样式表 (CSS 感应魔术) -->
+<!-- 3. 🎨 SOLID CLICK-TO-LOCK STYLESHEET (CSS CORE) -->
 <style>
+  /* Wipe old theme residue */
   header { display: none !important; height: 0 !important; padding: 0 !important; margin: 0 !important; }
   body { margin: 0; padding: 0 40px; background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
 
-  /* Top Bar 顶栏 */
+  /* Top Bar Header Layout */
   .custom-top-bar { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; border-bottom: 2px solid #e8dfcf; margin-bottom: 40px; margin-top: 20px; }
-  .top-brand-name-link { font-size: 1.9em; font-weight: bold; color: #2c3e50 !important; letter-spacing: 1px; margin-right: 15px; text-decoration: none !important; }
+  .top-brand-name-link { font-size: 1.9em; font-weight: bold; color: #2c3e50 !important; letter-spacing: 1px; margin-right: 15px; text-decoration: none !important; transition: color 0.2s; }
   .top-brand-name-link:hover { color: #e67e22 !important; }
   .top-brand-subtitle { font-size: 0.95em; color: #7f8c8d; font-style: italic; }
   .top-bar-right-menu { display: flex; gap: 25px; }
-  .top-menu-item { font-size: 1.1em; font-weight: bold; color: #34495e !important; text-decoration: none !important; }
+  .top-menu-item { font-size: 1.1em; font-weight: bold; color: #34495e !important; text-decoration: none !important; transition: color 0.2s; }
   .top-menu-item:hover, .active-nav { color: #e67e22 !important; }
 
-  /* 双栏布局大壳 */
-  .magazine-interactive-outer { display: flex; gap: 50px; align-items: flex-start; }
+  /* Two-Column Grid Setup */
+  .magazine-layout-wrapper { display: flex; gap: 50px; align-items: flex-start; }
 
-  /* 左边栏 7 大分类方块 */
+  /* Left Columns Options Blocks */
   .left-sidebar-menu-panel { flex: 0 0 280px; background-color: #faf9f6; padding: 20px; border-radius: 12px; border: 1px solid #f2ede4; }
   .sidebar-menu-title { font-size: 1.05em; font-weight: bold; color: #2c3e50; padding-bottom: 10px; margin-bottom: 15px; border-bottom: 2px solid #e8dfcf; }
   .sidebar-box-grid { display: flex; flex-direction: column; gap: 10px; }
   
-  .sidebar-category-box { display: flex; justify-content: space-between; align-items: center; padding: 12px 15px; background-color: #ffffff; border: 1px solid #eef0f2; border-radius: 8px; text-decoration: none !important; color: #34495e !important; font-weight: bold; transition: all 0.2s ease; cursor: pointer; }
+  .sidebar-category-box { display: flex; justify-content: space-between; align-items: center; padding: 12px 15px; background-color: #ffffff; border: 1px solid #eef0f2; border-radius: 8px; text-decoration: none !important; color: #34495e !important; font-weight: bold; transition: all 0.2s ease; }
+  .sidebar-category-box:hover { background-color: #fdfbf7; border-color: #e67e22; color: #e67e22 !important; transform: translateX(3px); }
   .box-count { font-size: 0.85em; color: #95a5a6; }
 
-  /* 右边中央主界面 */
+  /* Right Dashboard Window Engine 🌟 */
   .right-articles-flow-panel { flex: 1; }
 
-  /* 🌌 【悬停感应核心魔术代码】 🌌 */
-  
-  /* 规矩一：默认状态下，只显示第一个“故事专栏”的目录，其余6个通通完全隐藏！ */
-  .category-display-panel { display: none; }
-  .panel-stories { display: block; }
+  /* 🔒 RULE 1: Hide all directory panels by default completely */
+  .category-display-panel { 
+    display: none; 
+  }
 
-  /* 规矩二：当整个大盒子被触碰时，先让默认的故事目录淡出隐藏，腾出舞台位置 */
-  .magazine-interactive-outer:hover .category-display-panel { display: none; }
+  /* 🔒 RULE 2: Default State - Show the Stories column ONLY when no other hash is clicked */
+  .right-articles-flow-panel:not(:has(~ * :target)):not(:has(:target)) .default-show-room,
+  html:not(:has(:target)) .default-show-room { 
+    display: block !important; 
+  }
 
-  /* 规矩三：只要鼠标滑入对应的雷达盒子(Hover)，对应大厅就会瞬间百分之百强制亮起！ */
-  .trigger-stories:hover ~ .right-articles-flow-panel .panel-stories,
-  .magazine-interactive-outer:not(:hover) .panel-stories { display: block !important; }
+  /* 🔒 RULE 3: Click-to-Lock Target Magic - Make the targeted division stick open solidly */
+  .category-display-panel:target { 
+    display: block !important; 
+  }
   
-  .magazine-interactive-outer:has(.trigger-stories:hover) .panel-stories { display: block !important; }
-  .magazine-interactive-outer:has(.trigger-essays:hover) .panel-essays { display: block !important; }
-  .magazine-interactive-outer:has(.trigger-travels:hover) .panel-travels { display: block !important; }
-  .magazine-interactive-outer:has(.trigger-diaries:hover) .panel-diaries { display: block !important; }
-  .magazine-interactive-outer:has(.trigger-excerpts:hover) .panel-excerpts { display: block !important; }
-  .magazine-interactive-outer:has(.trigger-library:hover) .panel-library { display: block !important; }
-  .magazine-interactive-outer:has(.trigger-cooking:hover) .panel-cooking { display: block !important; }
+  /* 🔒 RULE 4: Clean Override - Ensure default room vanishes when another room is actively clicked */
+  html:has(#essays:target) .default-show-room,
+  html:has(#travels:target) .default-show-room,
+  html:has(#diaries:target) .default-show-room,
+  html:has(#excerpts:target) .default-show-room,
+  html:has(#library:target) .default-show-room,
+  html:has(#cooking:target) .default-show-room {
+    display: none !important;
+  }
+
+  /* Typography Styles for Interior Content Elements */
+  .flow-header { font-size: 1.3em; font-weight: bold; margin-top: 0; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #f2ede4; color: #e67e22; }
+  .articles-list-wrapper { display: flex; flex-direction: column; gap: 15px; }
+
+.post-row-item { display: flex; align-items: center; gap: 12px; padding-bottom: 12px; border-bottom: 1px dashed #f2ede4; }
+.post-row-date { color: #7f8c8d; font-size: 0.95em; white-space: nowrap; }
+/* Live Text Link Routing Styles for the Main Articles */
+.post-row-title-link { color: #2c3e50 !important; text-decoration: none !important; font-weight: bold; flex-grow: 1; transition: color 0.15s; }
+.post-row-title-link:hover { color: #e67e22 !important; text-decoration: underline !important; }
+.empty-notice { font-style: italic; color: #7f8c8d; }
+/* Purge baseline layout signatures */
+footer, .theme-by, #downloads, .site-footer, section.sidebar { display: none !important; }
 
