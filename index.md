@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<!-- 1. 🌟 TOP BAR 顶部横带区（大名字与全局菜单完美合并在同一横行） -->
+<!-- 1. 🌟 TOP BAR 顶部横带区 -->
 <div class="custom-top-bar">
   <div class="top-bar-left-branding">
     <a class="top-brand-name-link" href="/chunfeng/">椿枫漫笔</a>
@@ -31,7 +31,6 @@ layout: default
             <span class="arrow-icon">▶</span>
           </span>
         </summary>
-        <!-- 【第二层子目录】：强制独占一行的垂直列表箱 -->
         <div class="accordion-sub-links-list">
           {% for post in site.tags["故事"] %}
             <div class="sub-article-row-block">
@@ -180,14 +179,14 @@ layout: default
     </div>
   </div>
 
-  <!-- 📄 右边中央主舞台：展示段落分明的详细正文 -->
+  <!-- 📄 右边中央主舞台 -->
   <div class="right-articles-flow-panel">
     
     <!-- 🏡 缺省默认欢迎室 -->
     <div class="content-inside-card default-welcome-room">
       <h1 class="welcome-main-title">欢迎来到“椿枫漫笔”独立书斋</h1>
       <p class="welcome-p">这里是一片完全属于文字的净土。没有多余的喧嚣与广告，有且仅有关于生活感悟、读书摘录、以及东欧与纽约旅行的真实足迹。</p>
-      <p class="welcome-p">💡 <strong>阅读指南</strong>：请用鼠标点击左侧的【专栏分类】展开您的固态书架，轻点任何一篇随笔标题，即可在这里直接享受高质感、段落分明的优雅无缝阅读。</p>
+      <p class="welcome-p">💡 <strong>阅读指南</strong>：请用鼠标点击左侧的【专栏分类】展开您的固态书架，轻点任意一篇随笔标题，即可在这里直接享受高质感、段落分明的优雅无缝阅读。</p>
       <div class="welcome-decor-line"></div>
     </div>
 
@@ -213,7 +212,7 @@ layout: default
 
 </div>
 
-<!-- 3. 🎨 纯手工完全自定义全屏视觉控制皮肤 (CSS 终极成型魔术) -->
+<!-- 3. 🎨 纯手工完全自定义全屏视觉控制皮肤 -->
 <style>
   header { display: none !important; height: 0 !important; padding: 0 !important; margin: 0 !important; }
   body { margin: 0; padding: 0 40px; background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
@@ -235,8 +234,13 @@ layout: default
   .sidebar-menu-title { font-size: 1.05em; font-weight: bold; color: #2c3e50; padding-bottom: 10px; margin-bottom: 15px; border-bottom: 2px solid #e8dfcf; letter-spacing: 0.5px; }
   .sidebar-accordion-group { display: flex; flex-direction: column; gap: 12px; }
 
-  /* HTML 原生伸缩手风琴高档精装 */
-  .category-accordion-box { background-color: #ffffff; border: 1px solid #eef0f2; border-radius: 8px; overflow: hidden; transition: border-color 0.2s; }
+  /* 🔒 【超级重力修正 1】：在手风琴盒子外壳上，锁死溢出控制，彻底剥夺它的野蛮膨胀权！ */
+  .category-accordion-box { 
+    background-color: #ffffff; 
+    border: 1px solid #eef0f2; 
+    border-radius: 8px; 
+    overflow: hidden !important; /* 👈 关键铁律：彻底斩断抽屉往外乱爆的空间，逼迫滚动条亮相！ */
+    transition: border-color 0.2s; 
+  }
   .category-accordion-box[open] { border-color: #e67e22; box-shadow: 0 3px 10px rgba(230,126,34,0.03); }
   
-  .accordion-header::-webkit-details-marker { display: none; }
