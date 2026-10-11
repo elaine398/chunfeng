@@ -17,7 +17,7 @@ layout: default
 <!-- 2. 📰 CORE SPLIT MAGAZINE INTERFACE -->
 <div class="magazine-layout-wrapper">
 
-  <!-- 🧭 左边栏：固态全屏吸顶悬浮大书架（带整栏独立高级滚动条） -->
+  <!-- 🧭 左边栏：固态全屏吸顶悬浮大书架（坚不可摧的 310px 黄金身材 🛡️） -->
   <div class="left-sidebar-menu-panel">
     <div class="sidebar-menu-title">📚 专栏分类</div>
     <div class="sidebar-accordion-group">
@@ -179,39 +179,32 @@ layout: default
     </div>
   </div>
 
-  <!-- 📄 右边中央主舞台：精选随笔流展厅 -->
+  <!-- 📄 右边中央主舞台 -->
   <div class="right-articles-flow-panel">
     
-    <!-- 🏡 1. 缺省默认展示流：进门时自动抓取最新的 5 篇文章并原地折叠展示 -->
+    <!-- 🏡 1. 缺省默认展示流：只提取纯净的第一段文字，彻底杜绝任何文章内部代码漏洞干扰 -->
     <div class="content-panel-card default-welcome-room">
-      <h2 class="magazine-stream-header">✨ 最近发表 · 精选随笔</h2>
+      <h2 class="magazine-stream-header">✨ 最近发表 · 精选随笔随流</h2>
       
       {% for post in site.posts limit:5 %}
         <div class="stream-article-item">
           <h3 class="stream-title">{{ post.title }}</h3>
           <div class="stream-meta">📅 {{ post.date | date: "%Y-%m-%d" }} &nbsp;|&nbsp; 🏷️ {{ post.tags | first }}</div>
           
-          <!-- 📜 伸缩组件：将第一段截取作为预览，其余藏在抽屉里 -->
-          <details class="readmore-accordion">
-            <summary class="readmore-btn-summary">
-              <div class="teaser-text-preview">
-                {{ post.content | strip_html | truncate: 140 }}
-              </div>
-              <div class="readmore-badge-trigger">
-                <span class="text-expand">[展开阅读全文 ↓]</span>
-                <span class="text-collapse">[收起全文 ↑]</span>
-              </div>
-            </summary>
-            
-            <div class="full-article-body-expanded">
-              {{ post.content }}
-            </div>
-          </details>
+          <!-- 🔒 纯文字安全摘要箱：只提取开头的140个纯字，不加载原文的div和格式，大门绝对关得死死的！ -->
+          <div class="teaser-text-preview">
+            {{ post.content | strip_html | truncatewords: 40 }}
+          </div>
+          
+          <!-- 指引读者点击左侧列表查看无缝大正文 -->
+          <div class="readmore-guide-badge">
+            <a class="guide-click-link" href="#post-{{ post.id | slugify }}">点击左侧专栏，即可在中央无缝畅读全文 ↩</a>
+          </div>
         </div>
       {% endfor %}
     </div>
 
-    <!-- 📖 2. 深度阅读室：点击左边任何一篇具体随笔时，一秒无缝在中间拆开 -->
+    <!-- 📖 2. 深度阅读内页展厅：点击左边任何一篇具体随笔时，一秒完美无缝在右侧铺开 -->
     {% for post in site.posts %}
       <div class="content-panel-card article-reading-room" id="post-{{ post.id | slugify }}">
         <h1 class="article-inside-title">{{ post.title }}</h1>
@@ -222,6 +215,8 @@ layout: default
           <span class="meta-split">|</span>
           <span>🏷️ 分类：{{ post.tags | first }}</span>
         </div>
+        
+        <!-- ✒️ 正文文字墨香排版内核（段落分明 ✨） -->
         <div class="article-inside-body">
           {{ post.content }}
         </div>
@@ -232,9 +227,8 @@ layout: default
 
 </div>
 
-<!-- 3. 🎨 纯手工完全自定义全屏视觉控制皮肤 (CSS 终极彻底对齐死锁版) -->
+<!-- 3. 🎨 纯手工完全自定义全屏视觉控制皮肤 (CSS 终极无缝并排死锁版) -->
 <style>
-  /* 全盘炸碎官方旧皮肤的最大宽度枷锁限制 */
   html, body, .wrapper, #main_content_wrap, section.main-content, .container, main {
     max-width: 100% !important;   
     width: 100% !important;
@@ -257,3 +251,8 @@ layout: default
   .top-brand-name-link:hover { color: #e67e22 !important; }
   .top-brand-subtitle { font-size: 0.95em; color: #7f8c8d; font-style: italic; }
   .top-bar-right-menu { display: flex; gap: 25px; }
+  .top-menu-item { font-size: 1.1em; font-weight: bold; color: #34495e !important; text-decoration: none !important; }
+  .top-menu-item:hover, .active-nav { color: #e67e22 !important; }
+
+  /* 🔒 【终极锁死并排横向骨架】：无论发生什么，绝不准换行堆叠！永远左右并肩！ */
+  .magazine-layout-wrapper { 
