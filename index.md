@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<!-- 1. 🌟 TOP BAR 顶部横带区（大名字与全局菜单完美合并在同一横行） -->
+<!-- 1. 🌟 TOP BAR 顶部横带区 -->
 <div class="custom-top-bar">
   <div class="top-bar-left-branding">
     <a class="top-brand-name-link" href="/chunfeng/">椿枫漫笔</a>
@@ -21,7 +21,6 @@ layout: default
   <div class="left-sidebar-menu-panel">
     <div class="sidebar-menu-title">📚 专栏分类</div>
     <div class="sidebar-box-grid">
-      <!-- Each anchor tag points to a distinct internal id hash -->
       <a class="sidebar-category-box btn-stories" href="#stories">
         <span class="box-text">📖 故事专栏</span>
         <span class="box-count">({{ site.tags["故事"].size | default: 0 }})</span>
@@ -53,17 +52,19 @@ layout: default
     </div>
   </div>
 
-  <!-- 📄 右边中央主界面：固态文章分类展示墙（点击切换并长久锁定） -->
+  <!-- 📄 右边中央主界面：动态内容大舞台（点击可在“子目录”与“文章正文”之间一秒完美无缝切换） -->
   <div class="right-articles-flow-panel">
     
-    <!-- 目录 1: 故事专栏 (Defines as the default room using CSS classes ✨) -->
-    <div class="category-display-panel default-show-room" id="stories">
+    <!-- ==================== PART A: 7 大栏目的子目录分区 ==================== -->
+    
+    <!-- 目录 1: 故事专栏 (缺省默认显示) -->
+    <div class="content-panel-card default-show-room" id="stories">
       <h2 class="flow-header">📖 故事专栏 · 文章目录</h2>
       <div class="articles-list-wrapper">
         {% for post in site.tags["故事"] %}
           <div class="post-row-item">
             <span class="post-row-date">[{{ post.date | date: "%Y-%m-%d" }}]</span>
-            <a class="post-row-title-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <a class="post-row-title-link" href="#post-{{ post.id | slugify }}">{{ post.title }}</a>
           </div>
         {% else %}
           <p class="empty-notice">暂无最新故事随笔...</p>
@@ -72,13 +73,13 @@ layout: default
     </div>
 
     <!-- 目录 2: 短文随笔 -->
-    <div class="category-display-panel" id="essays">
+    <div class="content-panel-card" id="essays">
       <h2 class="flow-header">✍️ 短文随笔 · 文章目录</h2>
       <div class="articles-list-wrapper">
         {% for post in site.tags["短文"] %}
           <div class="post-row-item">
             <span class="post-row-date">[{{ post.date | date: "%Y-%m-%d" }}]</span>
-            <a class="post-row-title-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <a class="post-row-title-link" href="#post-{{ post.id | slugify }}">{{ post.title }}</a>
           </div>
         {% else %}
           <p class="empty-notice">暂无最新短文随笔...</p>
@@ -87,13 +88,13 @@ layout: default
     </div>
 
     <!-- 目录 3: 游记日记 -->
-    <div class="category-display-panel" id="travels">
+    <div class="content-panel-card" id="travels">
       <h2 class="flow-header">✈️ 游记日记 · 文章目录</h2>
       <div class="articles-list-wrapper">
         {% for post in site.tags["游记"] %}
           <div class="post-row-item">
             <span class="post-row-date">[{{ post.date | date: "%Y-%m-%d" }}]</span>
-            <a class="post-row-title-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <a class="post-row-title-link" href="#post-{{ post.id | slugify }}">{{ post.title }}</a>
           </div>
         {% else %}
           <p class="empty-notice">暂无最新游记日记...</p>
@@ -102,13 +103,13 @@ layout: default
     </div>
 
     <!-- 目录 4: 生活日志 -->
-    <div class="category-display-panel" id="diaries">
+    <div class="content-panel-card" id="diaries">
       <h2 class="flow-header">📅 生活日志 · 文章目录</h2>
       <div class="articles-list-wrapper">
         {% for post in site.tags["日志"] %}
           <div class="post-row-item">
             <span class="post-row-date">[{{ post.date | date: "%Y-%m-%d" }}]</span>
-            <a class="post-row-title-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <a class="post-row-title-link" href="#post-{{ post.id | slugify }}">{{ post.title }}</a>
           </div>
         {% else %}
           <p class="empty-notice">暂无最新生活日志...</p>
@@ -117,13 +118,13 @@ layout: default
     </div>
 
     <!-- 目录 5: 读书书摘 -->
-    <div class="category-display-panel" id="excerpts">
+    <div class="content-panel-card" id="excerpts">
       <h2 class="flow-header">📚 读书书摘 · 文章目录</h2>
       <div class="articles-list-wrapper">
         {% for post in site.tags["书摘"] %}
           <div class="post-row-item">
             <span class="post-row-date">[{{ post.date | date: "%Y-%m-%d" }}]</span>
-            <a class="post-row-title-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <a class="post-row-title-link" href="#post-{{ post.id | slugify }}">{{ post.title }}</a>
           </div>
         {% else %}
           <p class="empty-notice">暂无最新读书书摘...</p>
@@ -132,13 +133,13 @@ layout: default
     </div>
 
     <!-- 目录 6: 个人书斋 -->
-    <div class="category-display-panel" id="library">
+    <div class="content-panel-card" id="library">
       <h2 class="flow-header">🏡 个人书斋 · 文章目录</h2>
       <div class="articles-list-wrapper">
         {% for post in site.tags["书斋"] %}
           <div class="post-row-item">
             <span class="post-row-date">[{{ post.date | date: "%Y-%m-%d" }}]</span>
-            <a class="post-row-title-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <a class="post-row-title-link" href="#post-{{ post.id | slugify }}">{{ post.title }}</a>
           </div>
         {% else %}
           <p class="empty-notice">暂无最新书斋藏品...</p>
@@ -147,13 +148,13 @@ layout: default
     </div>
 
     <!-- 目录 7: 美食私房 -->
-    <div class="category-display-panel" id="cooking">
+    <div class="content-panel-card" id="cooking">
       <h2 class="flow-header">🍳 美食私房 · 文章目录</h2>
       <div class="articles-list-wrapper">
         {% for post in site.tags["美食"] %}
           <div class="post-row-item">
             <span class="post-row-date">[{{ post.date | date: "%Y-%m-%d" }}]</span>
-            <a class="post-row-title-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <a class="post-row-title-link" href="#post-{{ post.id | slugify }}">{{ post.title }}</a>
           </div>
         {% else %}
           <p class="empty-notice">暂无最新美食记录...</p>
@@ -161,13 +162,33 @@ layout: default
       </div>
     </div>
 
+
+    <!-- ==================== PART B: 全量文章正文隐藏展厅（点哪个大门，哪个就无缝绽放） ==================== -->
+    {% for post in site.posts %}
+      <div class="content-panel-card article-reading-room" id="post-{{ post.id | slugify }}">
+        <!-- 文章页头：大标题、日期与所属专栏 -->
+        <h1 class="article-inside-title">{{ post.title }}</h1>
+        <div class="article-inside-meta">
+          <span>📅 发布日期：{{ post.date | date: "%Y-%m-%d" }}</span>
+          <span class="article-meta-split">|</span>
+          <span>✍️ 作者：{{ post.author | default: "Elaine" }}</span>
+          <span class="article-meta-split">|</span>
+          <a class="back-to-list-badge" href="#{{ post.tags | first | default: 'stories' }}">返回目录 ↩</a>
+        </div>
+        
+        <!-- 文章正文核心区：注入段落分明、极具呼吸感的舒畅排版皮肤 -->
+        <div class="article-inside-body markdown-rendered-content">
+          {{ post.content }}
+        </div>
+      </div>
+    {% endfor %}
+
   </div>
 
 </div>
 
 <!-- 3. 🎨 SOLID CLICK-TO-LOCK STYLESHEET (CSS CORE) -->
 <style>
-  /* Wipe old theme residue */
   header { display: none !important; height: 0 !important; padding: 0 !important; margin: 0 !important; }
   body { margin: 0; padding: 0 40px; background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
 
@@ -180,47 +201,37 @@ layout: default
   .top-menu-item { font-size: 1.1em; font-weight: bold; color: #34495e !important; text-decoration: none !important; transition: color 0.2s; }
   .top-menu-item:hover, .active-nav { color: #e67e22 !important; }
 
-  /* Two-Column Grid Setup */
-  .magazine-layout-wrapper { display: flex; gap: 50px; align-items: flex-start; }
+  /* 双栏杂志大排版外壳 */
+  .magazine-layout-wrapper { display: flex; gap: 50px; align-items: flex-start; margin-bottom: 60px; }
 
-  /* Left Columns Options Blocks */
-  .left-sidebar-menu-panel { flex: 0 0 280px; background-color: #faf9f6; padding: 20px; border-radius: 12px; border: 1px solid #f2ede4; }
+  /* 左边栏 7 大分类固定面板 */
+  .left-sidebar-menu-panel { flex: 0 0 280px; background-color: #faf9f6; padding: 20px; border-radius: 12px; border: 1px solid #f2ede4; position: sticky; top: 30px; }
   .sidebar-menu-title { font-size: 1.05em; font-weight: bold; color: #2c3e50; padding-bottom: 10px; margin-bottom: 15px; border-bottom: 2px solid #e8dfcf; }
   .sidebar-box-grid { display: flex; flex-direction: column; gap: 10px; }
-  
   .sidebar-category-box { display: flex; justify-content: space-between; align-items: center; padding: 12px 15px; background-color: #ffffff; border: 1px solid #eef0f2; border-radius: 8px; text-decoration: none !important; color: #34495e !important; font-weight: bold; transition: all 0.2s ease; }
   .sidebar-category-box:hover { background-color: #fdfbf7; border-color: #e67e22; color: #e67e22 !important; transform: translateX(3px); }
   .box-count { font-size: 0.85em; color: #95a5a6; }
 
-  /* Right Dashboard Window Engine 🌟 */
-  .right-articles-flow-panel { flex: 1; }
+  /* 右边大舞台核心中央调度器 */
+  .right-articles-flow-panel { flex: 1; min-width: 0; }
 
-  /* 🔒 RULE 1: Hide all directory panels by default completely */
-  .category-display-panel { 
+  /* 🔒 终极动态调度机制：默认让所有的目录卡片和文章正文面板全部隐藏 */
+  .content-panel-card { 
     display: none; 
   }
 
-  /* 🔒 RULE 2: Default State - Show the Stories column ONLY when no other hash is clicked */
-  .right-articles-flow-panel:not(:has(~ * :target)):not(:has(:target)) .default-show-room,
+  /* 🔒 默认进门状态：如果没有点击任何锚点，有且仅有第一个“故事专栏目录”亮起 */
   html:not(:has(:target)) .default-show-room { 
     display: block !important; 
   }
 
-  /* 🔒 RULE 3: Click-to-Lock Target Magic - Make the targeted division stick open solidly */
-  .category-display-panel:target { 
+  /* 🔒 触碰锚点机制：无论是点击了7大子目录，还是点击了具体的文章正文，对应的卡片一秒精准锁死显现 */
+  .content-panel-card:target { 
     display: block !important; 
   }
   
-  /* 🔒 RULE 4: Clean Override - Ensure default room vanishes when another room is actively clicked */
-  html:has(#essays:target) .default-show-room,
-  html:has(#travels:target) .default-show-room,
-  html:has(#diaries:target) .default-show-room,
-  html:has(#excerpts:target) .default-show-room,
-  html:has(#library:target) .default-show-room,
-  html:has(#cooking:target) .default-show-room {
+  /* 🔒 动态大驱逐：只要有任意一个锚点被激活（不管是看分类还是看文章），必须强制将默认的故事目录一秒完全熄灭 */
+  html:has(:target) .default-show-room {
     display: none !important;
   }
 
-  /* Typography Styles for Interior Content Elements */
-  .flow-header { font-size: 1.3em; font-weight: bold; margin-top: 0; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #f2ede4; color: #e67e22; }
-  .articles-list-wrapper { display: flex; flex-direction: column; gap: 15px; }
