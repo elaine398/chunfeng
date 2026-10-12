@@ -259,7 +259,7 @@ layout: default
   }
 }
 
-  /* 🔒 【双栏永久死锁并排骨架】：核心钢筋！永远左右并肩，禁止换行塌陷！ */
+   /* 🔒 【双栏永久死锁并排骨架】：核心钢筋！永远左右并肩，禁止换行塌陷！ */
   .magazine-layout-wrapper { 
     display: flex !important; 
     flex-direction: row !important; 
@@ -270,6 +270,82 @@ layout: default
     box-sizing: border-box !important;
   }
 
-  /* 🧭 左边栏：固态310px黄金吸顶悬浮柜（整栏自带独立小滚动条） */
+  
+  /* 🧭 左边栏外壳：全尺寸绝对吸顶悬浮柜 */
   .left-sidebar-menu-panel { 
-    flex: 0 0 310px !important; width: 310px !important; min-width: 310px !important;
+    flex: 0 0 310px !important; 
+    width: 310px !important; 
+    min-width: 310px !important;
+    background-color: #faf9f6; 
+    padding: 20px; 
+    border-radius: 12px; 
+    border: 1px solid #f2ede4; 
+    position: sticky !important; 
+    top: 25px !important; 
+    max-height: calc(100vh - 90px) !important; 
+    overflow-y: auto !important; 
+    overflow-x: hidden !important; 
+    box-sizing: border-box !important;
+  }
+  
+  /* 🍷 换装：控制左栏最上方小标题“专栏分类”变为古典“绛红色” */
+  .sidebar-menu-title { font-size: 1.05em; font-weight: bold; color: #8c1623; padding-bottom: 10px; margin-bottom: 15px; border-bottom: 2px solid #e8dfcf; }
+  .sidebar-accordion-group { display: flex; flex-direction: column; gap: 12px; }
+
+  .category-accordion-box { background-color: #ffffff; border: 1px solid #eef0f2; border-radius: 8px; overflow: hidden !important; width: 100% !important; box-sizing: border-box !important; }
+  .category-accordion-box[open] { border-color: #8c1623; }
+  
+  /* 🍷 【真名死锁换色重锤】：强控浏览器将 7 个方块的大题目一律彻底刷成华丽的“绛红色”(#8c1623) */
+  .left-sidebar-menu-panel summary,
+  .accordion-header,
+  .header-text { 
+    display: flex !important; 
+    justify-content: space-between !important; 
+    align-items: center !important; 
+    padding: 14px 15px !important; 
+    font-weight: bold !important; 
+    color: #8c1623 !important;                     
+    -webkit-text-fill-color: #8c1623 !important;   
+    cursor: pointer; 
+    white-space: nowrap !important; 
+  }
+  .accordion-header:hover { background-color: #fdfbf7; color: #e67e22 !important; -webkit-text-fill-color: #e67e22 !important; }
+  .accordion-header::-webkit-details-marker { display: none; }
+  
+  .header-right-info { display: flex; align-items: center; gap: 8px; }
+  .badge-count { font-size: 0.8em; color: #95a5a6; background-color: #f4f6f7; padding: 1px 6px; border-radius: 10px; -webkit-text-fill-color: #95a5a6 !important; }
+  .arrow-icon { font-size: 0.7em; color: #bdc3c7; transition: transform 0.25s ease; display: inline-block; -webkit-text-fill-color: #bdc3c7 !important; }
+  .category-accordion-box[open] .arrow-icon { transform: rotate(90deg); color: #8c1623; -webkit-text-fill-color: #8c1623 !important; }
+
+  /* 垂直单行列表小抽屉箱 */
+  .accordion-sub-links-list { display: block !important; background-color: #faf9f6; border-top: 1px solid #f9f6f0; padding: 6px 0; max-height: 200px !important; overflow-y: auto !important; }
+  .sub-article-row-block { display: block !important; width: 100% !important; }
+  .sub-article-title-link { font-size: 0.92em; font-weight: bold; color: #555555 !important; padding: 11px 18px; text-decoration: none !important; display: block !important; line-height: 1.4; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; -webkit-text-fill-color: #555555 !important; }
+  .sub-article-title-link:hover { background-color: #fdf6ec; color: #e67e22 !important; -webkit-text-fill-color: #e67e22 !important; }
+  
+  .left-sidebar-menu-panel::-webkit-scrollbar, .accordion-sub-links-list::-webkit-scrollbar { width: 5px !important; }
+  .left-sidebar-menu-panel::-webkit-scrollbar-thumb, .accordion-sub-links-list::-webkit-scrollbar-thumb { background-color: #dcd6cd !important; border-radius: 10px !important; }
+  .left-sidebar-menu-panel::-webkit-scrollbar-track, .accordion-sub-links-list::-webkit-scrollbar-track { background-color: transparent !important; }
+
+  /* 右边大厅 */
+  .right-articles-flow-panel { flex: 1 !important; min-width: 0 !important; word-break: break-word !important; }
+  .magazine-stream-header { font-size: 1.3em; font-weight: bold; color: #2c3e50; padding-bottom: 12px; border-bottom: 2px solid #e8dfcf; margin-bottom: 30px; margin-top: 0; }
+  .stream-article-item { margin-bottom: 35px; padding-bottom: 30px; border-bottom: 1px dashed #e8dfcf; }
+  .stream-title { font-size: 1.5em; color: #2c3e50; font-weight: bold; margin-top: 0; margin-bottom: 10px; }
+  .stream-meta { font-size: 0.88em; color: #7f8c8d; margin-bottom: 15px; }
+
+  .readmore-accordion { background-color: transparent; }
+  .readmore-btn-summary { list-style: none; outline: none; cursor: pointer; }
+  .readmore-btn-summary::-webkit-details-marker { display: none; }
+  .teaser-text-preview { font-size: 1.12em; color: #555555; line-height: 1.85; text-align: justify; margin-bottom: 12px; }
+  .readmore-badge-trigger { display: inline-block; font-size: 0.93em; font-weight: bold; color: #e67e22; background-color: #fdf6ec; padding: 4px 12px; border-radius: 20px; margin-top: 5px; }
+
+  .readmore-accordion .text-collapse { display: none; }
+  .readmore-accordion[open] .text-expand { display: none; }
+  .readmore-accordion[open] .text-collapse { display: inline; }
+  .readmore-accordion[open] .teaser-text-preview { display: none; }
+
+  /* 正文排版：段落分明 1.6em 黄金书籍留白 */
+  .full-article-body-expanded { font-size: 1.16em; color: #2c3e50; line-height: 1.95; letter-spacing: 0.5px; }
+  .full-article-body-expanded p { margin-top: 0 !important; margin-bottom: 1.6em !important; text-align: justify; }
+</style>
