@@ -386,16 +386,235 @@ layout: default
 
   </div>
 </div>
-<!-- 3. 🎨 MASTER INTEGRATED CSS SKIN (With final tag fully preserved) -->
+---
+layout: default
+---
+
+<!-- 1. 🌟 TOP BAR NAVIGATION -->
+<div class="custom-top-bar">
+  <div class="top-bar-left-branding">
+    <a class="top-brand-name-link" href="/chunfeng/">椿枫漫笔</a>
+    <span class="top-brand-subtitle">Let's not remember years, remember moments</span>
+  </div>
+  <div class="top-bar-right-menu">
+    <a class="top-menu-item active-nav" href="/chunfeng/">主页</a>
+    <a class="top-menu-item" href="/chunfeng/about">关于我</a>
+  </div>
+</div>
+
+<!-- 2. 📰 CORE SPLIT MAGAZINE INTERFACE -->
+<div class="magazine-layout-wrapper">
+
+  <!-- 🧭 LEFT ACCORDION PANEL (7 Categories with Target Anchor Hooks) -->
+  <div class="left-sidebar-menu-panel">
+    <div class="sidebar-menu-title">📚 专栏分类</div>
+    <div class="sidebar-accordion-group">
+      
+      <!-- Category 1: 故事专栏 -->
+      <details class="category-accordion-box">
+        <summary class="accordion-header">
+          <span class="header-text">📖 故事专栏</span>
+          <span class="header-right-info">
+            <span class="badge-count">{{ site.tags["故事"].size | default: 0 }}</span>
+            <span class="arrow-icon">▶</span>
+          </span>
+        </summary>
+        <div class="accordion-sub-links-list">
+          {% for post in site.tags["故事"] %}
+            <div class="sub-article-row-block">
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
+            </div>
+          {% endfor %}
+        </div>
+      </details>
+
+      <!-- Category 2: 短文随笔 -->
+      <details class="category-accordion-box">
+        <summary class="accordion-header">
+          <span class="header-text">✍️ 短文随笔</span>
+          <span class="header-right-info">
+            <span class="badge-count">{{ site.tags["短文"].size | default: 0 }}</span>
+            <span class="arrow-icon">▶</span>
+          </span>
+        </summary>
+        <div class="accordion-sub-links-list">
+          {% for post in site.tags["短文"] %}
+            <div class="sub-article-row-block">
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
+            </div>
+          {% endfor %}
+        </div>
+      </details>
+
+      <!-- Category 3: 游记日记 -->
+      <details class="category-accordion-box">
+        <summary class="accordion-header">
+          <span class="header-text">✈️ 游记日记</span>
+          <span class="header-right-info">
+            <span class="badge-count">{{ site.tags["游记"].size | default: 0 }}</span>
+            <span class="arrow-icon">▶</span>
+          </span>
+        </summary>
+        <div class="accordion-sub-links-list">
+          {% for post in site.tags["游记"] %}
+            <div class="sub-article-row-block">
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
+            </div>
+          {% endfor %}
+        </div>
+      </details>
+
+      <!-- Category 4: 生活日志 -->
+      <details class="category-accordion-box">
+        <summary class="accordion-header">
+          <span class="header-text">📅 生活日志</span>
+          <span class="header-right-info">
+            <span class="badge-count">{{ site.tags["日志"].size | default: 0 }}</span>
+            <span class="arrow-icon">▶</span>
+          </span>
+        </summary>
+        <div class="accordion-sub-links-list">
+          {% for post in site.tags["日志"] %}
+            <div class="sub-article-row-block">
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
+            </div>
+          {% endfor %}
+        </div>
+      </details>
+
+      <!-- Category 5: 读书书摘 -->
+      <details class="category-accordion-box">
+        <summary class="accordion-header">
+          <span class="header-text">📚 读书书摘</span>
+          <span class="header-right-info">
+            <span class="badge-count">{{ site.tags["书摘"].size | default: 0 }}</span>
+            <span class="arrow-icon">▶</span>
+          </span>
+        </summary>
+        <div class="accordion-sub-links-list">
+          {% for post in site.tags["书摘"] %}
+            <div class="sub-article-row-block">
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
+            </div>
+          {% endfor %}
+        </div>
+      </details>
+
+      <!-- Category 6: 个人书斋 -->
+      <details class="category-accordion-box">
+        <summary class="accordion-header">
+          <span class="header-text">🏡 个人书斋</span>
+          <span class="header-right-info">
+            <span class="badge-count">{{ site.tags["书斋"].size | default: 0 }}</span>
+            <span class="arrow-icon">▶</span>
+          </span>
+        </summary>
+        <div class="accordion-sub-links-list">
+          {% for post in site.tags["书斋"] %}
+            <div class="sub-article-row-block">
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
+            </div>
+          {% endfor %}
+        </div>
+      </details>
+
+      <!-- Category 7: 美食私房 -->
+      <details class="category-accordion-box">
+        <summary class="accordion-header">
+          <span class="header-text">🍳 美食私房</span>
+          <span class="header-right-info">
+            <span class="badge-count">{{ site.tags["美食"].size | default: 0 }}</span>
+            <span class="arrow-icon">▶</span>
+          </span>
+        </summary>
+        <div class="accordion-sub-links-list">
+          {% for post in site.tags["美食"] %}
+            <div class="sub-article-row-block">
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
+            </div>
+          {% endfor %}
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <!-- 📄 RIGHT DASHBOARD REPLACEMENT WORKS WINDOW -->
+  <div class="right-articles-flow-panel">
+    
+    <!-- DISPLAY CONTAINER A: Default Teaser State (Shows 5 Recent Essays) -->
+    <div class="content-panel-card default-welcome-stream-room">
+      <h2 class="magazine-stream-header">✨ 最近发表 · 精选随笔</h2>
+      {% for post in site.posts limit:5 %}
+        <div class="stream-article-item">
+          <h3 class="stream-title">{{ post.title }}</h3>
+          <div class="stream-meta">📅 {{ post.date | date: "%Y-%m-%d" }} &nbsp;|&nbsp; 🏷️ {{ post.tags | first }}</div>
+          <details class="readmore-accordion">
+            <summary class="readmore-btn-summary">
+              <div class="teaser-text-preview">{{ post.content | strip_html | truncate: 140 }}</div>
+              <div class="readmore-badge-trigger">
+                <span class="text-expand">[展开阅读全文 ↓]</span>
+                <span class="text-collapse">[收起全文 ↑]</span>
+              </div>
+            </summary>
+            <div class="full-article-body-expanded">{{ post.content }}</div>
+          </details>
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- DISPLAY CONTAINER B: Full Text Hub (Replaces State A upon selection) -->
+    {% for post in site.posts %}
+      <div class="content-panel-card article-reading-room" id="post-{{ post.id | slugify }}">
+        <h1 class="article-inside-title">{{ post.title }}</h1>
+        <div class="article-inside-meta">
+          <span>📅 发布时间：{{ post.date | date: "%Y-%m-%d" }}</span>
+          <span class="meta-split">|</span>
+          <span>🏷️ 分类：{{ post.tags | first }}</span>
+          <span class="meta-split">|</span>
+          <a class="back-to-home-badge" href="/chunfeng/">返回最近发表 ↩</a>
+        </div>
+        <div class="article-inside-body">{{ post.content }}</div>
+      </div>
+    {% endfor %}
+
+  </div>
+</div>
+<!-- 3. 🎨 MASTER INTEGRATED CSS SKIN (Fixed Ceiling & Dual Sticky Panel Architecture) -->
 <style>
+  /* 🔒 CEILING DEADLOCK RESET: Forces the outermost body wrap to respect the top boundary locks */
   html, body, .wrapper, #main_content_wrap, section.main-content, .container, main, .markdown-body {
-    max-width: 100% !important; width: 100% !important; padding: 0 !important; margin: 0 !important;
+    max-width: 100% !important; 
+    width: 100% !important; 
+    padding: 0 !important; 
+    margin: 0 !important;
+    position: relative !important;
   }
   header, .site-header { display: none !important; height: 0 !important; }
-  body { background-color: #ffffff; padding: 0 40px !important; box-sizing: border-box !important; }
+  
+  body { 
+    background-color: #ffffff; 
+    padding: 0 40px !important; 
+    box-sizing: border-box !important; 
+  }
 
-  /* Top Bar Header Layout */
-  .custom-top-bar { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; border-bottom: 2px solid #e8dfcf; margin-bottom: 40px; margin-top: 20px; }
+  /* 🔒 TOP BAR NAVIGATION: Permanently welded and locked to the absolute viewport ceiling */
+  .custom-top-bar { 
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 85px !important; 
+    background-color: #ffffff !important; 
+    display: flex !important; 
+    justify-content: space-between !important; 
+    align-items: center !important; 
+    padding: 0 40px !important; 
+    border-bottom: 2px solid #e8dfcf; 
+    z-index: 99999 !important; /* Raised to ultra-high weight to block any content leaks */
+    box-sizing: border-box !important;
+  }
+  
   .top-brand-name-link { font-size: 2.2em !important; font-weight: bold !important; color: #2c3e50 !important; letter-spacing: 1px !important; text-decoration: none !important; transition: color 0.2s ease; display: inline-block; font-family: "STSong", "Songti SC", "SimSun", serif !important; }
   .top-brand-name-link:hover { color: #e67e22 !important; }
   .top-brand-subtitle { font-size: 0.95em; color: #7f8c8d; font-style: italic; margin-left: 15px; font-family: "STSong", "Songti SC", "SimSun", serif !important; }
@@ -403,14 +622,35 @@ layout: default
   .top-menu-item { font-size: 1.1em; font-weight: bold; color: #34495e !important; text-decoration: none !important; }
   .top-menu-item:hover, .active-nav { color: #e67e22 !important; }
 
-  /* Dual Grid Lock Matrix */
-  .magazine-layout-wrapper { display: grid !important; grid-template-columns: 310px 1fr !important; gap: 45px !important; align-items: flex-start !important; width: 100% !important; box-sizing: border-box !important; }
+  /* Dual Grid Lock Matrix: Pushed safely clear of the floating ceiling */
+  .magazine-layout-wrapper { 
+    display: grid !important; 
+    grid-template-columns: 310px 1fr !important; 
+    gap: 45px !important; 
+    align-items: flex-start !important; 
+    width: 100% !important; 
+    margin-top: 115px !important; 
+    box-sizing: border-box !important; 
+  }
 
-  /* Left Columns Station Cabinets */
-  .left-sidebar-menu-panel { grid-column: 1 !important; background-color: #faf9f6; padding: 20px; border-radius: 12px; border: 1px solid #f2ede4; position: sticky !important; top: 25px !important; max-height: calc(100vh - 90px) !important; overflow-y: auto !important; overflow-x: hidden !important; box-sizing: border-box !important; }
+  /* 🧭 STATIONARY SIDEBAR CABINET */
+  .left-sidebar-menu-panel { 
+    grid-column: 1 !important; 
+    background-color: #faf9f6; 
+    padding: 20px; 
+    border-radius: 12px; 
+    border: 1px solid #f2ede4; 
+    position: sticky !important; 
+    top: 115px !important; 
+    max-height: calc(100vh - 150px) !important; 
+    overflow-y: auto !important; 
+    overflow-x: hidden !important; 
+    box-sizing: border-box !important; 
+  }
+  
   .sidebar-menu-title { font-size: 1.05em; font-weight: bold; color: #8c1623; padding-bottom: 10px; margin-bottom: 15px; border-bottom: 2px solid #e8dfcf; }
   .sidebar-accordion-group { display: flex; flex-direction: column; gap: 12px; }
-  .category-accordion-box { background-color: #ffffff; border: 1px solid #eef0f2; border-radius: 8px; overflow: hidden !important; width: 100% !important; }
+  .category-accordion-box { background-color: #ffffff; border: 1px solid #eef0f2; border-radius: 8px; overflow: hidden !important; }
   .category-accordion-box[open] { border-color: #8c1623; }
 
   /* Crimson Primary Folders Styling */
@@ -428,6 +668,7 @@ layout: default
   .sub-article-title-link:hover { background-color: #fdf6ec; color: #e67e22 !important; -webkit-text-fill-color: #e67e22 !important; }
   .left-sidebar-menu-panel::-webkit-scrollbar, .accordion-sub-links-list::-webkit-scrollbar { width: 5px !important; }
   .left-sidebar-menu-panel::-webkit-scrollbar-thumb, .accordion-sub-links-list::-webkit-scrollbar-thumb { background-color: #dcd6cd !important; border-radius: 10px !important; }
+  .left-sidebar-menu-panel::-webkit-scrollbar-track, .accordion-sub-links-list::-webkit-scrollbar-track { background-color: transparent !important; }
 
   /* Right-Side Dashboard Swap Space */
   .right-articles-flow-panel { grid-column: 2 !important; min-width: 0 !important; contain: inline-size !important; word-break: break-word !important; overflow-wrap: break-word !important; }
@@ -463,4 +704,3 @@ layout: default
   .full-article-body-expanded p, .article-inside-body p { margin-top: 0 !important; margin-bottom: 1.6em !important; text-align: justify; }
   @keyframes fadeInPaper { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 </style>
-
