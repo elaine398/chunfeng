@@ -251,7 +251,16 @@ layout: default
     box-sizing: border-box !important;
   }
   
-  .top-brand-name-link { font-size: 2.2em !important; font-weight: bold !important; color: #2c3e50 !important; letter-spacing: 1px !important; text-decoration: none !important; transition: color 0.2s ease; display: inline-block; font-family: "STSong", "Songti SC", "SimSun", serif !important; }
+   .top-brand-name-link { 
+    font-size: 2.5em !important;        /* 👈 Adjusted from 2.2em to 2.5em to make it significantly bigger */
+    font-weight: bold !important; 
+    color: #8c1623 !important;          /* 👈 Changed to #8c1623 to lock in that elegant Crimson/绛红色 */
+    letter-spacing: 1px !important; 
+    text-decoration: none !important; 
+    transition: color 0.2s ease; 
+    display: inline-block; 
+    font-family: "STSong", "Songti SC", "SimSun", serif !important; 
+  }
   .top-brand-name-link:hover { color: #e67e22 !important; }
   .top-brand-subtitle { font-size: 0.95em; color: #7f8c8d; font-style: italic; margin-left: 15px; font-family: "STSong", "Songti SC", "SimSun", serif !important; }
   .top-bar-right-menu { display: flex; gap: 25px; }
