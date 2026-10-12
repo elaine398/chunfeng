@@ -54,9 +54,8 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["短文"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.url | relative_url }}">
-                ▪ {{ post.title }}
-              </a>
+              <!-- Re-anchored to unlock perfect single-page seamless translation -->
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
             </div>
           {% endfor %}
         </div>
