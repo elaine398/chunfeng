@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<!-- 1. 🌟 TOP BAR NAVIGATION -->
+<!-- 1. 🌟 TOP BAR 顶部横带区（锁定在天花板绝不移动） -->
 <div class="custom-top-bar">
   <div class="top-bar-left-branding">
     <a class="top-brand-name-link" href="/chunfeng/">椿枫漫笔</a>
@@ -17,12 +17,12 @@ layout: default
 <!-- 2. 📰 CORE SPLIT MAGAZINE INTERFACE -->
 <div class="magazine-layout-wrapper">
 
-  <!-- 🧭 LEFT ACCORDION PANEL (7 Categories with Target Anchor Hooks) -->
+  <!-- 🧭 左边栏：固态310px黄金吸顶悬浮大书架（带整栏独立滚动条，中文字全绛红） -->
   <div class="left-sidebar-menu-panel">
     <div class="sidebar-menu-title">📚 专栏分类</div>
     <div class="sidebar-accordion-group">
       
-      <!-- Category 1: 故事专栏 -->
+      <!-- 【第一层分类 1】: 故事专栏 -->
       <details class="category-accordion-box">
         <summary class="accordion-header">
           <span class="header-text">📖 故事专栏</span>
@@ -34,13 +34,15 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["故事"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
+                ▪ {{ post.title }}
+              </a>
             </div>
           {% endfor %}
         </div>
       </details>
 
-      <!-- Category 2: 短文随笔 -->
+      <!-- 【第一层分类 2】: 短文随笔 -->
       <details class="category-accordion-box">
         <summary class="accordion-header">
           <span class="header-text">✍️ 短文随笔</span>
@@ -52,13 +54,15 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["短文"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
+              <a class="sub-article-title-link" href="#post-{{ post.url | relative_url }}">
+                ▪ {{ post.title }}
+              </a>
             </div>
           {% endfor %}
         </div>
       </details>
 
-      <!-- Category 3: 游记日记 -->
+      <!-- 【第一层分类 3】: 游记日记 -->
       <details class="category-accordion-box">
         <summary class="accordion-header">
           <span class="header-text">✈️ 游记日记</span>
@@ -70,13 +74,15 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["游记"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
+                ▪ {{ post.title }}
+              </a>
             </div>
           {% endfor %}
         </div>
       </details>
 
-      <!-- Category 4: 生活日志 -->
+      <!-- 【第一层分类 4】: 生活日志 -->
       <details class="category-accordion-box">
         <summary class="accordion-header">
           <span class="header-text">📅 生活日志</span>
@@ -88,13 +94,15 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["日志"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
+                ▪ {{ post.title }}
+              </a>
             </div>
           {% endfor %}
         </div>
       </details>
 
-      <!-- Category 5: 读书书摘 -->
+      <!-- 【第一层分类 5】: 读书书摘 -->
       <details class="category-accordion-box">
         <summary class="accordion-header">
           <span class="header-text">📚 读书书摘</span>
@@ -106,13 +114,15 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["书摘"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
+                ▪ {{ post.title }}
+              </a>
             </div>
           {% endfor %}
         </div>
       </details>
 
-      <!-- Category 6: 个人书斋 -->
+      <!-- 【第一层分类 6】: 个人书斋 -->
       <details class="category-accordion-box">
         <summary class="accordion-header">
           <span class="header-text">🏡 个人书斋</span>
@@ -124,13 +134,15 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["书斋"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
+                ▪ {{ post.title }}
+              </a>
             </div>
           {% endfor %}
         </div>
       </details>
 
-      <!-- Category 7: 美食私房 -->
+      <!-- 【第一层分类 7】: 美食私房 -->
       <details class="category-accordion-box">
         <summary class="accordion-header">
           <span class="header-text">🍳 美食私房</span>
@@ -142,7 +154,9 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["美食"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
+                ▪ {{ post.title }}
+              </a>
             </div>
           {% endfor %}
         </div>
@@ -151,225 +165,38 @@ layout: default
     </div>
   </div>
 
-  <!-- 📄 RIGHT DASHBOARD REPLACEMENT WORKS WINDOW -->
+  <!-- 📄 右边中央主舞台：精选最近发表的 5 篇摘要流 -->
   <div class="right-articles-flow-panel">
     
-    <!-- DISPLAY CONTAINER A: Default Teaser State (Shows 5 Recent Essays) -->
+    <!-- 🏡 【空间 A】：5 篇最近发表精选随笔流（带原地展开纽扣） -->
     <div class="content-panel-card default-welcome-stream-room">
       <h2 class="magazine-stream-header">✨ 最近发表 · 精选随笔</h2>
-      {% for post in site.posts limit:5 %}
-        <div class="stream-article-item">
-          <h3 class="stream-title">{{ post.title }}</h3>
-          <div class="stream-meta">📅 {{ post.date | date: "%Y-%m-%d" }} &nbsp;|&nbsp; 🏷️ {{ post.tags | first }}</div>
-          <details class="readmore-accordion">
-            <summary class="readmore-btn-summary">
-              <div class="teaser-text-preview">{{ post.content | strip_html | truncate: 140 }}</div>
-              <div class="readmore-badge-trigger">
-                <span class="text-expand">[展开阅读全文 ↓]</span>
-                <span class="text-collapse">[收起全文 ↑]</span>
-              </div>
-            </summary>
-            <div class="full-article-body-expanded">{{ post.content }}</div>
-          </details>
-        </div>
-      {% endfor %}
-    </div>
-
-    <!-- DISPLAY CONTAINER B: Full Text Hub (Replaces State A upon selection) -->
-    {% for post in site.posts %}
-      <div class="content-panel-card article-reading-room" id="post-{{ post.id | slugify }}">
-        <h1 class="article-inside-title">{{ post.title }}</h1>
-        <div class="article-inside-meta">
-          <span>📅 发布时间：{{ post.date | date: "%Y-%m-%d" }}</span>
-          <span class="meta-split">|</span>
-          <span>🏷️ 分类：{{ post.tags | first }}</span>
-          <span class="meta-split">|</span>
-          <a class="back-to-home-badge" href="/chunfeng/">返回最近发表 ↩</a>
-        </div>
-        <div class="article-inside-body">{{ post.content }}</div>
-      </div>
-    {% endfor %}
-
-  </div>
-</div>
----
-layout: default
----
-
-<!-- 1. 🌟 TOP BAR NAVIGATION -->
-<div class="custom-top-bar">
-  <div class="top-bar-left-branding">
-    <a class="top-brand-name-link" href="/chunfeng/">椿枫漫笔</a>
-    <span class="top-brand-subtitle">Let's not remember years, remember moments</span>
-  </div>
-  <div class="top-bar-right-menu">
-    <a class="top-menu-item active-nav" href="/chunfeng/">主页</a>
-    <a class="top-menu-item" href="/chunfeng/about">关于我</a>
-  </div>
-</div>
-
-<!-- 2. 📰 CORE SPLIT MAGAZINE INTERFACE -->
-<div class="magazine-layout-wrapper">
-
-  <!-- 🧭 LEFT ACCORDION PANEL (7 Categories with Target Anchor Hooks) -->
-  <div class="left-sidebar-menu-panel">
-    <div class="sidebar-menu-title">📚 专栏分类</div>
-    <div class="sidebar-accordion-group">
       
-      <!-- Category 1: 故事专栏 -->
-      <details class="category-accordion-box">
-        <summary class="accordion-header">
-          <span class="header-text">📖 故事专栏</span>
-          <span class="header-right-info">
-            <span class="badge-count">{{ site.tags["故事"].size | default: 0 }}</span>
-            <span class="arrow-icon">▶</span>
-          </span>
-        </summary>
-        <div class="accordion-sub-links-list">
-          {% for post in site.tags["故事"] %}
-            <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
-            </div>
-          {% endfor %}
-        </div>
-      </details>
-
-      <!-- Category 2: 短文随笔 -->
-      <details class="category-accordion-box">
-        <summary class="accordion-header">
-          <span class="header-text">✍️ 短文随笔</span>
-          <span class="header-right-info">
-            <span class="badge-count">{{ site.tags["短文"].size | default: 0 }}</span>
-            <span class="arrow-icon">▶</span>
-          </span>
-        </summary>
-        <div class="accordion-sub-links-list">
-          {% for post in site.tags["短文"] %}
-            <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
-            </div>
-          {% endfor %}
-        </div>
-      </details>
-
-      <!-- Category 3: 游记日记 -->
-      <details class="category-accordion-box">
-        <summary class="accordion-header">
-          <span class="header-text">✈️ 游记日记</span>
-          <span class="header-right-info">
-            <span class="badge-count">{{ site.tags["游记"].size | default: 0 }}</span>
-            <span class="arrow-icon">▶</span>
-          </span>
-        </summary>
-        <div class="accordion-sub-links-list">
-          {% for post in site.tags["游记"] %}
-            <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
-            </div>
-          {% endfor %}
-        </div>
-      </details>
-
-      <!-- Category 4: 生活日志 -->
-      <details class="category-accordion-box">
-        <summary class="accordion-header">
-          <span class="header-text">📅 生活日志</span>
-          <span class="header-right-info">
-            <span class="badge-count">{{ site.tags["日志"].size | default: 0 }}</span>
-            <span class="arrow-icon">▶</span>
-          </span>
-        </summary>
-        <div class="accordion-sub-links-list">
-          {% for post in site.tags["日志"] %}
-            <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
-            </div>
-          {% endfor %}
-        </div>
-      </details>
-
-      <!-- Category 5: 读书书摘 -->
-      <details class="category-accordion-box">
-        <summary class="accordion-header">
-          <span class="header-text">📚 读书书摘</span>
-          <span class="header-right-info">
-            <span class="badge-count">{{ site.tags["书摘"].size | default: 0 }}</span>
-            <span class="arrow-icon">▶</span>
-          </span>
-        </summary>
-        <div class="accordion-sub-links-list">
-          {% for post in site.tags["书摘"] %}
-            <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
-            </div>
-          {% endfor %}
-        </div>
-      </details>
-
-      <!-- Category 6: 个人书斋 -->
-      <details class="category-accordion-box">
-        <summary class="accordion-header">
-          <span class="header-text">🏡 个人书斋</span>
-          <span class="header-right-info">
-            <span class="badge-count">{{ site.tags["书斋"].size | default: 0 }}</span>
-            <span class="arrow-icon">▶</span>
-          </span>
-        </summary>
-        <div class="accordion-sub-links-list">
-          {% for post in site.tags["书斋"] %}
-            <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
-            </div>
-          {% endfor %}
-        </div>
-      </details>
-
-      <!-- Category 7: 美食私房 -->
-      <details class="category-accordion-box">
-        <summary class="accordion-header">
-          <span class="header-text">🍳 美食私房</span>
-          <span class="header-right-info">
-            <span class="badge-count">{{ site.tags["美食"].size | default: 0 }}</span>
-            <span class="arrow-icon">▶</span>
-          </span>
-        </summary>
-        <div class="accordion-sub-links-list">
-          {% for post in site.tags["美食"] %}
-            <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
-            </div>
-          {% endfor %}
-        </div>
-      </details>
-
-    </div>
-  </div>
-
-  <!-- 📄 RIGHT DASHBOARD REPLACEMENT WORKS WINDOW -->
-  <div class="right-articles-flow-panel">
-    
-    <!-- DISPLAY CONTAINER A: Default Teaser State (Shows 5 Recent Essays) -->
-    <div class="content-panel-card default-welcome-stream-room">
-      <h2 class="magazine-stream-header">✨ 最近发表 · 精选随笔</h2>
       {% for post in site.posts limit:5 %}
         <div class="stream-article-item">
           <h3 class="stream-title">{{ post.title }}</h3>
           <div class="stream-meta">📅 {{ post.date | date: "%Y-%m-%d" }} &nbsp;|&nbsp; 🏷️ {{ post.tags | first }}</div>
+          
           <details class="readmore-accordion">
             <summary class="readmore-btn-summary">
-              <div class="teaser-text-preview">{{ post.content | strip_html | truncate: 140 }}</div>
+              <div class="teaser-text-preview">
+                {{ post.content | strip_html | truncate: 140 }}
+              </div>
               <div class="readmore-badge-trigger">
                 <span class="text-expand">[展开阅读全文 ↓]</span>
                 <span class="text-collapse">[收起全文 ↑]</span>
               </div>
             </summary>
-            <div class="full-article-body-expanded">{{ post.content }}</div>
+            
+            <div class="full-article-body-expanded">
+              {{ post.content }}
+            </div>
           </details>
         </div>
       {% endfor %}
     </div>
 
-    <!-- DISPLAY CONTAINER B: Full Text Hub (Replaces State A upon selection) -->
+    <!-- 📖 【空间 B】：深度阅读区 —— 点击左栏任意一本书名，长散文正文一秒原位替换绽放 -->
     {% for post in site.posts %}
       <div class="content-panel-card article-reading-room" id="post-{{ post.id | slugify }}">
         <h1 class="article-inside-title">{{ post.title }}</h1>
@@ -380,209 +207,19 @@ layout: default
           <span class="meta-split">|</span>
           <a class="back-to-home-badge" href="/chunfeng/">返回最近发表 ↩</a>
         </div>
-        <div class="article-inside-body">{{ post.content }}</div>
+        <div class="article-inside-body">
+          {{ post.content }}
+        </div>
       </div>
     {% endfor %}
 
   </div>
-</div>
----
-layout: default
----
 
-<!-- 1. 🌟 TOP BAR NAVIGATION -->
-<div class="custom-top-bar">
-  <div class="top-bar-left-branding">
-    <a class="top-brand-name-link" href="/chunfeng/">椿枫漫笔</a>
-    <span class="top-brand-subtitle">Let's not remember years, remember moments</span>
-  </div>
-  <div class="top-bar-right-menu">
-    <a class="top-menu-item active-nav" href="/chunfeng/">主页</a>
-    <a class="top-menu-item" href="/chunfeng/about">关于我</a>
-  </div>
 </div>
 
-<!-- 2. 📰 CORE SPLIT MAGAZINE INTERFACE -->
-<div class="magazine-layout-wrapper">
-
-  <!-- 🧭 LEFT ACCORDION PANEL (7 Categories with Target Anchor Hooks) -->
-  <div class="left-sidebar-menu-panel">
-    <div class="sidebar-menu-title">📚 专栏分类</div>
-    <div class="sidebar-accordion-group">
-      
-      <!-- Category 1: 故事专栏 -->
-      <details class="category-accordion-box">
-        <summary class="accordion-header">
-          <span class="header-text">📖 故事专栏</span>
-          <span class="header-right-info">
-            <span class="badge-count">{{ site.tags["故事"].size | default: 0 }}</span>
-            <span class="arrow-icon">▶</span>
-          </span>
-        </summary>
-        <div class="accordion-sub-links-list">
-          {% for post in site.tags["故事"] %}
-            <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
-            </div>
-          {% endfor %}
-        </div>
-      </details>
-
-      <!-- Category 2: 短文随笔 -->
-      <details class="category-accordion-box">
-        <summary class="accordion-header">
-          <span class="header-text">✍️ 短文随笔</span>
-          <span class="header-right-info">
-            <span class="badge-count">{{ site.tags["短文"].size | default: 0 }}</span>
-            <span class="arrow-icon">▶</span>
-          </span>
-        </summary>
-        <div class="accordion-sub-links-list">
-          {% for post in site.tags["短文"] %}
-            <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
-            </div>
-          {% endfor %}
-        </div>
-      </details>
-
-      <!-- Category 3: 游记日记 -->
-      <details class="category-accordion-box">
-        <summary class="accordion-header">
-          <span class="header-text">✈️ 游记日记</span>
-          <span class="header-right-info">
-            <span class="badge-count">{{ site.tags["游记"].size | default: 0 }}</span>
-            <span class="arrow-icon">▶</span>
-          </span>
-        </summary>
-        <div class="accordion-sub-links-list">
-          {% for post in site.tags["游记"] %}
-            <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
-            </div>
-          {% endfor %}
-        </div>
-      </details>
-
-      <!-- Category 4: 生活日志 -->
-      <details class="category-accordion-box">
-        <summary class="accordion-header">
-          <span class="header-text">📅 生活日志</span>
-          <span class="header-right-info">
-            <span class="badge-count">{{ site.tags["日志"].size | default: 0 }}</span>
-            <span class="arrow-icon">▶</span>
-          </span>
-        </summary>
-        <div class="accordion-sub-links-list">
-          {% for post in site.tags["日志"] %}
-            <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
-            </div>
-          {% endfor %}
-        </div>
-      </details>
-
-      <!-- Category 5: 读书书摘 -->
-      <details class="category-accordion-box">
-        <summary class="accordion-header">
-          <span class="header-text">📚 读书书摘</span>
-          <span class="header-right-info">
-            <span class="badge-count">{{ site.tags["书摘"].size | default: 0 }}</span>
-            <span class="arrow-icon">▶</span>
-          </span>
-        </summary>
-        <div class="accordion-sub-links-list">
-          {% for post in site.tags["书摘"] %}
-            <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
-            </div>
-          {% endfor %}
-        </div>
-      </details>
-
-      <!-- Category 6: 个人书斋 -->
-      <details class="category-accordion-box">
-        <summary class="accordion-header">
-          <span class="header-text">🏡 个人书斋</span>
-          <span class="header-right-info">
-            <span class="badge-count">{{ site.tags["书斋"].size | default: 0 }}</span>
-            <span class="arrow-icon">▶</span>
-          </span>
-        </summary>
-        <div class="accordion-sub-links-list">
-          {% for post in site.tags["书斋"] %}
-            <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
-            </div>
-          {% endfor %}
-        </div>
-      </details>
-
-      <!-- Category 7: 美食私房 -->
-      <details class="category-accordion-box">
-        <summary class="accordion-header">
-          <span class="header-text">🍳 美食私房</span>
-          <span class="header-right-info">
-            <span class="badge-count">{{ site.tags["美食"].size | default: 0 }}</span>
-            <span class="arrow-icon">▶</span>
-          </span>
-        </summary>
-        <div class="accordion-sub-links-list">
-          {% for post in site.tags["美食"] %}
-            <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
-            </div>
-          {% endfor %}
-        </div>
-      </details>
-
-    </div>
-  </div>
-
-  <!-- 📄 RIGHT DASHBOARD REPLACEMENT WORKS WINDOW -->
-  <div class="right-articles-flow-panel">
-    
-    <!-- DISPLAY CONTAINER A: Default Teaser State (Shows 5 Recent Essays) -->
-    <div class="content-panel-card default-welcome-stream-room">
-      <h2 class="magazine-stream-header">✨ 最近发表 · 精选随笔</h2>
-      {% for post in site.posts limit:5 %}
-        <div class="stream-article-item">
-          <h3 class="stream-title">{{ post.title }}</h3>
-          <div class="stream-meta">📅 {{ post.date | date: "%Y-%m-%d" }} &nbsp;|&nbsp; 🏷️ {{ post.tags | first }}</div>
-          <details class="readmore-accordion">
-            <summary class="readmore-btn-summary">
-              <div class="teaser-text-preview">{{ post.content | strip_html | truncate: 140 }}</div>
-              <div class="readmore-badge-trigger">
-                <span class="text-expand">[展开阅读全文 ↓]</span>
-                <span class="text-collapse">[收起全文 ↑]</span>
-              </div>
-            </summary>
-            <div class="full-article-body-expanded">{{ post.content }}</div>
-          </details>
-        </div>
-      {% endfor %}
-    </div>
-
-    <!-- DISPLAY CONTAINER B: Full Text Hub (Replaces State A upon selection) -->
-    {% for post in site.posts %}
-      <div class="content-panel-card article-reading-room" id="post-{{ post.id | slugify }}">
-        <h1 class="article-inside-title">{{ post.title }}</h1>
-        <div class="article-inside-meta">
-          <span>📅 发布时间：{{ post.date | date: "%Y-%m-%d" }}</span>
-          <span class="meta-split">|</span>
-          <span>🏷️ 分类：{{ post.tags | first }}</span>
-          <span class="meta-split">|</span>
-          <a class="back-to-home-badge" href="/chunfeng/">返回最近发表 ↩</a>
-        </div>
-        <div class="article-inside-body">{{ post.content }}</div>
-      </div>
-    {% endfor %}
-
-  </div>
-</div>
-<!-- 3. 🎨 MASTER INTEGRATED CSS SKIN (Fixed Ceiling & Dual Sticky Panel Architecture) -->
+<!-- 3. 🎨 纯手工完全自定义全屏视觉控制皮肤 (地平线切齐死锁版) -->
 <style>
-  /* 🔒 CEILING DEADLOCK RESET: Forces the outermost body wrap to respect the top boundary locks */
+  /* 🔒 彻底粉碎官方底部的任何留白杂质残留，确保平整对齐地平线 */
   html, body, .wrapper, #main_content_wrap, section.main-content, .container, main, .markdown-body {
     max-width: 100% !important; 
     width: 100% !important; 
@@ -590,7 +227,7 @@ layout: default
     margin: 0 !important;
     position: relative !important;
   }
-  header, .site-header { display: none !important; height: 0 !important; }
+  header, .site-header, footer, .site-footer, .theme-by, #downloads { display: none !important; height: 0 !important; padding: 0 !important; margin: 0 !important; }
   
   body { 
     background-color: #ffffff; 
@@ -598,7 +235,7 @@ layout: default
     box-sizing: border-box !important; 
   }
 
-  /* 🔒 TOP BAR NAVIGATION: Permanently welded and locked to the absolute viewport ceiling */
+  /* 🔒 TOP BAR 顶栏：绝对死锁吸顶 */
   .custom-top-bar { 
     position: fixed !important;
     top: 0 !important;
@@ -611,7 +248,7 @@ layout: default
     align-items: center !important; 
     padding: 0 40px !important; 
     border-bottom: 2px solid #e8dfcf; 
-    z-index: 99999 !important; /* Raised to ultra-high weight to block any content leaks */
+    z-index: 99999 !important; 
     box-sizing: border-box !important;
   }
   
@@ -622,27 +259,29 @@ layout: default
   .top-menu-item { font-size: 1.1em; font-weight: bold; color: #34495e !important; text-decoration: none !important; }
   .top-menu-item:hover, .active-nav { color: #e67e22 !important; }
 
-  /* Dual Grid Lock Matrix: Pushed safely clear of the floating ceiling */
+  /* 🛡️ 网格死锁矩阵防线：向下精确留白，底部收尾留空 40 像素确保整齐 */
   .magazine-layout-wrapper { 
-    display: grid !important; 
-    grid-template-columns: 310px 1fr !important; 
+    display: flex !important; 
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
     gap: 45px !important; 
     align-items: flex-start !important; 
     width: 100% !important; 
     margin-top: 115px !important; 
+    margin-bottom: 40px !important; /* 👈 精准地平线：让左右两边在底部留出高档相等的白边切齐 */
     box-sizing: border-box !important; 
   }
 
-  /* 🧭 STATIONARY SIDEBAR CABINET */
+  /* 🧭 左边栏外壳：全尺寸绝对吸顶悬浮柜 */
   .left-sidebar-menu-panel { 
-    grid-column: 1 !important; 
+    flex: 0 0 310px !important; width: 310px !important; min-width: 310px !important;
     background-color: #faf9f6; 
     padding: 20px; 
     border-radius: 12px; 
     border: 1px solid #f2ede4; 
     position: sticky !important; 
     top: 115px !important; 
-    max-height: calc(100vh - 150px) !important; 
+    max-height: calc(100vh - 155px) !important; /* 👈 高度微调：确保触底停靠时完美卡死，绝不凸出多余盲区 */
     overflow-y: auto !important; 
     overflow-x: hidden !important; 
     box-sizing: border-box !important; 
@@ -650,36 +289,50 @@ layout: default
   
   .sidebar-menu-title { font-size: 1.05em; font-weight: bold; color: #8c1623; padding-bottom: 10px; margin-bottom: 15px; border-bottom: 2px solid #e8dfcf; }
   .sidebar-accordion-group { display: flex; flex-direction: column; gap: 12px; }
-  .category-accordion-box { background-color: #ffffff; border: 1px solid #eef0f2; border-radius: 8px; overflow: hidden !important; }
+  .category-accordion-box { background-color: #ffffff; border: 1px solid #eef0f2; border-radius: 8px; overflow: hidden !important; width: 100% !important; }
   .category-accordion-box[open] { border-color: #8c1623; }
-
-  /* Crimson Primary Folders Styling */
-  .left-sidebar-menu-panel summary, .accordion-header, .header-text { display: flex !important; justify-content: space-between !important; align-items: center !important; padding: 14px 15px !important; font-weight: bold !important; color: #8c1623 !important; -webkit-text-fill-color: #8c1623 !important; cursor: pointer; white-space: nowrap !important; }
+  
+  /* 🍷 绛红色 7 大方块题目死锁 */
+  .left-sidebar-menu-panel summary,
+  .accordion-header,
+  .header-text { 
+    display: flex !important; 
+    justify-content: space-between !important; 
+    align-items: center !important; 
+    padding: 14px 15px !important; 
+    font-weight: bold !important; 
+    color: #8c1623 !important;                     
+    -webkit-text-fill-color: #8c1623 !important;   
+    cursor: pointer; 
+    white-space: nowrap !important; 
+  }
+  .accordion-header:hover { background-color: #fdfbf7; color: #e67e22 !important; -webkit-text-fill-color: #e67e22 !important; }
   .accordion-header::-webkit-details-marker { display: none; }
+  
   .header-right-info { display: flex; align-items: center; gap: 8px; }
   .badge-count { font-size: 0.8em; color: #95a5a6; background-color: #f4f6f7; padding: 1px 6px; border-radius: 10px; -webkit-text-fill-color: #95a5a6 !important; }
   .arrow-icon { font-size: 0.7em; color: #bdc3c7; transition: transform 0.25s ease; display: inline-block; -webkit-text-fill-color: #bdc3c7 !important; }
   .category-accordion-box[open] .arrow-icon { transform: rotate(90deg); color: #8c1623; -webkit-text-fill-color: #8c1623 !important; }
 
-  /* Accordion Drawers Inner Links */
+  /* 垂直小抽屉箱 */
   .accordion-sub-links-list { display: block !important; background-color: #faf9f6; border-top: 1px solid #f9f6f0; padding: 6px 0; max-height: 200px !important; overflow-y: auto !important; }
   .sub-article-row-block { display: block !important; width: 100% !important; }
   .sub-article-title-link { font-size: 0.92em; font-weight: bold; color: #555555 !important; padding: 11px 18px; text-decoration: none !important; display: block !important; line-height: 1.4; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; -webkit-text-fill-color: #555555 !important; }
   .sub-article-title-link:hover { background-color: #fdf6ec; color: #e67e22 !important; -webkit-text-fill-color: #e67e22 !important; }
+  
   .left-sidebar-menu-panel::-webkit-scrollbar, .accordion-sub-links-list::-webkit-scrollbar { width: 5px !important; }
   .left-sidebar-menu-panel::-webkit-scrollbar-thumb, .accordion-sub-links-list::-webkit-scrollbar-thumb { background-color: #dcd6cd !important; border-radius: 10px !important; }
-  .left-sidebar-menu-panel::-webkit-scrollbar-track, .accordion-sub-links-list::-webkit-scrollbar-track { background-color: transparent !important; }
 
-  /* Right-Side Dashboard Swap Space */
-  .right-articles-flow-panel { grid-column: 2 !important; min-width: 0 !important; contain: inline-size !important; word-break: break-word !important; overflow-wrap: break-word !important; }
+  /* 右边大厅量子隔离防护舱 */
+  .right-articles-flow-panel { flex: 1 !important; min-width: 0 !important; contain: inline-size !important; word-break: break-word !important; overflow-wrap: break-word !important; }
   .content-panel-card { display: none; }
   
-  /* Target Interlocking State Swap Controllers */
+  /* 单页原地内容置换引擎枢纽 */
   html:not(:has(:target)) .default-welcome-stream-room { display: block !important; }
   .content-panel-card:target { display: block !important; animation: fadeInPaper 0.4s ease-out; }
   html:has(:target) .default-welcome-stream-room { display: none !important; }
 
-  /* Inside Articles Layout Design Elements */
+  /* 正文排版与书籍级大段落留白 */
   .magazine-stream-header { font-size: 1.3em; font-weight: bold; color: #2c3e50; padding-bottom: 12px; border-bottom: 2px solid #e8dfcf; margin-bottom: 30px; margin-top: 0; }
   .stream-article-item { margin-bottom: 35px; padding-bottom: 30px; border-bottom: 1px dashed #e8dfcf; }
   .stream-title { font-size: 1.5em; color: #2c3e50; font-weight: bold; margin-top: 0; margin-bottom: 10px; }
@@ -694,7 +347,6 @@ layout: default
   .readmore-accordion[open] .text-collapse { display: inline; }
   .readmore-accordion[open] .teaser-text-preview { display: none; }
 
-  /* Book-Grade Scholarly Reading Space */
   .article-reading-room { background-color: #ffffff; width: 100%; }
   .article-inside-title { font-size: 2.3em; color: #2c3e50; font-weight: bold; line-height: 1.35; margin-top: 0; margin-bottom: 15px; letter-spacing: 0.5px; }
   .article-inside-meta { font-size: 0.9em; color: #7f8c8d; margin-bottom: 35px; padding-bottom: 15px; border-bottom: 1px solid #f2ede4; display: flex; align-items: center; gap: 12px; }
