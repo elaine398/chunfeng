@@ -249,15 +249,13 @@ layout: default
   border-bottom: 2px solid #e8dfcf; 
 
     /* 🍷 7个方块专栏题目专属：染上典雅的绛红色 */
-  .accordion-header {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    padding: 14px 15px !important;
+     /* 🍷 Force structural styling for the 7 primary headings */
+  .magazine-layout-wrapper .left-sidebar-menu-panel details summary.accordion-header,
+  .accordion-header,
+  .accordion-header span.header-text {
+    color: #8c1623 !important;      /* 👈 The master Crimson/绛红色 code */
     font-weight: bold !important;
-    color: #8c1623 !important; /* 👈 This line turns the 7 main category titles into Crimson Red */
-    cursor: pointer;
-    white-space: nowrap !important;
+    -webkit-text-fill-color: #8c1623 !important; /* Forces Safari engine compliance */
   }
 }
 
