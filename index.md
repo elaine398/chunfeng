@@ -247,6 +247,18 @@ layout: default
   padding-bottom: 10px; 
   margin-bottom: 15px; 
   border-bottom: 2px solid #e8dfcf; 
+
+    /* 🍷 7个方块专栏题目专属：染上典雅的绛红色 */
+  .accordion-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 14px 15px !important;
+    font-weight: bold !important;
+    color: #8c1623 !important; /* 👈 This line turns the 7 main category titles into Crimson Red */
+    cursor: pointer;
+    white-space: nowrap !important;
+  }
 }
 
   /* 🔒 【双栏永久死锁并排骨架】：核心钢筋！永远左右并肩，禁止换行塌陷！ */
