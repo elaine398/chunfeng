@@ -192,6 +192,200 @@ layout: default
 
   </div>
 </div>
+---
+layout: default
+---
+
+<!-- 1. 🌟 TOP BAR NAVIGATION -->
+<div class="custom-top-bar">
+  <div class="top-bar-left-branding">
+    <a class="top-brand-name-link" href="/chunfeng/">椿枫漫笔</a>
+    <span class="top-brand-subtitle">Let's not remember years, remember moments</span>
+  </div>
+  <div class="top-bar-right-menu">
+    <a class="top-menu-item active-nav" href="/chunfeng/">主页</a>
+    <a class="top-menu-item" href="/chunfeng/about">关于我</a>
+  </div>
+</div>
+
+<!-- 2. 📰 CORE SPLIT MAGAZINE INTERFACE -->
+<div class="magazine-layout-wrapper">
+
+  <!-- 🧭 LEFT ACCORDION PANEL (7 Categories with Target Anchor Hooks) -->
+  <div class="left-sidebar-menu-panel">
+    <div class="sidebar-menu-title">📚 专栏分类</div>
+    <div class="sidebar-accordion-group">
+      
+      <!-- Category 1: 故事专栏 -->
+      <details class="category-accordion-box">
+        <summary class="accordion-header">
+          <span class="header-text">📖 故事专栏</span>
+          <span class="header-right-info">
+            <span class="badge-count">{{ site.tags["故事"].size | default: 0 }}</span>
+            <span class="arrow-icon">▶</span>
+          </span>
+        </summary>
+        <div class="accordion-sub-links-list">
+          {% for post in site.tags["故事"] %}
+            <div class="sub-article-row-block">
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
+            </div>
+          {% endfor %}
+        </div>
+      </details>
+
+      <!-- Category 2: 短文随笔 -->
+      <details class="category-accordion-box">
+        <summary class="accordion-header">
+          <span class="header-text">✍️ 短文随笔</span>
+          <span class="header-right-info">
+            <span class="badge-count">{{ site.tags["短文"].size | default: 0 }}</span>
+            <span class="arrow-icon">▶</span>
+          </span>
+        </summary>
+        <div class="accordion-sub-links-list">
+          {% for post in site.tags["短文"] %}
+            <div class="sub-article-row-block">
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
+            </div>
+          {% endfor %}
+        </div>
+      </details>
+
+      <!-- Category 3: 游记日记 -->
+      <details class="category-accordion-box">
+        <summary class="accordion-header">
+          <span class="header-text">✈️ 游记日记</span>
+          <span class="header-right-info">
+            <span class="badge-count">{{ site.tags["游记"].size | default: 0 }}</span>
+            <span class="arrow-icon">▶</span>
+          </span>
+        </summary>
+        <div class="accordion-sub-links-list">
+          {% for post in site.tags["游记"] %}
+            <div class="sub-article-row-block">
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
+            </div>
+          {% endfor %}
+        </div>
+      </details>
+
+      <!-- Category 4: 生活日志 -->
+      <details class="category-accordion-box">
+        <summary class="accordion-header">
+          <span class="header-text">📅 生活日志</span>
+          <span class="header-right-info">
+            <span class="badge-count">{{ site.tags["日志"].size | default: 0 }}</span>
+            <span class="arrow-icon">▶</span>
+          </span>
+        </summary>
+        <div class="accordion-sub-links-list">
+          {% for post in site.tags["日志"] %}
+            <div class="sub-article-row-block">
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
+            </div>
+          {% endfor %}
+        </div>
+      </details>
+
+      <!-- Category 5: 读书书摘 -->
+      <details class="category-accordion-box">
+        <summary class="accordion-header">
+          <span class="header-text">📚 读书书摘</span>
+          <span class="header-right-info">
+            <span class="badge-count">{{ site.tags["书摘"].size | default: 0 }}</span>
+            <span class="arrow-icon">▶</span>
+          </span>
+        </summary>
+        <div class="accordion-sub-links-list">
+          {% for post in site.tags["书摘"] %}
+            <div class="sub-article-row-block">
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
+            </div>
+          {% endfor %}
+        </div>
+      </details>
+
+      <!-- Category 6: 个人书斋 -->
+      <details class="category-accordion-box">
+        <summary class="accordion-header">
+          <span class="header-text">🏡 个人书斋</span>
+          <span class="header-right-info">
+            <span class="badge-count">{{ site.tags["书斋"].size | default: 0 }}</span>
+            <span class="arrow-icon">▶</span>
+          </span>
+        </summary>
+        <div class="accordion-sub-links-list">
+          {% for post in site.tags["书斋"] %}
+            <div class="sub-article-row-block">
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
+            </div>
+          {% endfor %}
+        </div>
+      </details>
+
+      <!-- Category 7: 美食私房 -->
+      <details class="category-accordion-box">
+        <summary class="accordion-header">
+          <span class="header-text">🍳 美食私房</span>
+          <span class="header-right-info">
+            <span class="badge-count">{{ site.tags["美食"].size | default: 0 }}</span>
+            <span class="arrow-icon">▶</span>
+          </span>
+        </summary>
+        <div class="accordion-sub-links-list">
+          {% for post in site.tags["美食"] %}
+            <div class="sub-article-row-block">
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
+            </div>
+          {% endfor %}
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <!-- 📄 RIGHT DASHBOARD REPLACEMENT WORKS WINDOW -->
+  <div class="right-articles-flow-panel">
+    
+    <!-- DISPLAY CONTAINER A: Default Teaser State (Shows 5 Recent Essays) -->
+    <div class="content-panel-card default-welcome-stream-room">
+      <h2 class="magazine-stream-header">✨ 最近发表 · 精选随笔</h2>
+      {% for post in site.posts limit:5 %}
+        <div class="stream-article-item">
+          <h3 class="stream-title">{{ post.title }}</h3>
+          <div class="stream-meta">📅 {{ post.date | date: "%Y-%m-%d" }} &nbsp;|&nbsp; 🏷️ {{ post.tags | first }}</div>
+          <details class="readmore-accordion">
+            <summary class="readmore-btn-summary">
+              <div class="teaser-text-preview">{{ post.content | strip_html | truncate: 140 }}</div>
+              <div class="readmore-badge-trigger">
+                <span class="text-expand">[展开阅读全文 ↓]</span>
+                <span class="text-collapse">[收起全文 ↑]</span>
+              </div>
+            </summary>
+            <div class="full-article-body-expanded">{{ post.content }}</div>
+          </details>
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- DISPLAY CONTAINER B: Full Text Hub (Replaces State A upon selection) -->
+    {% for post in site.posts %}
+      <div class="content-panel-card article-reading-room" id="post-{{ post.id | slugify }}">
+        <h1 class="article-inside-title">{{ post.title }}</h1>
+        <div class="article-inside-meta">
+          <span>📅 发布时间：{{ post.date | date: "%Y-%m-%d" }}</span>
+          <span class="meta-split">|</span>
+          <span>🏷️ 分类：{{ post.tags | first }}</span>
+          <span class="meta-split">|</span>
+          <a class="back-to-home-badge" href="/chunfeng/">返回最近发表 ↩</a>
+        </div>
+        <div class="article-inside-body">{{ post.content }}</div>
+      </div>
+    {% endfor %}
+
+  </div>
+</div>
 <!-- 3. 🎨 MASTER INTEGRATED CSS SKIN (With final tag fully preserved) -->
 <style>
   html, body, .wrapper, #main_content_wrap, section.main-content, .container, main, .markdown-body {
@@ -269,3 +463,4 @@ layout: default
   .full-article-body-expanded p, .article-inside-body p { margin-top: 0 !important; margin-bottom: 1.6em !important; text-align: justify; }
   @keyframes fadeInPaper { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 </style>
+
