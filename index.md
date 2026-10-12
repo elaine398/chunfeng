@@ -240,6 +240,15 @@ layout: default
   .top-menu-item { font-size: 1.1em; font-weight: bold; color: #893333 !important; text-decoration: none !important; }
   .top-menu-item:hover, .active-nav { color: #16183f !important; }
 
+  .sidebar-menu-title { 
+  font-size: 1.05em; 
+  font-weight: bold; 
+  color: #5c0d12; /* 👈 就是这一句，控制“专栏分类”四个字变酱红 */
+  padding-bottom: 10px; 
+  margin-bottom: 15px; 
+  border-bottom: 2px solid #e8dfcf; 
+}
+
   /* 🔒 【双栏永久死锁并排骨架】：核心钢筋！永远左右并肩，禁止换行塌陷！ */
   .magazine-layout-wrapper { 
     display: flex !important; 
