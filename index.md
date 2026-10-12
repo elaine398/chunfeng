@@ -252,7 +252,7 @@ layout: default
   }
   
    .top-brand-name-link { 
-    font-size: 2.5em !important;        /* 👈 Adjusted from 2.2em to 2.5em to make it significantly bigger */
+    font-size: 2.2em !important;        /* 👈 Adjusted from 2.2em to 2.5em to make it significantly bigger */
     font-weight: bold !important; 
     color: #8c1623 !important;          /* 👈 Changed to #8c1623 to lock in that elegant Crimson/绛红色 */
     letter-spacing: 1px !important; 
