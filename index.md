@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<!-- 1. 🌟 TOP BAR 顶部横带区（左侧大字饱满放大，且一键点击秒回首页！） -->
+<!-- 1. 🌟 TOP BAR 顶部横带区（左侧大字饱满放大，一键点击秒回首页） -->
 <div class="custom-top-bar">
   <div class="top-bar-left-branding">
     <a class="top-brand-name-link" href="/chunfeng/">椿枫漫笔</a>
@@ -14,10 +14,10 @@ layout: default
   </div>
 </div>
 
-<!-- 2. 📰 CORE SPLIT MAGAZINE INTERFACE -->
+<!-- 2. 📰 CORE SPLIT MAGAZINE INTERFACE（核心 HTML 左右分栏双大门） -->
 <div class="magazine-layout-wrapper">
 
-  <!-- 🧭 左边栏：固态310px黄金吸顶悬浮柜（7分类两层折叠小抽屉，带整栏独立滚动条） -->
+  <!-- 🧭 左边栏：固态310px黄金吸顶悬浮大书架 -->
   <div class="left-sidebar-menu-panel">
     <div class="sidebar-menu-title">📚 专栏分类</div>
     <div class="sidebar-accordion-group">
@@ -179,7 +179,7 @@ layout: default
     </div>
   </div>
 
-  <!-- 📄 右边中央主舞台：精选最近发表的 5 篇摘要流（带[展开/收起]纽扣 ✨） -->
+  <!-- 📄 右边中央主舞台：精选最近发表的 5 篇摘要流 -->
   <div class="right-articles-flow-panel">
     <div class="content-panel-card default-welcome-stream-room" style="display: block !important;">
       <h2 class="magazine-stream-header">✨ 最近发表 · 精选随笔</h2>
@@ -209,9 +209,9 @@ layout: default
     </div>
   </div>
 
-</div>
+</div> <!-- 👈 核心铁防线：左右并排大围墙大门在此闭合！ -->
 
-<!-- 3. 🎨 纯手工完全自定义全屏视觉控制皮肤 (CSS 终极双轴独立滚动防拉扯版) -->
+<!-- 3. 🎨 纯手工完全自定义全屏视觉控制皮肤 (CSS 终极成型形态) -->
 <style>
   html, body, .wrapper, #main_content_wrap, section.main-content, .container, main, .markdown-body {
     max-width: 100% !important;   
@@ -222,44 +222,22 @@ layout: default
   header, .site-header { display: none !important; height: 0 !important; padding: 0 !important; margin: 0 !important; }
   
   body { 
-    background-color: #e7d7af; 
+    background-color: #ffffff; 
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     padding: 0 40px !important; 
     box-sizing: border-box !important;
   }
 
   /* Top Bar 顶栏 */
-  .custom-top-bar { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; border-bottom: 2px solid #77404f; margin-bottom: 40px; margin-top: 20px; width: 100% !important; box-sizing: border-box; }
-  
-  /* 🌟 核心放大：将左上角的“椿枫漫笔”大字狠狠放大至 2.2em，并做成高质感的可点击主页链接 */
-  .top-brand-name-link { font-size: 2.2em !important; font-weight: bold !important; color: #893333 !important; letter-spacing: 1px !important; text-decoration: none !important; transition: color 0.2s ease; display: inline-block; }
+  .custom-top-bar { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; border-bottom: 2px solid #e8dfcf; margin-bottom: 40px; margin-top: 20px; width: 100% !important; box-sizing: border-box; }
+  .top-brand-name-link { font-size: 2.2em !important; font-weight: bold !important; color: #2c3e50 !important; letter-spacing: 1px !important; text-decoration: none !important; transition: color 0.2s ease; display: inline-block; }
   .top-brand-name-link:hover { color: #e67e22 !important; }
-  
-  .top-brand-subtitle { font-size: 0.95em; color: #8e5744; font-style: italic; margin-left: 15px; }
+  .top-brand-subtitle { font-size: 0.95em; color: #7f8c8d; font-style: italic; margin-left: 15px; }
   .top-bar-right-menu { display: flex; gap: 25px; }
-  .top-menu-item { font-size: 1.1em; font-weight: bold; color: #893333 !important; text-decoration: none !important; }
-  .top-menu-item:hover, .active-nav { color: #16183f !important; }
+  .top-menu-item { font-size: 1.1em; font-weight: bold; color: #34495e !important; text-decoration: none !important; }
+  .top-menu-item:hover, .active-nav { color: #e67e22 !important; }
 
-  .sidebar-menu-title { 
-  font-size: 1.05em; 
-  font-weight: bold; 
-  color: #5c0d12; /* 👈 就是这一句，控制“专栏分类”四个字变酱红 */
-  padding-bottom: 10px; 
-  margin-bottom: 15px; 
-  border-bottom: 2px solid #e8dfcf; 
-
-   /* 🍷 终极降维打击：直接锁死 summary 组件真名，强行让7个题目变成绛红色 */
-  .left-sidebar-menu-panel details summary,
-  .category-accordion-box summary,
-  .accordion-header,
-  .header-text {
-    color: #8c1623 !important;             /* 👈 完美的绛红色 */
-    -webkit-text-fill-color: #8c1623 !important; /* 强行让 Safari 浏览器必须听话换色 */
-  }
-  }
-}
-
-   /* 🔒 【双栏永久死锁并排骨架】：核心钢筋！永远左右并肩，禁止换行塌陷！ */
+  /* 🔒 【双栏永久死锁并排框架】：强控并肩排列，拒绝任何挤压塌陷 */
   .magazine-layout-wrapper { 
     display: flex !important; 
     flex-direction: row !important; 
@@ -270,7 +248,6 @@ layout: default
     box-sizing: border-box !important;
   }
 
-  
   /* 🧭 左边栏外壳：全尺寸绝对吸顶悬浮柜 */
   .left-sidebar-menu-panel { 
     flex: 0 0 310px !important; 
