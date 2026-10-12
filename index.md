@@ -248,14 +248,14 @@ layout: default
   margin-bottom: 15px; 
   border-bottom: 2px solid #e8dfcf; 
 
-    /* 🍷 7个方块专栏题目专属：染上典雅的绛红色 */
-     /* 🍷 Force structural styling for the 7 primary headings */
-  .magazine-layout-wrapper .left-sidebar-menu-panel details summary.accordion-header,
+   /* 🍷 终极降维打击：直接锁死 summary 组件真名，强行让7个题目变成绛红色 */
+  .left-sidebar-menu-panel details summary,
+  .category-accordion-box summary,
   .accordion-header,
-  .accordion-header span.header-text {
-    color: #8c1623 !important;      /* 👈 The master Crimson/绛红色 code */
-    font-weight: bold !important;
-    -webkit-text-fill-color: #8c1623 !important; /* Forces Safari engine compliance */
+  .header-text {
+    color: #8c1623 !important;             /* 👈 完美的绛红色 */
+    -webkit-text-fill-color: #8c1623 !important; /* 强行让 Safari 浏览器必须听话换色 */
+  }
   }
 }
 
