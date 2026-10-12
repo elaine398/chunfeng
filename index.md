@@ -222,23 +222,23 @@ layout: default
   header, .site-header { display: none !important; height: 0 !important; padding: 0 !important; margin: 0 !important; }
   
   body { 
-    background-color: #eacc81; 
+    background-color: #e7d7af; 
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     padding: 0 40px !important; 
     box-sizing: border-box !important;
   }
 
   /* Top Bar 顶栏 */
-  .custom-top-bar { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; border-bottom: 2px solid #e8dfcf; margin-bottom: 40px; margin-top: 20px; width: 100% !important; box-sizing: border-box; }
+  .custom-top-bar { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; border-bottom: 2px solid #77404f; margin-bottom: 40px; margin-top: 20px; width: 100% !important; box-sizing: border-box; }
   
   /* 🌟 核心放大：将左上角的“椿枫漫笔”大字狠狠放大至 2.2em，并做成高质感的可点击主页链接 */
   .top-brand-name-link { font-size: 2.2em !important; font-weight: bold !important; color: #893333 !important; letter-spacing: 1px !important; text-decoration: none !important; transition: color 0.2s ease; display: inline-block; }
   .top-brand-name-link:hover { color: #e67e22 !important; }
   
-  .top-brand-subtitle { font-size: 0.95em; color: #856459; font-style: italic; margin-left: 15px; }
+  .top-brand-subtitle { font-size: 0.95em; color: #8e5744; font-style: italic; margin-left: 15px; }
   .top-bar-right-menu { display: flex; gap: 25px; }
   .top-menu-item { font-size: 1.1em; font-weight: bold; color: #893333 !important; text-decoration: none !important; }
-  .top-menu-item:hover, .active-nav { color: #e67e22 !important; }
+  .top-menu-item:hover, .active-nav { color: #16183f !important; }
 
   /* 🔒 【双栏永久死锁并排骨架】：核心钢筋！永远左右并肩，禁止换行塌陷！ */
   .magazine-layout-wrapper { 
