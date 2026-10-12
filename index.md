@@ -230,10 +230,10 @@ layout: default
 
   /* Top Bar 顶栏 */
   .custom-top-bar { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; border-bottom: 2px solid #e8dfcf; margin-bottom: 40px; margin-top: 20px; width: 100% !important; box-sizing: border-box; }
-  .top-brand-name-link { font-size: 2.2em !important; font-weight: bold !important; color: #2c3e50 !important; letter-spacing: 1px !important; text-decoration: none !important; transition: color 0.2s ease; display: inline-block; }
+  .top-brand-name-link { font-size: 2.2em !important; font-weight: bold !important; color: #2c3e50 !important; letter-spacing: 1px !important; text-decoration: none !important; transition: color 0.2s ease; display: inline-block;font-family: "STKaiti", "Kaiti SC", "KaiTi", serif !important;}
   .top-brand-name-link:hover { color: #e67e22 !important; }
   .top-brand-subtitle { font-size: 0.95em; color: #7f8c8d; font-style: italic; margin-left: 15px; }
-  .top-bar-right-menu { display: flex; gap: 25px; }
+  .top-bar-right-menu { display: flex; gap: 25px; font-family: "STKaiti", "Kaiti SC", "KaiTi", serif !important;}
   .top-menu-item { font-size: 1.1em; font-weight: bold; color: #34495e !important; text-decoration: none !important; }
   .top-menu-item:hover, .active-nav { color: #e67e22 !important; }
 
@@ -263,10 +263,11 @@ layout: default
     overflow-y: auto !important; 
     overflow-x: hidden !important; 
     box-sizing: border-box !important;
+  
   }
   
   /* 🍷 换装：控制左栏最上方小标题“专栏分类”变为古典“绛红色” */
-  .sidebar-menu-title { font-size: 1.05em; font-weight: bold; color: #8c1623; padding-bottom: 10px; margin-bottom: 15px; border-bottom: 2px solid #e8dfcf; }
+  .sidebar-menu-title { font-size: 1.05em; font-weight: bold; color: #8c1623; padding-bottom: 10px; margin-bottom: 15px; border-bottom: 2px solid #e8dfcf; font-family: "STKaiti", "Kaiti SC", "KaiTi", serif !important;}
   .sidebar-accordion-group { display: flex; flex-direction: column; gap: 12px; }
 
   .category-accordion-box { background-color: #ffffff; border: 1px solid #eef0f2; border-radius: 8px; overflow: hidden !important; width: 100% !important; box-sizing: border-box !important; }
@@ -285,6 +286,7 @@ layout: default
     -webkit-text-fill-color: #8c1623 !important;   
     cursor: pointer; 
     white-space: nowrap !important; 
+    font-family: "STKaiti", "Kaiti SC", "KaiTi", serif !important;
   }
   .accordion-header:hover { background-color: #fdfbf7; color: #e67e22 !important; -webkit-text-fill-color: #e67e22 !important; }
   .accordion-header::-webkit-details-marker { display: none; }
