@@ -230,7 +230,7 @@ layout: default
 
   /* Top Bar 顶栏 */
   .custom-top-bar { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; border-bottom: 2px solid #e8dfcf; margin-bottom: 40px; margin-top: 20px; width: 100% !important; box-sizing: border-box; }
-  .top-brand-name-link { font-size: 2.2em !important; font-weight: bold !important; color: #2c3e50 !important; letter-spacing: 1px !important; text-decoration: none !important; transition: color 0.2s ease; display: inline-block;font-family: "STKaiti", "Kaiti SC", "KaiTi", serif !important;}
+  .top-brand-name-link { font-size: 2.2em !important; font-weight: bold !important; color: #8c1623 !important; letter-spacing: 1px !important; text-decoration: none !important; transition: color 0.2s ease; display: inline-block;font-family: "STKaiti", "Kaiti SC", "KaiTi", serif !important;}
   .top-brand-name-link:hover { color: #e67e22 !important; }
   .top-brand-subtitle { font-size: 0.95em; color: #7f8c8d; font-style: italic; margin-left: 15px; }
   .top-bar-right-menu { display: flex; gap: 25px; font-family: "STKaiti", "Kaiti SC", "KaiTi", serif !important;}
