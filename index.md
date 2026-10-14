@@ -195,7 +195,7 @@ layout: default
       {% endfor %}
     </div>
 
-    <!-- 📖 【空间 B】：深度阅读区 —— 点击左栏任意一本书名，长散文正文一秒原位替换绽放 -->
+       <!-- DISPLAY CONTAINER B: Full Text Hub (Replaces State A upon selection with comment boxes enabled! 🌟) -->
     {% for post in site.posts %}
       <div class="content-panel-card article-reading-room" id="post-{{ post.id | slugify }}">
         <h1 class="article-inside-title">{{ post.title }}</h1>
@@ -206,8 +206,28 @@ layout: default
           <span class="meta-split">|</span>
           <a class="back-to-home-badge" href="/chunfeng/">返回最近发表 ↩</a>
         </div>
-        <div class="article-inside-body">
-          {{ post.content }}
+        
+        <!-- The Main Essay Body Text -->
+        <div class="article-inside-body">{{ post.content }}</div>
+
+        <!-- 💬 GISCUS AUTOMATED COMMENT BOARD: Seamlessly mounts reader messages right below the essay -->
+        <div class="article-comments-divider" style="margin-top: 60px; margin-bottom: 30px; border-top: 1px dashed #e8dfcf;"></div>
+        <div class="giscus-comment-wrapper" style="width: 100% !important; margin-top: 20px;">
+          <script src="https://giscus.app"
+                  data-repo="elaine398/chunfeng"
+                  data-repo-id="R_kgDOM765qw"
+                  data-category="Announcements"
+                  data-category-id="DIC_kwDOM765q84CiwX7"
+                  data-mapping="pathname"
+                  data-strict="0"
+                  data-reactions-enabled="1"
+                  data-emit-metadata="0"
+                  data-input-position="bottom"
+                  data-theme="light"
+                  data-lang="zh-CN"
+                  crossorigin="anonymous"
+                  async>
+          </script>
         </div>
       </div>
     {% endfor %}
