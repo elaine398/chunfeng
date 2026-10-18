@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<!-- 1. 🌟 TOP BAR 顶部横带区（锁定在天花板绝不移动） -->
+<!-- 1. 🌟 TOP BAR 顶部横带区 -->
 <div class="custom-top-bar">
   <div class="top-bar-left-branding">
     <a class="top-brand-name-link" href="/chunfeng/">椿枫漫笔</a>
@@ -17,7 +17,7 @@ layout: default
 <!-- 2. 📰 CORE SPLIT MAGAZINE INTERFACE -->
 <div class="magazine-layout-wrapper">
 
-  <!-- 🧭 左边栏：固态310px黄金吸顶悬浮大书架（带整栏独立滚动条，中文字全绛红） -->
+  <!-- 🧭 左边栏：固态310px黄金吸顶悬浮大书架 -->
   <div class="left-sidebar-menu-panel">
     <div class="sidebar-menu-title">📚 专栏分类</div>
     <div class="sidebar-accordion-group">
@@ -34,9 +34,7 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["故事"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
-                ▪ {{ post.title }}
-              </a>
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
             </div>
           {% endfor %}
         </div>
@@ -54,7 +52,6 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["短文"] %}
             <div class="sub-article-row-block">
-              <!-- Re-anchored to unlock perfect single-page seamless translation -->
               <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
             </div>
           {% endfor %}
@@ -73,9 +70,7 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["游记"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
-                ▪ {{ post.title }}
-              </a>
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
             </div>
           {% endfor %}
         </div>
@@ -91,11 +86,9 @@ layout: default
           </span>
         </summary>
         <div class="accordion-sub-links-list">
-          {% for post in site.tags["日志"] %}
+          {% check for post in site.tags["日志"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
-                ▪ {{ post.title }}
-              </a>
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
             </div>
           {% endfor %}
         </div>
@@ -113,9 +106,7 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["书摘"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
-                ▪ {{ post.title }}
-              </a>
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
             </div>
           {% endfor %}
         </div>
@@ -133,9 +124,7 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["书斋"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
-                ▪ {{ post.title }}
-              </a>
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
             </div>
           {% endfor %}
         </div>
@@ -153,9 +142,7 @@ layout: default
         <div class="accordion-sub-links-list">
           {% for post in site.tags["美食"] %}
             <div class="sub-article-row-block">
-              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">
-                ▪ {{ post.title }}
-              </a>
+              <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
             </div>
           {% endfor %}
         </div>
@@ -164,10 +151,10 @@ layout: default
     </div>
   </div>
 
-  <!-- 📄 右边中央主舞台：精选最近发表的 5 篇摘要流 -->
+  <!-- 📄 右边中央主舞台 -->
   <div class="right-articles-flow-panel">
     
-    <!-- 🏡 【空间 A】：5 篇最近发表精选随笔流（带原地展开纽扣） -->
+    <!-- 🏡 【空间 A】：5 篇最近发表精选随笔流 -->
     <div class="content-panel-card default-welcome-stream-room">
       <h2 class="magazine-stream-header">✨ 最近发表 · 精选随笔</h2>
       
@@ -195,7 +182,7 @@ layout: default
       {% endfor %}
     </div>
 
-    <!-- 📖 【空间 B】：深度阅读区 —— 强行跳过 Giscus 官网验证，直接在最底层用通用动态识别引擎连接留言板！ 💬 -->
+    <!-- 📖 【空间 B】：深度阅读区（彻底拆除了一切高度死锁，给留言大厅彻底放行通道 💬） -->
     {% for post in site.posts %}
       <div class="content-panel-card article-reading-room" id="post-{{ post.id | slugify }}">
         <h1 class="article-inside-title">{{ post.title }}</h1>
@@ -210,9 +197,9 @@ layout: default
           {{ post.content }}
         </div>
 
-        <!-- 💬 GISCUS 动态直连留言系统：不需要官网那一长串数字加密串，由浏览器在运行时全自动动态抓取！ -->
+        <!-- 💬 GISCUS 动态直连留言大厅：在下方预留了无限向下生长的垂直大通槽 -->
         <div style="margin-top: 60px; margin-bottom: 30px; border-top: 1px dashed #e8dfcf;"></div>
-        <div class="giscus-comment-box" style="width: 100% !important; margin-top: 20px;">
+        <div class="giscus-comment-box" style="width: 100% !important; display: block !important; clear: both !important;">
           <script src="https://giscus.app"
                   data-repo="elaine398/chunfeng"
                   data-mapping="title"
@@ -233,9 +220,8 @@ layout: default
 
 </div>
 
-<!-- 3. 🎨 纯手工完全自定义全屏视觉控制皮肤 (地平线切齐死锁版) -->
+<!-- 3. 🎨 纯手工完全自定义全屏视觉控制皮肤 (无限向下生长大通槽版) -->
 <style>
-  /* 🔒 彻底粉碎官方底部的任何留白杂质残留，确保平整对齐地平线 */
   html, body, .wrapper, #main_content_wrap, section.main-content, .container, main, .markdown-body {
     max-width: 100% !important; 
     width: 100% !important; 
@@ -268,23 +254,14 @@ layout: default
     box-sizing: border-box !important;
   }
   
-   .top-brand-name-link { 
-    font-size: 2.2em !important;        /* 👈 Adjusted from 2.2em to 2.5em to make it significantly bigger */
-    font-weight: bold !important; 
-    color: #8c1623 !important;          /* 👈 Changed to #8c1623 to lock in that elegant Crimson/绛红色 */
-    letter-spacing: 1px !important; 
-    text-decoration: none !important; 
-    transition: color 0.2s ease; 
-    display: inline-block; 
-    font-family: "STSong", "Songti SC", "SimSun", serif !important; 
-  }
+  .top-brand-name-link { font-size: 2.2em !important; font-weight: bold !important; color: #2c3e50 !important; letter-spacing: 1px !important; text-decoration: none !important; transition: color 0.2s ease; display: inline-block; font-family: "STSong", "Songti SC", "SimSun", serif !important; }
   .top-brand-name-link:hover { color: #e67e22 !important; }
   .top-brand-subtitle { font-size: 0.95em; color: #7f8c8d; font-style: italic; margin-left: 15px; font-family: "STSong", "Songti SC", "SimSun", serif !important; }
   .top-bar-right-menu { display: flex; gap: 25px; }
   .top-menu-item { font-size: 1.1em; font-weight: bold; color: #34495e !important; text-decoration: none !important; }
   .top-menu-item:hover, .active-nav { color: #e67e22 !important; }
 
-  /* 🛡️ 网格死锁矩阵防线：向下精确留白，底部收尾留空 40 像素确保整齐 */
+  /* 🛡️ 网格防线：向下精确留白 */
   .magazine-layout-wrapper { 
     display: flex !important; 
     flex-direction: row !important;
@@ -293,11 +270,11 @@ layout: default
     align-items: flex-start !important; 
     width: 100% !important; 
     margin-top: 115px !important; 
-    margin-bottom: 40px !important; /* 👈 精准地平线：让左右两边在底部留出高档相等的白边切齐 */
+    margin-bottom: 60px !important; 
     box-sizing: border-box !important; 
   }
 
-  /* 🧭 左边栏外壳：全尺寸绝对吸顶悬浮柜 */
+  /* 🧭 左边栏外壳：全尺寸绝对吸顶悬浮柜（只限高左边，彻底解放右边） */
   .left-sidebar-menu-panel { 
     flex: 0 0 310px !important; width: 310px !important; min-width: 310px !important;
     background-color: #faf9f6; 
@@ -306,7 +283,7 @@ layout: default
     border: 1px solid #f2ede4; 
     position: sticky !important; 
     top: 115px !important; 
-    max-height: calc(100vh - 155px) !important; /* 👈 高度微调：确保触底停靠时完美卡死，绝不凸出多余盲区 */
+    max-height: calc(100vh - 160px) !important; /* 👈 限高大书架外壳，让右边随内容任意撑开 */
     overflow-y: auto !important; 
     overflow-x: hidden !important; 
     box-sizing: border-box !important; 
@@ -348,16 +325,29 @@ layout: default
   .left-sidebar-menu-panel::-webkit-scrollbar, .accordion-sub-links-list::-webkit-scrollbar { width: 5px !important; }
   .left-sidebar-menu-panel::-webkit-scrollbar-thumb, .accordion-sub-links-list::-webkit-scrollbar-thumb { background-color: #dcd6cd !important; border-radius: 10px !important; }
 
-  /* 右边大厅量子隔离防护舱 */
-  .right-articles-flow-panel { flex: 1 !important; min-width: 0 !important; contain: inline-size !important; word-break: break-word !important; overflow-wrap: break-word !important; }
-  .content-panel-card { display: none; }
+  /* 📄 右边大厅：彻底打破高度死锁，解锁垂直大通槽 ✨ 📄 */
+  .right-articles-flow-panel { 
+    flex: 1 !important; 
+    min-width: 0 !important; 
+    max-height: none !important;      /* 👈 彻底粉碎高度天花板 */
+    height: auto !important;          /* 👈 随内容和留言板全自动向下无限撑开 */
+    overflow: visible !important;     /* 👈 强行规定：多长都必须全部可见吐出来！ */
+    word-break: break-word !important; 
+    overflow-wrap: break-word !important; 
+  }
   
-  /* 单页原地内容置换引擎枢纽 */
+  .content-panel-card { 
+    display: none; 
+    height: auto !important; 
+    max-height: none !important; 
+    overflow: visible !important; 
+  }
+  
   html:not(:has(:target)) .default-welcome-stream-room { display: block !important; }
   .content-panel-card:target { display: block !important; animation: fadeInPaper 0.4s ease-out; }
   html:has(:target) .default-welcome-stream-room { display: none !important; }
 
-  /* 正文排版与书籍级大段落留白 */
+  /* 正文排版 */
   .magazine-stream-header { font-size: 1.3em; font-weight: bold; color: #2c3e50; padding-bottom: 12px; border-bottom: 2px solid #e8dfcf; margin-bottom: 30px; margin-top: 0; }
   .stream-article-item { margin-bottom: 35px; padding-bottom: 30px; border-bottom: 1px dashed #e8dfcf; }
   .stream-title { font-size: 1.5em; color: #2c3e50; font-weight: bold; margin-top: 0; margin-bottom: 10px; }
@@ -377,6 +367,7 @@ layout: default
   .article-inside-meta { font-size: 0.9em; color: #7f8c8d; margin-bottom: 35px; padding-bottom: 15px; border-bottom: 1px solid #f2ede4; display: flex; align-items: center; gap: 12px; }
   .meta-split { color: #e8dfcf; }
   .back-to-home-badge { font-size: 0.9em; font-weight: bold; background-color: #fdf6ec; color: #e67e22 !important; padding: 2px 12px; border-radius: 20px; text-decoration: none !important; }
+  
   .full-article-body-expanded, .article-inside-body { font-size: 1.16em; color: #2c3e50; line-height: 1.95; letter-spacing: 0.5px; }
   .full-article-body-expanded p, .article-inside-body p { margin-top: 0 !important; margin-bottom: 1.6em !important; text-align: justify; }
   @keyframes fadeInPaper { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
