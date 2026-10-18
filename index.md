@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<!-- 1. 🌟 TOP BAR 顶部横带区 -->
+<!-- 1. 🌟 TOP BAR NAVIGATION -->
 <div class="custom-top-bar">
   <div class="top-bar-left-branding">
     <a class="top-brand-name-link" href="/chunfeng/">椿枫漫笔</a>
@@ -17,12 +17,12 @@ layout: default
 <!-- 2. 📰 CORE SPLIT MAGAZINE INTERFACE -->
 <div class="magazine-layout-wrapper">
 
-  <!-- 🧭 左边栏：固态310px黄金吸顶悬浮大书架 -->
+  <!-- 🧭 LEFT COLUMN ACCORDION SHELVES -->
   <div class="left-sidebar-menu-panel">
     <div class="sidebar-menu-title">📚 专栏分类</div>
     <div class="sidebar-accordion-group">
       
-      <!-- 【第一层分类 1】: 故事专栏 -->
+      <!-- Category 1: 故事专栏 -->
       <details class="category-accordion-box">
         <summary class="accordion-header">
           <span class="header-text">📖 故事专栏</span>
@@ -40,7 +40,7 @@ layout: default
         </div>
       </details>
 
-      <!-- 【第一层分类 2】: 短文随笔 -->
+      <!-- Category 2: 短文随笔 -->
       <details class="category-accordion-box">
         <summary class="accordion-header">
           <span class="header-text">✍️ 短文随笔</span>
@@ -58,7 +58,7 @@ layout: default
         </div>
       </details>
 
-      <!-- 【第一层分类 3】: 游记日记 -->
+      <!-- Category 3: 游记日记 -->
       <details class="category-accordion-box">
         <summary class="accordion-header">
           <span class="header-text">✈️ 游记日记</span>
@@ -76,7 +76,7 @@ layout: default
         </div>
       </details>
 
-      <!-- 【第一层分类 4】: 生活日志 (🌟 100% 精准修复修正了 for 标签问题) -->
+      <!-- Category 4: 生活日志 -->
       <details class="category-accordion-box">
         <summary class="accordion-header">
           <span class="header-text">📅 生活日志</span>
@@ -94,7 +94,7 @@ layout: default
         </div>
       </details>
 
-      <!-- 【第一层分类 5】: 读书书摘 -->
+      <!-- Category 5: 读书书摘 -->
       <details class="category-accordion-box">
         <summary class="accordion-header">
           <span class="header-text">📚 读书书摘</span>
@@ -112,7 +112,7 @@ layout: default
         </div>
       </details>
 
-      <!-- 【第一层分类 6】: 个人书斋 -->
+      <!-- Category 6: 个人书斋 -->
       <details class="category-accordion-box">
         <summary class="accordion-header">
           <span class="header-text">🏡 个人书斋</span>
@@ -130,7 +130,7 @@ layout: default
         </div>
       </details>
 
-      <!-- 【第一层分类 7】: 美食私房 -->
+      <!-- Category 7: 美食私房 -->
       <details class="category-accordion-box">
         <summary class="accordion-header">
           <span class="header-text">🍳 美食私房</span>
@@ -151,38 +151,31 @@ layout: default
     </div>
   </div>
 
-  <!-- 📄 右边中央主舞台 -->
+  <!-- 📄 RIGHT COLUMN PRESENTATION STAGE -->
   <div class="right-articles-flow-panel">
     
-    <!-- 🏡 【空间 A】：5 篇最近发表精选随笔流 -->
+    <!-- CONTAINER A: The 5 Teaser Essay Stream -->
     <div class="content-panel-card default-welcome-stream-room">
       <h2 class="magazine-stream-header">✨ 最近发表 · 精选随笔</h2>
-      
       {% for post in site.posts limit:5 %}
         <div class="stream-article-item">
           <h3 class="stream-title">{{ post.title }}</h3>
           <div class="stream-meta">📅 {{ post.date | date: "%Y-%m-%d" }} &nbsp;|&nbsp; 🏷️ {{ post.tags | first }}</div>
-          
           <details class="readmore-accordion">
             <summary class="readmore-btn-summary">
-              <div class="teaser-text-preview">
-                {{ post.content | strip_html | truncate: 140 }}
-              </div>
+              <div class="teaser-text-preview">{{ post.content | strip_html | truncate: 140 }}</div>
               <div class="readmore-badge-trigger">
                 <span class="text-expand">[展开阅读全文 ↓]</span>
                 <span class="text-collapse">[收起全文 ↑]</span>
               </div>
             </summary>
-            
-            <div class="full-article-body-expanded">
-              {{ post.content }}
-            </div>
+            <div class="full-article-body-expanded">{{ post.content }}</div>
           </details>
         </div>
       {% endfor %}
     </div>
 
-    <!-- 📖 【空间 B】：深度阅读区（解开高度大锁，让留言大厅自由吐出 ✨） -->
+    <!-- CONTAINER B: Full Detailed Essays Reading Rooms -->
     {% for post in site.posts %}
       <div class="content-panel-card article-reading-room" id="post-{{ post.id | slugify }}">
         <h1 class="article-inside-title">{{ post.title }}</h1>
@@ -193,11 +186,9 @@ layout: default
           <span class="meta-split">|</span>
           <a class="back-to-home-badge" href="/chunfeng/">返回最近发表 ↩</a>
         </div>
-        <div class="article-inside-body">
-          {{ post.content }}
-        </div>
+        <div class="article-inside-body">{{ post.content }}</div>
 
-        <!-- 💬 GISCUS 动态直连留言大厅：在下方预留了无限向下生长的垂直大通槽 -->
+        <!-- 💬 GISCUS AUTOMATED COMMENT BLOCK CONTAINER -->
         <div style="margin-top: 60px; margin-bottom: 30px; border-top: 1px dashed #e8dfcf;"></div>
         <div class="giscus-comment-box" style="width: 100% !important; display: block !important; clear: both !important;">
           <script src="https://giscus.app"
@@ -217,7 +208,6 @@ layout: default
     {% endfor %}
 
   </div>
-
 </div>
 
 <!-- 3. 🎨 MASTER INTEGRATED RESPONSIVE CSS SKIN (Desktop Dual Matrix & Mobile Adaptive Layout) -->
