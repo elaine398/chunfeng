@@ -175,7 +175,7 @@ layout: default
       {% endfor %}
     </div>
 
-    <!-- CONTAINER B: Full Detailed Essays Reading Rooms -->
+      <!-- DISPLAY CONTAINER B: Full Text Hub (Guest-Friendly Waline Moderation Suite 💬) -->
     {% for post in site.posts %}
       <div class="content-panel-card article-reading-room" id="post-{{ post.id | slugify }}">
         <h1 class="article-inside-title">{{ post.title }}</h1>
@@ -188,22 +188,26 @@ layout: default
         </div>
         <div class="article-inside-body">{{ post.content }}</div>
 
-        <!-- 💬 GISCUS AUTOMATED COMMENT BLOCK CONTAINER -->
+        <!-- 💬 WALINE GUEST COMMENT SYSTEM: No Login Required, Admin Approval Enabled -->
         <div style="margin-top: 60px; margin-bottom: 30px; border-top: 1px dashed #e8dfcf;"></div>
-        <div class="giscus-comment-box" style="width: 100% !important; display: block !important; clear: both !important;">
-          <script src="https://giscus.app"
-                  data-repo="elaine398/chunfeng"
-                  data-mapping="title"
-                  data-strict="0"
-                  data-reactions-enabled="1"
-                  data-emit-metadata="0"
-                  data-input-position="bottom"
-                  data-theme="light"
-                  data-lang="zh-CN"
-                  crossorigin="anonymous"
-                  async>
-          </script>
-        </div>
+        
+        <!-- Core Style & Script Engine Injection -->
+        <link rel="stylesheet" href="https://unpkg.com" />
+        <div id="waline-{{ post.id | slugify }}" style="width: 100% !important; margin-top: 20px;"></div>
+        
+        <script type="module">
+          import { init } from 'https://unpkg.com';
+          init({
+            el: '#waline-{{ post.id | slugify }}',
+            /* 👑 Successfully bound to your real Vercel production control server! */
+            serverURL: 'https://vercel.app',
+            path: window.location.pathname + '#post-{{ post.id | slugify }}',
+            lang: 'zh-CN',
+            placeholder: '在这里写下你的读后感吧...（提示：无需登录，输入昵称即可留言，管理员审核后显示 ✨）',
+            reaction: true, 
+            requiredMeta: ['nick'] 
+          });
+        </script>
       </div>
     {% endfor %}
 
