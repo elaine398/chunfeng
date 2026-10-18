@@ -76,7 +76,7 @@ layout: default
         </div>
       </details>
 
-      <!-- 【第一层分类 4】: 生活日志 -->
+      <!-- 【第一层分类 4】: 生活日志 (🌟 100% 精准修复修正了 for 标签问题) -->
       <details class="category-accordion-box">
         <summary class="accordion-header">
           <span class="header-text">📅 生活日志</span>
@@ -86,7 +86,7 @@ layout: default
           </span>
         </summary>
         <div class="accordion-sub-links-list">
-          {% check for post in site.tags["日志"] %}
+          {% for post in site.tags["日志"] %}
             <div class="sub-article-row-block">
               <a class="sub-article-title-link" href="#post-{{ post.id | slugify }}">▪ {{ post.title }}</a>
             </div>
@@ -182,7 +182,7 @@ layout: default
       {% endfor %}
     </div>
 
-    <!-- 📖 【空间 B】：深度阅读区（彻底拆除了一切高度死锁，给留言大厅彻底放行通道 💬） -->
+    <!-- 📖 【空间 B】：深度阅读区（解开高度大锁，让留言大厅自由吐出 ✨） -->
     {% for post in site.posts %}
       <div class="content-panel-card article-reading-room" id="post-{{ post.id | slugify }}">
         <h1 class="article-inside-title">{{ post.title }}</h1>
