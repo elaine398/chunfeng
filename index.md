@@ -189,25 +189,45 @@ layout: default
         <div class="article-inside-body">{{ post.content }}</div>
 
         <!-- 💬 WALINE GUEST COMMENT SYSTEM: No Login Required, Admin Approval Enabled -->
-        <div style="margin-top: 60px; margin-bottom: 30px; border-top: 1px dashed #e8dfcf;"></div>
-        
-        <!-- Core Style & Script Engine Injection -->
-        <link rel="stylesheet" href="https://unpkg.com" />
-        <div id="waline-{{ post.id | slugify }}" style="width: 100% !important; margin-top: 20px;"></div>
-        
-        <script type="module">
-          import { init } from 'https://unpkg.com';
-          init({
-            el: '#waline-{{ post.id | slugify }}',
-            /* 👑 Successfully bound to your real Vercel production control server! */
-            serverURL: 'https://chunfeng-comments.vercel.app',
-            path: window.location.pathname + '#post-{{ post.id | slugify }}',
-            lang: 'zh-CN',
-            placeholder: '在这里写下你的读后感吧...（提示：无需登录，输入昵称即可留言，管理员审核后显示 ✨）',
-            reaction: true, 
-            requiredMeta: ['nick'] 
-          });
-        </script>
+       
+<!-- 💬 Waline 文章留言区 -->
+<div style="margin-top:60px; margin-bottom:30px; border-top:1px dashed #e8dfcf;"></div>
+
+<h3 style="color:#8c1623;">🌷 留下你的足迹</h3>
+<p style="color:#7f8c8d; font-size:14px;">
+  欢迎留下你的读后感。无需登录，留言经博主审核后显示。
+</p>
+
+<div class="waline-comment"
+     id="waline-{{ post.id | slugify }}"
+     data-path="{{ post.url | relative_url }}">
+</div>
+
+<!-- Waline 官方样式 -->
+<link rel="stylesheet"
+      href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+
+<!-- Waline 评论初始化 -->
+<script type="module">
+  import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+
+  const commentEl = document.getElementById(
+    'waline-{{ post.id | slugify }}'
+  );
+
+  init({
+    el: commentEl,
+    serverURL: 'https://chunfeng-comments.vercel.app',
+    path: commentEl.dataset.path,
+    lang: 'zh-CN',
+    locale: {
+      placeholder: '写下你的读后感吧……'
+    },
+    requiredMeta: ['nick'],
+    login: 'disable',
+    reaction: false
+  });
+</script>
       </div>
     {% endfor %}
 
