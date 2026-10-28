@@ -83,7 +83,8 @@ SIGNS THE ONLY PROBLEM WITH YOUR LIFE is that you THINK ABOUT IT more than YOU L
 02. You're a maladaptive daydreamer（不适应性白日梦）.Maladaptive daydreaming is when you imagine extensive fantasies to replace human interaction or general function. Many people experience it while listening to music or doing some kind of rocking motion (walking, pacing, swinging, etc.). Rather than cope with issues in life, you just daydream about grandiose alternatives that give you a "high" to eliminate the uncomfortable feeling.
 
 03. Your purpose in life is abstract.
-<h2 style="line-height: 1.38; margin-bottom: 6pt; margin-top: 18pt; text-align: left;">WHY LOGICAL PEOPLE LEAD BETTER LIVES (in a generation where "passion" is at a premium):
+   
+WHY LOGICAL PEOPLE LEAD BETTER LIVES (in a generation where "passion" is at a premium):
 
 It's not about following passion; it's about following purpose passionately.
 
@@ -226,8 +227,8 @@ Only wanting happiness. There's so much more in a life than just feeling content
 You will not remember the days when you were just “okay" and “happy." You will remember the moments of joy, and the pangs of ache, and the things that were defining and changing and miraculous and incredible and made
 
 you feel alive. Stop numbing your life because you're afraid of yourself. The only beast there is to tame is the one who doesn't want to really live.
-</h2><h2 style="line-height: 1.38; margin-bottom: 6pt; margin-top: 18pt; text-align: left;">You probably can't be whatever you want, but if you're really lucky and you work really hard, you can be exactly who you are. Grandiose visions of being something spectacular can be measured in proportion to how much they feel they are lacking. The funny reality is that people who accomplish incredible things never think of them as incredible; they think of them as normal. It's that integration into "normalcy" that makes it a pattern,which makes it a routine, which makes it a habit, which ultimately makes it a product.
-</h2><h2 dir="ltr" style="line-height: 1.38; margin-bottom: 6pt; margin-top: 18pt;">What people who have lost love know:
+You probably can't be whatever you want, but if you're really lucky and you work really hard, you can be exactly who you are. Grandiose visions of being something spectacular can be measured in proportion to how much they feel they are lacking. The funny reality is that people who accomplish incredible things never think of them as incredible; they think of them as normal. It's that integration into "normalcy" that makes it a pattern,which makes it a routine, which makes it a habit, which ultimately makes it a product.
+What people who have lost love know:
 
 They know what it's like to look back on the things they thought they'd never get over, and to realize that even the hardest things somehow dissipate with time, ease with understanding, release with awareness.
 
@@ -766,5 +767,3 @@ It leaves us chasing the kind of empty happiness that never really fills us and 
 WHAT YOU should know if you're EXPERIENCING METANOIA: a change of MIND, HEART, SELF OR WAY OF LIFE
 
 You don't need to believe in anything, but you do need to be able to listen to what feels true in the moment and hold enough objectivity to speak and act with respect and kindness toward yourself and those around you. And if you're instructed or pressured to believe in anything that doesn't resonate with you at basically everycell of your being, know that it is your internal guidance system saying: "not quite."
-
-</h2>
