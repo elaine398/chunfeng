@@ -2,7 +2,7 @@
 layout: post
 title: "书斋 - Book Lirbrary"
 author: "Elaine"
-tags: [个人随笔]
+tags: [书斋]
 ---
 
 喜欢的书 - My favorites:
