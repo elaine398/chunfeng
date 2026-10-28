@@ -2,7 +2,7 @@
 layout: post
 title: "Poor Charlie's Almanack (穷查理宝典：查理·芒格智慧箴言录)"
 author: "Elaine"
-tags: [个人随笔]
+tags: [书摘]
 ---
 
 如何获得幸福和成功？
