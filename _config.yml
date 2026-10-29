@@ -2,8 +2,6 @@
 title: "椿枫漫笔"
 author: "Elaine"
 description: "Let's not remember years, remember moments"
-header:
-  background: /images/maple.png  # 把这里的默认图片链接改成你的枫叶图路径
 
 # 顶部横栏链接锁定
 navbar-links:
