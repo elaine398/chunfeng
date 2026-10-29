@@ -2,14 +2,17 @@
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
     <meta charset="UTF-8">
-    <meta name="google-site-verification" content="BZrs5C17vkydTWMvo65ik8SXO3bVKMx47tmej91V4hE" />      
+    <meta name="google-site-verification" content="BZrs5C1vkydTWmvo65ik8SX03bVKMx47tmej91V4hE" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>椿枫漫笔</title>
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-<header class="site-header" style="background-image: url('{{ site.header.background }}'); background-size: cover; background-position: center;">
   </head>
   <body>
+    <!-- 正确的位置：header 必须在 body 里面，并且加入了文字白色的样式 -->
+    <header class="site-header" style="background-image: url('/images/maple.png'); background-size: cover; background-position: center; padding: 30px 20px; color: #ffffff;">
+    </header>
+
     <div class="container-lg px-3 my-5 markdown-body">
       {{ content }}
     </div>
