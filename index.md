@@ -243,12 +243,12 @@ layout: default
   .custom-top-bar{
     position:fixed!important;
     top:0!important;
-    left:0!important;
+   left: 0 !important;
     width:100%!important;
     height:85px!important;
     
     /* 核心修改：加入你的枫叶背景图并使其完美平铺 */
-    background-image: url('/chunfeng/images/maple.png') !important;
+    background-image: url('/chunfeng/images/maple.PNG') !important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
