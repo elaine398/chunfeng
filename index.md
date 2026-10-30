@@ -248,7 +248,7 @@ layout: default
     height:85px!important;
     
     /* 核心修改：加入你的枫叶背景图并使其完美平铺 */
-    background-image: url('/images/maple.png') !important;
+    background-image: url('/chunfeng/images/maple.png') !important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
