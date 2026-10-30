@@ -239,7 +239,46 @@ layout: default
   html,body,.wrapper,#main_content_wrap,section.main-content,.container,main,.markdown-body{max-width:100%!important;width:100%!important;padding:0!important;margin:0!important;position:relative!important;}
   header,.site-header,footer,.site-footer,.theme-by,#downloads{display:none!important;height:0!important;padding:0!important;margin:0!important;}
   body{background-color:#ffffff;padding:0 40px!important;box-sizing:border-box!important;}
-  .custom-top-bar{position:fixed!important;top:0!important;left:0!important;width:100%!important;height:85px!important;background-color:#ffffff!important;display:flex!important;justify-content:space-between!important;align-items:center!important;padding:0 40px!important;border-bottom:2px solid #e8dfcf;z-index:99999!important;box-sizing:border-box!important;}
+    /* 🍁 找到这一行并进行替换，成功为顶部菜单栏注入枫叶背景图 */
+  .custom-top-bar{
+    position:fixed!important;
+    top:0!important;
+    left:0!important;
+    width:100%!important;
+    height:85px!important;
+    
+    /* 核心修改：加入你的枫叶背景图并使其完美平铺 */
+    background-image: url('/images/maple.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    
+    display:flex!important;
+    justify-content:space-between!important;
+    align-items:center!important;
+    padding:0 40px!important;
+    border-bottom:2px solid #e8dfcf;
+    z-index:99999!important;
+    box-sizing:border-box!important;
+  }
+
+  /* 💡 额外补充：为了防止枫叶图背景太花导致白字/黑字看不清，给文字加上高清晰度的文字阴影 */
+  .top-brand-name-link {
+    color: #ffffff !important; /* 强制大标题文字为白色 */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7) !important; /* 加上黑色重阴影，保证清晰度 */
+  }
+  .top-brand-subtitle {
+    color: #f5f5f5 !important; /* 强制副标题为浅灰色 */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8) !important;
+  }
+  .top-menu-item {
+    color: #ffffff !important; /* 导航菜单字改为白色 */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8) !important;
+  }
+  .top-menu-item:hover, .active-nav {
+    color: #ffeb3b !important; /* 鼠标悬停或选中时变成明亮的琥珀金黄色 */
+  }
+
   .top-brand-name-link{font-size:2.2em!important;font-weight:bold!important;color:#2c3e50!important;letter-spacing:1px!important;text-decoration:none!important;transition:color 0.2s ease;display:inline-block;font-family:"STSong","Songti SC","SimSun",serif!important;}
   .top-brand-name-link:hover{color:#e67e22!important;}
   .top-brand-subtitle{font-size:0.95em;color:#7f8c8d;font-style:italic;margin-left:15px;font-family:"STSong","Songti SC","SimSun",serif!important;}
