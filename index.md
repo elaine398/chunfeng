@@ -112,10 +112,10 @@ layout: default
         </div>
       </details>
 
-      <!-- Category 6: 个人书斋 -->
+      <!-- Category 6: 个人书店 -->
       <details class="category-accordion-box">
         <summary class="accordion-header">
-          <span class="header-text">🏡 个人书斋</span>
+          <span class="header-text">🏡 个人书店</span>
           <span class="header-right-info">
             <span class="badge-count">{{ site.tags["书斋"].size | default: 0 }}</span>
             <span class="arrow-icon">▶</span>
